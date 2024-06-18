@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.trusted-section {
+  margin: 128px 0px;
+  width: 100%;
+}
+
+h3 {
+  margin: 100px 0px;
+  text-align: center;
+}
+
+.trusted-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 400px;
+}
+
+.trusted-item {
+  position: relative;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.trusted-item img {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.trusted-item p {
+  text-align: justify;
+}
+
+.trusted-item:hover img {
+  transform: scale(1.5);
+}
+
+.description {
+  margin-top: 60px;
+}

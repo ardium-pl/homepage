@@ -1,0 +1,61 @@
+<div class="trusted-section">
+  <h3>ZAUFALI NAM</h3>
+  <div class="trusted-container">
+    <div
+      class="trusted-item"
+      (mouseover)="hoveredIndex = 0"
+      (mouseleave)="hoveredIndex = -1"
+    >
+      <img src="assets/logo1.png" alt="Firma 1" />
+      <p class="description" *ngIf="hoveredIndex === 0">
+        <!-- do zmiany -->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi
+        id iure labore eveniet ipsa, error dolores repudiandae delectus, fugit
+        ratione assumenda? Laboriosam, suscipit vero tempora illum recusandae
+        delectus nobis!
+      </p>
+    </div>
+    <div
+      class="trusted-item"
+      (mouseover)="hoveredIndex = 1"
+      (mouseleave)="hoveredIndex = -1"
+    >
+      <img src="assets/logo2.png" alt="Firma 2" />
+      <p class="description" *ngIf="hoveredIndex === 1">
+        <!-- do zmiany -->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+        natus ipsam, placeat accusantium exercitationem omnis nisi cumque iste
+        dolorum quae doloribus tempora fugiat ab error explicabo necessitatibus
+        ad voluptate provident!
+      </p>
+    </div>
+    <div
+      class="trusted-item"
+      (mouseover)="hoveredIndex = 2"
+      (mouseleave)="hoveredIndex = -1"
+    >
+      <img src="assets/logo3.png" alt="Firma 3" />
+      <p class="description" *ngIf="hoveredIndex === 2">
+        <!-- do zmiany -->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+        laudantium minus ex culpa! Magnam, asperiores deserunt aperiam nesciunt
+        temporibus, autem suscipit nihil totam accusamus minima repudiandae
+        consequatur qui, cupiditate porro?
+      </p>
+    </div>
+    <div
+      class="trusted-item"
+      (mouseover)="hoveredIndex = 3"
+      (mouseleave)="hoveredIndex = -1"
+    >
+      <img src="assets/logo4.png" alt="Firma 4" />
+      <p class="description" *ngIf="hoveredIndex === 3">
+        <!-- do zmiany -->
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
+        cupiditate alias, facilis provident necessitatibus accusantium fuga
+        repellendus deleniti ipsa ut, animi fugiat explicabo excepturi ex quasi
+        dolorum ab quod totam.
+      </p>
+    </div>
+  </div>
+</div>
