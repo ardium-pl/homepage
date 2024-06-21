@@ -31,10 +31,10 @@ header {
 .column {
   text-align: justify;
   padding: 24px;
-}
 
-.column h4 {
-  text-align: center;
+  h4 {
+    text-align: center;
+  }
 }
 
 .comment {
@@ -50,9 +50,13 @@ header {
   text-align: center;
 }
 
+.upper {
+  text-transform: uppercase;
+}
+
 .big-icon {
   padding-bottom: 16px;
-  color: #64B5F6;
+  color: #64b5f6;
 }
 
 .section {
@@ -60,21 +64,20 @@ header {
 }
 
 .motivation {
-  /* display: flex; */
   background-position: top;
   background-size: cover;
   background-image: url("/assets/bgimg_warsaw.jpg");
   min-height: 800px;
-}
 
-.motivation h1 {
-  padding: 60px 0px;
-  margin: 0px;
-  text-align: center;
-}
+  h1 {
+    padding: 60px 0px;
+    margin: 0px;
+    text-align: center;
+  }
 
-.motivation p {
-  width: 800px;
-  margin: 0px auto;
-  text-align: justify;
+  p {
+    width: 800px;
+    margin: 0px auto;
+    text-align: justify;
+  }
 }

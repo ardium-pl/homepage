@@ -23,16 +23,16 @@ header {
   margin: 0;
   height: 100%;
   list-style: none;
-}
 
-.navigation a {
-  height: 100%;
-  padding: 0px 16px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
+  a {
+    height: 100%;
+    padding: 0px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
 
-.navigation a:hover {
-  background: lightgray;
+  a:hover {
+    background: lightgray;
+  }
 }
