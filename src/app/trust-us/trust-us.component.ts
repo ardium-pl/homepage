@@ -11,10 +11,9 @@ import { CommonModule } from '@angular/common';
 export class TrustUsComponent {
   @ViewChild('descriptionContainer', { static: true }) descriptionContainer!: ElementRef;
 
-  hoveredIndex = signal(-1);  // Inicjalizacja sygnału bez typu
-  lastHoveredIndex = signal(-1);  // Inicjalizacja sygnału bez typu
+  hoveredIndex = signal(-1);
+  lastHoveredIndex = signal(-1);
 
-  // Computed signal for description
   description = computed(() => {
     const items = document.querySelectorAll('.trust-us-item .description');
     if (this.hoveredIndex() >= 0) {
@@ -33,7 +32,6 @@ export class TrustUsComponent {
     this.hoveredIndex.set(index);
   }
 
-  // Użyj bezpośredniego wywołania sygnałów zamiast .get()
   getDescription(): string {
     const items = document.querySelectorAll('.trust-us-item .description');
     if (this.hoveredIndex() >= 0) {
