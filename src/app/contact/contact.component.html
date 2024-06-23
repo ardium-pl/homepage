@@ -17,47 +17,49 @@
     </div>
     <div class="container2">
       <div class="forms">
-        <form action="/action_page.php" target="_blank">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <p>
             <input
               class="w3-input w3-border box"
               type="text"
               placeholder="Imię"
-              required
-              name="Name"
+              formControlName="name"
             />
+            <small *ngIf="name?.invalid && name?.touched">Imię jest wymagane</small>
           </p>
           <p>
             <input
               class="w3-input w3-border box"
-              type="text"
+              type="email"
               placeholder="Email"
-              required
-              name="Email"
+              formControlName="email"
             />
+            <small *ngIf="emailControl?.invalid && emailControl?.touched">
+              Podaj poprawny email
+            </small>
           </p>
           <p>
             <input
               class="w3-input w3-border box"
               type="text"
               placeholder="Temat"
-              required
-              name="Subject"
+              formControlName="subject"
             />
+            <small *ngIf="subject?.invalid && subject?.touched">Temat jest wymagany</small>
           </p>
           <p>
             <input
               class="w3-input w3-border box"
               type="text"
               placeholder="Wiadomość"
-              required
-              name="Message"
+              formControlName="message"
             />
+            <small *ngIf="message?.invalid && message?.touched">Wiadomość jest wymagana</small>
           </p>
 
           <div class="container3">
-            <button class="button" type="submit">
-              <i class="fa fa-paper-plane"></i>  wyślij wiadomość
+            <button class="button" type="submit" [disabled]="contactForm.invalid">
+              <i class="fa fa-paper-plane"></i> wyślij wiadomość
             </button>
           </div>
         </form>
