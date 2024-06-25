@@ -11,8 +11,8 @@ import { CommonModule } from '@angular/common';
 export class TrustUsComponent {
   @ViewChild('descriptionContainer', { static: true }) descriptionContainer!: ElementRef;
 
-  hoveredIndex = signal(-1);
-  lastHoveredIndex = signal(-1);
+  hoveredIndex = signal<number>(0);  // Domyślnie ustawione na pierwsze logo
+  lastHoveredIndex = signal<number>(0);  // Domyślnie ustawione na pierwsze logo
 
   description = computed(() => {
     const items = document.querySelectorAll('.trust-us-item .description');
@@ -32,14 +32,10 @@ export class TrustUsComponent {
     this.hoveredIndex.set(index);
   }
 
-  getDescription(): string {
-    const items = document.querySelectorAll('.trust-us-item .description');
-    if (this.hoveredIndex() >= 0) {
-      return items[this.hoveredIndex()]?.textContent || '';
-    } else if (this.lastHoveredIndex() >= 0) {
-      return items[this.lastHoveredIndex()]?.textContent || '';
-    } else {
-      return 'Najedź na logo, aby zobaczyć opis';
+  getIconClass(index: number): string {
+    if (this.hoveredIndex() === index || (this.hoveredIndex() === -1 && this.lastHoveredIndex() === index)) {
+      return 'big-icon';
     }
+    return '';
   }
 }

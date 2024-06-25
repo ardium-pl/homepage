@@ -1,33 +1,33 @@
 <div class="trust-us-section">
     <h3>zaufali nam</h3>
     <div class="trust-us-container">
-        <div class="trust-us-item" 
-             (mouseover)="setHoveredIndex(0)" 
-             (mouseleave)="setHoveredIndex(-1)">
-            <img src="assets/logo1.png" alt="Firma 1">
-            <p class="description" hidden>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem id sint, quas nesciunt magnam corrupti obcaecati aut similique, reiciendis accusantium illo, fugiat labore laudantium commodi deleniti minus repellat eius unde architecto! Odio molestiae ab quibusdam placeat provident minima nemo exercitationem? 1</p>
-        </div>
-        <div class="trust-us-item" 
-             (mouseover)="setHoveredIndex(1)" 
-             (mouseleave)="setHoveredIndex(-1)">
-            <img src="assets/logo2.png" alt="Firma 2">
-            <p class="description" hidden>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem id sint, quas nesciunt magnam corrupti obcaecati aut similique, reiciendis accusantium illo, fugiat labore laudantium commodi deleniti minus repellat eius unde architecto! Odio molestiae ab quibusdam placeat provident minima nemo exercitationem? 2</p>
-        </div>
-        <div class="trust-us-item" 
-             (mouseover)="setHoveredIndex(2)" 
-             (mouseleave)="setHoveredIndex(-1)">
-            <img src="assets/logo3.png" alt="Firma 3">
-            <p class="description" hidden>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem id sint, quas nesciunt magnam corrupti obcaecati aut similique, reiciendis accusantium illo, fugiat labore laudantium commodi deleniti minus repellat eius unde architecto! Odio molestiae ab quibusdam placeat provident minima nemo exercitationem? 3</p>
-        </div>
-        <div class="trust-us-item" 
-             (mouseover)="setHoveredIndex(3)" 
-             (mouseleave)="setHoveredIndex(-1)">
-            <img src="assets/logo4.png" alt="Firma 4">
-            <p class="description" hidden>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem id sint, quas nesciunt magnam corrupti obcaecati aut similique, reiciendis accusantium illo, fugiat labore laudantium commodi deleniti minus repellat eius unde architecto! Odio molestiae ab quibusdam placeat provident minima nemo exercitationem? 4</p>
-        </div>
+      <div class="trust-us-item" 
+           (mouseover)="setHoveredIndex(0)" 
+           (mouseleave)="setHoveredIndex(-1)">
+        <img [class]="getIconClass(0)" src="assets/logo1.png" alt="Firma 1">
+        <p class="description" hidden>Opis firmy 1</p>
+      </div>
+      <div class="trust-us-item" 
+           (mouseover)="setHoveredIndex(1)" 
+           (mouseleave)="setHoveredIndex(-1)">
+        <img [class]="getIconClass(1)" src="assets/logo2.png" alt="Firma 2">
+        <p class="description" hidden>Opis firmy 2</p>
+      </div>
+      <div class="trust-us-item" 
+           (mouseover)="setHoveredIndex(2)" 
+           (mouseleave)="setHoveredIndex(-1)">
+        <img [class]="getIconClass(2)" src="assets/logo3.png" alt="Firma 3">
+        <p class="description" hidden>Opis firmy 3</p>
+      </div>
+      <div class="trust-us-item" 
+           (mouseover)="setHoveredIndex(3)" 
+           (mouseleave)="setHoveredIndex(-1)">
+        <img [class]="getIconClass(3)" src="assets/logo4.png" alt="Firma 4">
+        <p class="description" hidden>Opis firmy 4</p>
+      </div>
     </div>
     <div class="central-description">
-        <p>{{ description() }}</p>
+      <p>{{ description() }}</p>
     </div>
   </div>
   
