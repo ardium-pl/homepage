@@ -8,7 +8,7 @@ header {
   left: 0;
   width: 100%;
   background: white;  // Ustaw tło, aby nagłówek nie był przezroczysty
-  z-index: 1000;  // Ustaw wysoki indeks z, aby nagłówek był zawsze na wierzchu
+  // z-index: 1000;  // Ustaw wysoki indeks z, aby nagłówek był zawsze na wierzchu
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);  // Opcjonalne: dodaj cień, aby nagłówek był wyraźniejszy
 }
 

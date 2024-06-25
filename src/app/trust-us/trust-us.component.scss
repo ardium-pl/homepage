@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  padding-top: 60px;  /* Upewnij się, że zawartość nie jest pod nagłówkiem */
 }
 
 h3 {
@@ -17,6 +18,8 @@ h3 {
   justify-content: center;
   width: 100%;
   background-color: white;
+  z-index: 1; /* Ustaw niższy indeks z, aby sekcja była pod nagłówkiem */
+  overflow: hidden; /* Ukryj przepełnienie, aby powiększone ikony nie nachodziły na nagłówek */
 }
 
 .trust-us-container {
@@ -41,6 +44,14 @@ h3 {
 
 .trust-us-item:hover img {
   transform: scale(1.2);
+}
+
+.big-icon {
+  transform: scale(1.2);
+}
+
+.trust-us-item .description {
+  display: none; /* Ukryj opisy pod logotypami */
 }
 
 .central-description {
