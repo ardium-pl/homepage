@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import chalk from 'chalk';
-import clientRouter from './client.js'; // Import the router from client.js
+import clientRouter from './client.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -10,7 +10,6 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-// Use the client router to serve static files
 app.use(clientRouter);
 
 console.log('[Server] Starting up...');
