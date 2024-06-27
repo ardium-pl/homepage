@@ -1,24 +1,11 @@
 import { Component } from '@angular/core';
-import { ContactService } from '../contact.service';
-
+import { ContactInfoComponent } from '../contact-info/contact-info.component';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [ContactInfoComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
-export class FooterComponent {
-  address: string = '';
-  phone: string = '';
-  email: string = '';
-
-  constructor(private contactService: ContactService) {}
-
-  ngOnInit(): void {
-    this.address = this.contactService.getAddress();
-    this.phone = this.contactService.getPhone();
-    this.email = this.contactService.getEmail();
-  }
-}
+export class FooterComponent { }

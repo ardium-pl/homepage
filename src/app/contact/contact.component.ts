@@ -1,27 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { ContactService } from '../contact.service';
 import { CommonModule } from '@angular/common';
-
+import { ContactInfoComponent } from '../contact-info/contact-info.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, ContactInfoComponent],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
+  styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent implements OnInit{
-  address: string = '';
-  phone: string = '';
-  email: string = '';
-
+export class ContactComponent {
   contactForm: FormGroup;
 
   constructor(
     private titleService: Title,
-    private contactService: ContactService,
     private formBuilder: FormBuilder
   ) {
     this.titleService.setTitle('Ardium - Contact');
@@ -31,12 +25,6 @@ export class ContactComponent implements OnInit{
       subject: ['', Validators.required],
       message: ['', Validators.required]
     });
-  }
-
-  ngOnInit(): void {
-    this.address = this.contactService.getAddress();
-    this.phone = this.contactService.getPhone();
-    this.email = this.contactService.getEmail();
   }
 
   get name() {

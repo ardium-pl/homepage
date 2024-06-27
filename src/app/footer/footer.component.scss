@@ -1,24 +1,20 @@
 .footer {
   height: 100%;
-  background-color: #64B5F6;
+  background-color: #64b5f6;
   margin: 0;
   display: block;
   padding: 24px 0px;
+
+  h3 {
+    margin: 0;
+  }
 }
 
-h3 {
-  margin: 0;
+app-contact-info {
+  font-size: 12px;
 }
 
 .center {
   text-align: center;
   text-transform: uppercase;
-}
-
-ul {
-  margin: 0;
-}
-
-.no-bullets {
-  list-style-type: none;
 }
