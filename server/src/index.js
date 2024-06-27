@@ -3,6 +3,9 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import chalk from 'chalk';
 import clientRouter from './client.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
