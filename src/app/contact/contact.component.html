@@ -15,9 +15,9 @@
             placeholder="Imię"
             formControlName="name"
           />
-          <small *ngIf="name?.invalid && name?.touched"
-            >Imię jest wymagane</small
-          >
+          @if (name?.invalid && name?.touched) {
+            <small>Imię jest wymagane</small>
+          }
         </p>
         <p>
           <input
@@ -26,9 +26,9 @@
             placeholder="Email"
             formControlName="email"
           />
-          <small *ngIf="emailControl?.invalid && emailControl?.touched">
-            Podaj poprawny email
-          </small>
+          @if (emailControl?.invalid && emailControl?.touched) {
+            <small>Podaj poprawny email</small>
+          }
         </p>
         <p>
           <input
@@ -37,9 +37,9 @@
             placeholder="Temat"
             formControlName="subject"
           />
-          <small *ngIf="subject?.invalid && subject?.touched"
-            >Temat jest wymagany</small
-          >
+          @if (subject?.invalid && subject?.touched) {
+            <small>Temat jest wymagany</small>
+          }
         </p>
         <p>
           <input
@@ -48,9 +48,9 @@
             placeholder="Wiadomość"
             formControlName="message"
           />
-          <small *ngIf="message?.invalid && message?.touched"
-            >Wiadomość jest wymagana</small
-          >
+          @if (message?.invalid && message?.touched) {
+            <small>Wiadomość jest wymagana</small>
+          }
         </p>
         <div class="container-2">
           <button class="button" type="submit" [disabled]="contactForm.invalid">
