@@ -18,8 +18,6 @@ h3 {
   justify-content: center;
   width: 100%;
   background-color: white;
-  z-index: 1; /* Ustaw niższy indeks z, aby sekcja była pod nagłówkiem */
-  overflow: hidden; /* Ukryj przepełnienie, aby powiększone ikony nie nachodziły na nagłówek */
 }
 
 .trust-us-container {
@@ -33,25 +31,22 @@ h3 {
 .trust-us-item {
   text-align: center;
   padding: 0 40px;
-  transition: transform 0.3s ease-in-out;
+  height: 120px;
 }
 
-.trust-us-item img {
+img {
   width: 100px;
   height: 100px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.trust-us-item:hover img {
-  transform: scale(1.2);
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
 .big-icon {
-  transform: scale(1.2);
+  width: 120px;
+  height: 120px;
 }
 
-.trust-us-item .description {
-  display: none; /* Ukryj opisy pod logotypami */
+.description {
+  display: none;
 }
 
 .central-description {
