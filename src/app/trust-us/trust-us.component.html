@@ -1,0 +1,40 @@
+<div class="trust-us-section">
+  <h3>zaufali nam</h3>
+  <div class="trust-us-container">
+    <div
+      class="trust-us-item"
+      (mouseover)="setHoveredIndex(1)"
+      (mouseleave)="setHoveredIndex(0)"
+    >
+      <img [ngClass]="getIconClass(1)" src="assets/logo1.png" alt="Firma 1" />
+      <p class="description">Opis firmy 1</p>
+    </div>
+    <div
+      class="trust-us-item"
+      (mouseover)="setHoveredIndex(2)"
+      (mouseleave)="setHoveredIndex(0)"
+    >
+      <img [ngClass]="getIconClass(2)" src="assets/logo2.png" alt="Firma 2" />
+      <p class="description">Opis firmy 2</p>
+    </div>
+    <div
+      class="trust-us-item"
+      (mouseover)="setHoveredIndex(3)"
+      (mouseleave)="setHoveredIndex(0)"
+    >
+      <img [ngClass]="getIconClass(3)" src="assets/logo3.png" alt="Firma 3" />
+      <p class="description">Opis firmy 3</p>
+    </div>
+    <div
+      class="trust-us-item"
+      (mouseover)="setHoveredIndex(4)"
+      (mouseleave)="setHoveredIndex(0)"
+    >
+      <img [ngClass]="getIconClass(4)" src="assets/logo4.png" alt="Firma 4" />
+      <p class="description">Opis firmy 4</p>
+    </div>
+  </div>
+  <div class="central-description">
+    <p>{{ description() }}</p>
+  </div>
+</div>
