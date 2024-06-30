@@ -1,5 +1,6 @@
 <div class="contact-us">
   <div class="header">
+
     <h3>Contack</h3>
     <p>Send us a message </p>
   </div>
@@ -17,6 +18,7 @@
           />
           @if (name?.invalid && name?.touched) {
             <small>Name is required</small>
+
           }
         </p>
         <p>
@@ -27,6 +29,7 @@
             formControlName="email"
           />
           @if (emailControl?.invalid && emailControl?.touched) {
+
             <small>Make sure that your email is valid</small>
           }
         </p>
