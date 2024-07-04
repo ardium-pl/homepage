@@ -32,19 +32,21 @@ h3 {
   text-align: center;
   padding: 0 40px;
   height: 120px;
-}
 
-img {
-  width: 100px;
-  height: 100px;
-  transition:
-    width 0.3s ease-in-out,
-    height 0.3s ease-in-out;
-}
+  img {
+    width: 100px;
+    height: 100px;
+    transition:
+      width 0.3s ease-in-out,
+      height 0.3s ease-in-out;
+  }
 
-.big-icon {
-  width: 120px;
-  height: 120px;
+  &.item-active {
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
 }
 
 .description {
