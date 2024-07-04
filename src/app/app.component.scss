@@ -1,0 +1,16 @@
+.home-page {
+  line-height: 1.8;
+  height: 100%;
+  font-family: "Raleway", sans-serif;
+}
+
+app-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
+}
+
+router-outlet {
+  margin-top: 60px;
+}

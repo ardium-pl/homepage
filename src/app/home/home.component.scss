@@ -1,0 +1,83 @@
+header {
+  display: flex;
+  background-position: center;
+
+  background-size: cover;
+  background-image: url("/assets/bgimg_isometric.jpg");
+  min-height: 800px;
+}
+
+.call_to_action {
+  margin: auto 2%;
+  margin-top: 11%;
+  color: white;
+}
+
+.call1 {
+  font-size: 30px;
+}
+
+.call2 {
+  font-size: 20px;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.column {
+  text-align: justify;
+  padding: 24px;
+
+  h4 {
+    text-align: center;
+  }
+}
+
+.comment {
+  text-align: center;
+}
+
+.container {
+  margin-top: 128px;
+  margin-bottom: 128px;
+}
+
+.center {
+  text-align: center;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.big-icon {
+  padding-bottom: 16px;
+  color: #64b5f6;
+}
+
+.section {
+  margin: 128px 0px;
+}
+
+.motivation {
+  background-position: top;
+  background-size: cover;
+  background-image: url("/assets/bgimg_warsaw.jpg");
+  min-height: 800px;
+
+  h1 {
+    padding: 60px 0px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  p {
+    width: 800px;
+    margin: 0px auto;
+    text-align: justify;
+  }
+}
