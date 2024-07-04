@@ -1,0 +1,53 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+  position: fixed; /* Ustaw nagłówek jako stały */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white; /* Ustaw tło, aby nagłówek nie był przezroczysty */
+  z-index: 1000; /* Ustaw wysoki indeks z, aby nagłówek był zawsze na wierzchu */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opcjonalne: dodaj cień, aby nagłówek był wyraźniejszy */
+}
+
+.logo {
+  margin: auto 16px;
+  height: 75%;
+  cursor: pointer;
+}
+
+.name {
+  height: 60%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  list-style: none;
+  height: 100%;
+
+  a {
+    height: 100%;
+    padding: 0px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  a:hover {
+    background: lightgray;
+  }
+}
+
+body {
+  margin: 0;
+  padding-top: 60px; /* Upewnij się, że zawartość nie jest pod nagłówkiem */
+}

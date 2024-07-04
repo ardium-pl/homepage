@@ -1,0 +1,4 @@
+client/.angular
+client/.vscode
+dist
+**/package-lock.json

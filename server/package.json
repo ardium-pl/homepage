@@ -1,20 +1,20 @@
 {
-    "name": "homepage",
-    "version": "0.0.0",
-    "type": "module",
-    "description": "",
-    "main": "src/index.js",
-    "scripts": {
-        "start": "nodemon"
-    },
-    "author": "",
-    "license": "MIT",
-    "devDependencies": {
-        "nodemon": "^3.0.2"
-    },
-    "dependencies": {
-        "cors": "^2.8.5",
-        "dotenv": "^16.4.5",
-        "express": "^4.18.2"
-    }
+  "name": "homepage",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2"
+  }
 }
