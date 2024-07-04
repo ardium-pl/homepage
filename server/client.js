@@ -9,10 +9,8 @@ const router = express.Router();
 const angularAppPath = path.join(__dirname, "../dist/homepage/browser");
 
 // Serve static files for the root URL
-router.use('/', express.static(angularAppPath));
+router.use("/", express.static(angularAppPath));
 // Serve static files for any other URL
-router.use('*', express.static(angularAppPath));
-
-
+router.use("*", express.static(angularAppPath));
 
 export default router;

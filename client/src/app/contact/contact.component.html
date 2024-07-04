@@ -1,0 +1,63 @@
+<div class="contact-us">
+  <div class="header">
+    <h3>Contact</h3>
+    <p>Send us a message</p>
+  </div>
+  <div class="container-1">
+    <app-contact-info></app-contact-info>
+
+    <div class="forms">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <p>
+          <input
+            class="w3-input w3-border box"
+            type="text"
+            placeholder="Name"
+            formControlName="name"
+          />
+          @if (name?.invalid && name?.touched) {
+            <small>Name is required</small>
+          }
+        </p>
+        <p>
+          <input
+            class="w3-input w3-border box"
+            type="email"
+            placeholder="Email"
+            formControlName="email"
+          />
+          @if (emailControl?.invalid && emailControl?.touched) {
+            <small>Make sure that your email is valid</small>
+          }
+        </p>
+        <p>
+          <input
+            class="w3-input w3-border box"
+            type="text"
+            placeholder="Subject"
+            formControlName="subject"
+          />
+          @if (subject?.invalid && subject?.touched) {
+            <small>Subject is required</small>
+          }
+        </p>
+        <p>
+          <input
+            class="w3-input w3-border box"
+            type="text"
+            placeholder="Message"
+            formControlName="message"
+          />
+          @if (message?.invalid && message?.touched) {
+            <small>Message is required</small>
+          }
+        </p>
+        <div class="container-2">
+          <button class="button" type="submit" [disabled]="contactForm.invalid">
+            <i class="fa fa-paper-plane"></i> Send message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
