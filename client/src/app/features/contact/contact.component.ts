@@ -7,7 +7,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ContactInfoComponent } from '../contact-info/contact-info.component';
+import { ContactInfoComponent } from '../../components/contact-info/contact-info.component';
 
 @Component({
   selector: 'app-contact',

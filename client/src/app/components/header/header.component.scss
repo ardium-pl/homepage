@@ -12,24 +12,10 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opcjonalne: dodaj cień, aby nagłówek był wyraźniejszy */
 }
 
-.brand {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.brand-item {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
 .logo {
-  margin: 0px 16px;
-  height: 80%;
+  margin: auto 16px;
+  height: 75%;
+  cursor: pointer;
 }
 
 .name {

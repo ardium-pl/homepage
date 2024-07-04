@@ -1,7 +1,6 @@
 header {
   display: flex;
   background-position: center;
-
   background-size: cover;
   background-image: url("/assets/bgimg_isometric.jpg");
   min-height: 800px;
@@ -11,6 +10,7 @@ header {
   margin: auto 2%;
   margin-top: 11%;
   color: white;
+  max-width: min(90%, max(400px, 30%));
 }
 
 .call1 {
