@@ -15,9 +15,9 @@
             placeholder="Name"
             formControlName="name"
           />
-          @if (name?.invalid && name?.touched) {
+          <ng-container *ngIf="name?.invalid && name?.touched">
             <small>Name is required</small>
-          }
+          </ng-container>
         </p>
         <p>
           <input
@@ -26,9 +26,9 @@
             placeholder="Email"
             formControlName="email"
           />
-          @if (emailControl?.invalid && emailControl?.touched) {
+          <ng-container *ngIf="emailControl?.invalid && emailControl?.touched">
             <small>Make sure that your email is valid</small>
-          }
+          </ng-container>
         </p>
         <p>
           <input
@@ -37,21 +37,35 @@
             placeholder="Subject"
             formControlName="subject"
           />
-          @if (subject?.invalid && subject?.touched) {
+          <ng-container *ngIf="subject?.invalid && subject?.touched">
             <small>Subject is required</small>
-          }
+          </ng-container>
         </p>
         <p>
-          <input
+          <textarea
             class="w3-input w3-border box"
-            type="text"
             placeholder="Message"
             formControlName="message"
-          />
-          @if (message?.invalid && message?.touched) {
+          ></textarea>
+          <ng-container *ngIf="message?.invalid && message?.touched">
             <small>Message is required</small>
-          }
+          </ng-container>
         </p>
+        <div class="container-2">
+          <label
+            class="privacy-policy"
+            [ngClass]="{'error': privacyPolicy?.invalid && privacyPolicy?.touched}"
+          >
+            <input
+              type="checkbox"
+              formControlName="privacyPolicy"
+            />
+            I agree to the <a href="/privacy-policy">Privacy Policy</a>
+          </label>
+          <ng-container *ngIf="privacyPolicy?.invalid && privacyPolicy?.touched">
+            <small class="error-message">Accepting the Privacy Policy is required</small>
+          </ng-container>
+        </div>
         <div class="container-2">
           <button class="button" type="submit" [disabled]="contactForm.invalid">
             <i class="fa fa-paper-plane"></i> Send message

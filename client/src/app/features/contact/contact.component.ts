@@ -29,6 +29,7 @@ export class ContactComponent {
       email: ['', [Validators.required, Validators.email]],
       subject: ['', Validators.required],
       message: ['', Validators.required],
+      privacyPolicy: [false, Validators.requiredTrue]
     });
   }
 
@@ -47,6 +48,11 @@ export class ContactComponent {
   get message() {
     return this.contactForm.get('message');
   }
+
+  get privacyPolicy() {
+    return this.contactForm.get('privacyPolicy');
+  }
+
 
   onSubmit() {
     if (this.contactForm.valid) {

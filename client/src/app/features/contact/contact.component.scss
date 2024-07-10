@@ -47,13 +47,43 @@ app-contact-info {
   padding: 8px 16px;
   border: none;
   text-transform: uppercase;
+  margin-top: 10px;
 }
 
 .button:hover {
   background: #2196f3;
 }
 
+.privacy-policy {
+  display: inline-block;
+  margin-right: 5px;
+
+  &.error {
+    color: red;
+  }
+
+  &::after {
+    content: '*';
+    color: red;
+    margin-left: 2px; // Adjust the space between the text and the star
+    font-size: 1.5rem;
+  }
+  
+}
+
+.error-message {
+  color: red;
+  display: block;
+  margin-top: 5px;
+}
+
+.privacy-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .container-2 {
-  width: 205px;
+  width: 100%;
   margin: auto;
+  text-align: left;
 }
