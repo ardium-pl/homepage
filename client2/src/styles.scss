@@ -1,0 +1,66 @@
+:root {
+  --clr-main: #09aff4;
+  --clr-accent: #0d1857;
+  --clr-secondary: #4820a7;
+
+  --clr-white: #fff;
+  --clr-black: #121212;
+  --clr-grey: #f1f1f1;
+  --clr-semi-dark: #b8b8b8;
+  --clr-dark-grey: #4d4d4d;
+  --clr-extra-dark-grey: #202020;
+
+  --clr-dark-blue: #060922;
+  --clr-semi-dark-blue: #000531;
+
+  --clr-danger: #fc0000;
+  --clr-success: #217234;
+  --clr-warning: #9b6a01;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: Jost, sans-serif;
+  position: relative;
+  color: var(--clr-white);
+  background: var(--clr-dark-blue);
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.5;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  text-transform: capitalize;
+}
