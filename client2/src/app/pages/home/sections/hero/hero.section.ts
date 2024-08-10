@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { ButtonComponent } from '@components/button';
 import { PreHeadingComponent } from '@components/pre-heading/pre-heading.component';
-import { ButtonComponent } from "../../../../components/button/button.component";
 
 @Component({
   selector: 'app-hero-section',
@@ -10,5 +11,9 @@ import { ButtonComponent } from "../../../../components/button/button.component"
   styleUrl: './hero.section.scss'
 })
 export class HeroSection {
+  private readonly router = inject(Router);
 
+  onContactUsClick() {
+    this.router.navigateByUrl('#contact')
+  }
 }

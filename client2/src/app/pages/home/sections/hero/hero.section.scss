@@ -22,10 +22,9 @@ section {
   opacity: 0.2;
 }
 .hero-container {
-  width: 100%;
   display: flex;
   gap: 1.5rem;
-  padding-top: 4rem;
+  padding: 4rem 0.75rem 0;
 
   > * {
     width: 50%;
@@ -38,24 +37,30 @@ section {
     width: 85%;
   }
 }
+.heading-container {
+  position: relative;
+}
+.striped-decor {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  opacity: 0.25;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  transform: translate(-25%, -10%);
+  border-radius: 9999px;
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent 0.9px,
+    var(--clr-main) 1.25px,
+    var(--clr-main) 3px,
+    transparent 4px,
+    transparent 8px
+  );
+}
 
-@media only screen and (min-width: 576px) {
-  .hero-container {
-    max-width: 540px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .hero-container {
-    max-width: 720px;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .hero-container {
-    max-width: 960px;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .hero-container {
-    max-width: 1140px;
-  }
+img {
+  position: relative;
+  bottom: 4rem;
 }

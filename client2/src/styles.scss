@@ -64,3 +64,34 @@ h1 {
   margin-bottom: 1.75rem;
   text-transform: capitalize;
 }
+
+
+
+.content-width-g {
+  width: 100%;
+}
+@media only screen and (min-width: 576px) {
+  .content-width-g {
+    max-width: 540px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .content-width-g {
+    max-width: 720px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .content-width-g {
+    max-width: 960px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .content-width-g {
+    max-width: 1140px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .content-width-g {
+    max-width: 1320px;
+  }
+}
