@@ -31,6 +31,9 @@
       "@components/*": [
         "src/app/components/*"
       ],
+      "@icons": [
+        "src/app/icons"
+      ],
     }
   },
   "angularCompilerOptions": {

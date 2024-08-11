@@ -1,0 +1,30 @@
+section {
+  padding: 5rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading-container {
+  margin-bottom: 3rem;
+  
+  p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    opacity: 0.75;
+  }
+}
+
+.card-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+app-card {
+  aspect-ratio: 1;
+
+  app-card-icon {
+    width: 3.5rem;
+  }
+}
