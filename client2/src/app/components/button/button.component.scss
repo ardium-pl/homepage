@@ -54,6 +54,11 @@ button {
   }
 }
 
+@media only screen and (min-width: 576px) {
+  button {
+    font-size: 1rem;
+  }
+}
 @media only screen and (min-width: 992px) {
   button {
     font-size: 1.05rem;

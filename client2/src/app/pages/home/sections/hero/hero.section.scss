@@ -23,18 +23,19 @@ section {
 }
 .hero-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   padding: 4rem 0.75rem 0;
 
   > * {
-    width: 50%;
+    width: 100%;
   }
   p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 400;
     margin-bottom: 2rem;
     opacity: 0.75;
-    width: 85%;
+    width: 100%;
   }
 }
 .heading-container {
@@ -61,14 +62,32 @@ section {
 }
 
 img {
-  position: relative;
-  bottom: 4rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 576px) {
   .hero-container {
     p {
       font-size: 1.125rem;
     }
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hero-container {
+    flex-wrap: nowrap;
+
+    > * {
+      width: 50%;
+    }
+    p {
+      font-size: 1.25rem;
+      width: 85%;
+    }
+  }
+  img {
+    width: 100%;
+    position: relative;
+    bottom: 4rem;
   }
 }

@@ -5,7 +5,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  padding: 1.375rem;
   font-size: 1rem;
   border: 1px solid rgba(var(--clr-main-rgb), 0.35);
   border-radius: 0.5rem;
@@ -34,13 +34,18 @@
       }
     }
     .card-content {
-      padding-top: 2rem;
+      padding-top: 1.25rem;
     }
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 576px) {
+  .annotated .card-content {
+    padding-top: 2rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
   .card-container {
-    padding: 1.375rem;
+    padding: 2rem;
   }
 }

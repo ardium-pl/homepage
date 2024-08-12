@@ -18,9 +18,15 @@ form {
 fieldset {
   border: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 app-button {
   margin-top: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  fieldset {
+    grid-template-columns: 1fr 1fr;
+  }
 }
