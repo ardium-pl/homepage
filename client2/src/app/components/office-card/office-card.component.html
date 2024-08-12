@@ -1,0 +1,34 @@
+<app-card annotated noIcon>
+  <app-card-title>{{ city() }}</app-card-title>
+  <app-card-content>
+    <div class="address">{{ address() }}</div>
+    <div class="contact-info">
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <icon-envelope />
+        </div>
+        <div class="contact-info-text">
+          <div class="contact-info-name">
+            Email:
+          </div>
+          <a class="contact-info-value" [href]="emailHref()">
+            {{ email() }}
+          </a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <icon-call-calling />
+        </div>
+        <div class="contact-info-text">
+          <div class="contact-info-name">
+            Phone:
+          </div>
+          <a class="contact-info-value phone-value" [href]="phoneHref()">
+            {{ phone() }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </app-card-content>
+</app-card>

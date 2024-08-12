@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-card-content',
   standalone: true,
   imports: [],
-  template: '<p><ng-content /></p>',
+  template: '<ng-content />',
   styleUrl: './card-content.component.scss',
 })
 export class CardContentComponent {}

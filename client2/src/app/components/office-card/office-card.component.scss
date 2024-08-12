@@ -1,0 +1,64 @@
+app-card {
+  display: block;
+  aspect-ratio: 1;
+  height: max-content;
+  width: 354px;
+}
+app-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+.address {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+  opacity: 0.75;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.contact-info-item {
+  display: flex;
+  gap: 1rem;
+}
+.contact-info-icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(var(--clr-main-rgb), 0.35);
+  border-radius: 0.25rem;
+  display: grid;
+  place-items: center;
+  color: var(--clr-main);
+
+  > * {
+    display: block;
+    width: 2.125rem;
+    height: 2.125rem;
+  }
+}
+.contact-info-text {
+  display: flex;
+  flex-direction: column;
+}
+.contact-info-name {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--clr-main);
+  opacity: 0.8;
+  text-transform: capitalize;
+  text-decoration: none;
+  line-height: 1.2;
+}
+.contact-info-value {
+  color: var(--clr-white);
+  display: block;
+  font-size: 1.1rem;
+  text-transform: lowercase;
+  text-decoration: none;
+  opacity: 0.75;
+}
+.phone-value {
+  font-size: 1rem;
+}
