@@ -5,6 +5,10 @@ section {
   align-items: center;
   justify-content: center;
 }
+.scroll-anchor {
+  position: absolute;
+  top: -3rem;
+}
 .heading-container {
   margin-bottom: 3rem;
   
