@@ -17,7 +17,7 @@
     content: "";
     position: absolute;
     top: 50%;
-    width: 6px;
+    width: 0.375em;
     aspect-ratio: 1 / 1;
     border-radius: 9999px;
     transform: translate(0, -50%);
@@ -28,5 +28,11 @@
   }
   &::after {
     right: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  :host {
+    font-size: 0.875rem;
   }
 }

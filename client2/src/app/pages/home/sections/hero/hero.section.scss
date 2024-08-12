@@ -64,3 +64,11 @@ img {
   position: relative;
   bottom: 4rem;
 }
+
+@media only screen and (min-width: 992px) {
+  .hero-container {
+    p {
+      font-size: 1.125rem;
+    }
+  }
+}

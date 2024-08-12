@@ -53,3 +53,10 @@ button {
     opacity: 0.5;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  button {
+    font-size: 1.05rem;
+    padding: 0.625rem 2rem;
+  }
+}

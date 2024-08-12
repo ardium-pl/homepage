@@ -22,3 +22,10 @@ app-card {
     width: 3.5rem;
   }
 }
+
+
+@media only screen and (min-width: 992px) {
+  app-card app-card-icon {
+    width: 3rem;
+  }
+}

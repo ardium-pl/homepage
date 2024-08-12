@@ -4,3 +4,9 @@
   margin: 0;
   opacity: 0.85;
 }
+
+@media only screen and (min-width: 992px) {
+  :host {
+    font-size: 0.95rem;
+  }
+}

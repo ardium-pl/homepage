@@ -2,3 +2,9 @@
   color: var(--clr-main);
   display: block;
 }
+
+@media only screen and (min-width: 992px) {
+  .card-container {
+    padding: 1.375rem;
+  }
+}
