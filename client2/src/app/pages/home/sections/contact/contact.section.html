@@ -1,0 +1,40 @@
+<section>
+  <div class="content-width-g">
+    <h2>Have any questions? Let's answer them</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <fieldset>
+        <app-form-field
+          formControlName="name"
+          label="Name"
+          required
+          inputId="name"
+          autocomplete="name"
+          [errorText]="translateError(form.controls.name)"
+        />
+        <app-form-field
+          formControlName="email"
+          label="E-mail"
+          required
+          inputId="email"
+          autocomplete="email"
+          [errorText]="translateError(form.controls.email)"
+        />
+      </fieldset>
+      <app-form-field
+        formControlName="subject"
+        label="Subject"
+        required
+        inputId="subject"
+        [errorText]="translateError(form.controls.subject)"
+      />
+      <app-form-field-textarea
+        formControlName="message"
+        label="Message"
+        required
+        inputId="message"
+        [errorText]="translateError(form.controls.subject)"
+      />
+      <app-button appearance="filled">Send your message</app-button>
+    </form>
+  </div>
+</section>

@@ -8,9 +8,6 @@ button {
   align-items: center;
   text-transform: capitalize;
   letter-spacing: 1px;
-  background-color: transparent;
-  border: 2px solid var(--clr-main);
-  color: var(--clr-main);
   border-radius: 0.25rem;
   border-bottom-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -18,14 +15,35 @@ button {
   font-weight: 500;
   overflow: hidden;
   outline: none;
-  transition: all 0.3s ease-in-out, opacity 0.15s ease;
+  transition:
+    all 0.3s ease-in-out,
+    opacity 0.15s ease;
   cursor: pointer;
   box-shadow: 0px 3px 10px -5px rgba(var(--clr-dark-blue-rgb), 0.15);
 
-  &:hover, &:focus-visible {
-    background-color: var(--clr-main);
-    color: var(--white);
+  &.appearance-outlined {
+    background-color: transparent;
+    border: 2px solid var(--clr-main);
+    color: var(--clr-main);
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--clr-main);
+      color: var(--white);
+    }
   }
+  &.appearance-filled {
+    background-color: var(--clr-main);
+    border: 2px solid var(--clr-main);
+    color: var(--clr-white);
+
+    &:hover,
+    &:focus-visible {
+      background-color: transparent;
+      color: var(--clr-main);
+    }
+  }
+
   &:active {
     opacity: 0.8;
   }

@@ -1,0 +1,21 @@
+<div class="label-container">
+  <label [for]="inputId()">
+    {{ label() }}
+    @if (required()) {
+      <app-required-asterisk />
+    }
+  </label>
+  @if (errorText()) {
+    <div class="error-text">{{ errorText() }}</div>
+  }
+</div>
+<input
+  class="input-element"
+  type="text"
+  [value]="value"
+  (input)="onInput($event)"
+  (blur)="onBlur()"
+  [placeholder]="placeholder()"
+  [id]="inputId()"
+  [autocomplete]="autocomplete()"
+/>

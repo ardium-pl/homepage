@@ -1,0 +1,59 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+.label-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+label {
+  color: var(--clr-white);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: capitalize;
+  position: relative;
+  bottom: 6px;
+  transition: color 0.3s ease-in-out;
+}
+.input-element {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(var(--clr-white-rgb), 0.25);
+  background: var(--clr-dark-blue);
+  color: var(--clr-white);
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+
+  &.textarea-input {
+    min-height: 10em;
+    resize: vertical;
+  }
+  &:is(:-webkit-autofill, :autofill) {
+    background-color: var(--clr-semi-dark-blue) !important;
+  }
+}
+.error-text {
+  color: var(--clr-danger);
+  font-size: 0.95em;
+  animation: appear 0.1s ease-out;
+}
+:host:focus-within {
+  label {
+    color: var(--clr-main);
+  }
+  .input-element {
+    border-color: var(--clr-main);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

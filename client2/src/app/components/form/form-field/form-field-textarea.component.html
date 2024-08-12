@@ -1,0 +1,20 @@
+<div class="label-container">
+  <label [for]="inputId()">
+    {{ label() }}
+    @if (required()) {
+      <app-required-asterisk />
+    }
+  </label>
+  @if (errorText()) {
+    <div class="error-text">{{ errorText() }}</div>
+  }
+</div>
+<textarea
+  class="input-element textarea-input"
+  type="text"
+  [value]="value"
+  (input)="onInput($event)"
+  (blur)="onBlur()"
+  [placeholder]="placeholder()"
+  [id]="inputId()"
+></textarea>
