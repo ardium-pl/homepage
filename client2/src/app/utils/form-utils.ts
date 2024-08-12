@@ -26,7 +26,5 @@ export function translateError(control: AbstractControl<any>): string {
 
   const err = Object.keys(errors);
 
-  console.log(err);
-
   return ERROR_MAP[err[0]] ?? '';
 }
