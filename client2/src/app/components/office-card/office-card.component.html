@@ -1,7 +1,7 @@
 <app-card annotated noIcon>
   <app-card-title>{{ city() }}</app-card-title>
   <app-card-content>
-    <div class="address">{{ address() }}</div>
+    <a class="address" [href]="addressHref()" target="_blank">{{ address() }}</a>
     <div class="contact-info">
       <div class="contact-info-item">
         <div class="contact-info-icon">
