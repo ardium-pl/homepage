@@ -7,6 +7,7 @@
   --clr-white: #fff;
   --clr-white-rgb: 255, 255, 255;
   --clr-black: #121212;
+  --clr-black-rgb: 18, 18, 18;
   --clr-grey: #f1f1f1;
   --clr-semi-dark: #b8b8b8;
   --clr-dark-grey: #4d4d4d;
@@ -48,6 +49,9 @@ button,
 textarea,
 select {
   font: inherit;
+}
+button {
+  cursor: pointer;
 }
 p,
 h1,

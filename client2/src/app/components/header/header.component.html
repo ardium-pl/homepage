@@ -3,7 +3,10 @@
     <div class="logo">
       <img src="ardium_logo.png" alt="Ardium logo" />
     </div>
-    <nav>
+    <app-icon-button (click)="isOpen.set(!isOpen())">
+      <app-hamburger-menu [open]="isOpen()" />
+    </app-icon-button>
+    <nav [class.open]="isOpen()">
       <ul>
         <li>
           <a [routerLink]="[]" fragment="home-section" (click)="scrollTo('home-section')">Home</a>
