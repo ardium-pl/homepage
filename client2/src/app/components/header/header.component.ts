@@ -1,7 +1,7 @@
 import { Component, HostListener, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HamburgerMenuComponent } from "../hamburger-menu/hamburger-menu.component";
-import { IconButtonComponent } from "../icon-button/icon-button.component";
+import { HamburgerMenuComponent } from '../hamburger-menu/hamburger-menu.component';
+import { IconButtonComponent } from '../icon-button/icon-button.component';
 
 @Component({
   selector: 'app-header',

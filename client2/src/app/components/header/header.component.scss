@@ -17,7 +17,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0.75rem;
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
   margin: 0;
   width: 100%;
 }
@@ -77,22 +77,13 @@ nav {
       }
       &:hover,
       &:focus-visible {
+        color: var(--clr-main);
+
         &::before {
           transform: translateY(-50%) scale(1);
         }
       }
     }
-  }
-}
-header:not(.is-scrolled) nav ul a {
-  &:hover,
-  &:focus-within {
-    color: var(--clr-main);
-  }
-}
-header.is-scrolled nav ul a {
-  &::before {
-    background-color: var(--clr-white);
   }
 }
 app-icon-button {
@@ -103,6 +94,8 @@ app-icon-button {
 @media only screen and (min-width: 576px) {
   .header-container {
     margin: 0 auto;
+    padding: 0.75rem;
+    width: calc(100% - 3rem);
   }
   app-icon-button {
     display: none;
@@ -118,6 +111,13 @@ app-icon-button {
       a {
         font-size: 1rem;
       }
+    }
+  }
+  header.is-scrolled nav ul a {
+    color: var(--clr-white);
+
+    &::before {
+      background-color: var(--clr-white);
     }
   }
 }
