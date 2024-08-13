@@ -8,12 +8,8 @@
           <icon-envelope />
         </div>
         <div class="contact-info-text">
-          <div class="contact-info-name">
-            Email:
-          </div>
-          <a class="contact-info-value" [href]="emailHref()">
-            {{ email() }}
-          </a>
+          <div class="contact-info-name">Email:</div>
+          <a class="contact-info-value" [href]="emailHref()" [innerHTML]="email()"></a>
         </div>
       </div>
       <div class="contact-info-item">
@@ -21,12 +17,8 @@
           <icon-call-calling />
         </div>
         <div class="contact-info-text">
-          <div class="contact-info-name">
-            Phone:
-          </div>
-          <a class="contact-info-value phone-value" [href]="phoneHref()">
-            {{ phone() }}
-          </a>
+          <div class="contact-info-name">Phone:</div>
+          <a class="contact-info-value phone-value" [href]="phoneHref()" [innerHTML]="phone()"></a>
         </div>
       </div>
     </div>

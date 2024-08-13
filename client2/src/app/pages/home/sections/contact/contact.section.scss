@@ -1,6 +1,6 @@
 section {
-  padding-top: 10rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -26,6 +26,10 @@ app-button {
 }
 
 @media only screen and (min-width: 768px) {
+  section {
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+  }
   fieldset {
     grid-template-columns: 1fr 1fr;
   }

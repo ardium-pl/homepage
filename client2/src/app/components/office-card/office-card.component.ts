@@ -20,5 +20,5 @@ export class OfficeCardComponent {
 
   readonly addressHref = computed(() => createUniversalMapLink(this.address()));
   readonly emailHref = computed(() => createMailto(this.email()));
-  readonly phoneHref = computed(() => `tel:${this.phone().replace(/\s/g, '')}`);
+  readonly phoneHref = computed(() => `tel:${this.phone().replace(/[^+\d]/g, '')}`);
 }

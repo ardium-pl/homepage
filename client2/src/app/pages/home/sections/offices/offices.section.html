@@ -1,16 +1,13 @@
 <section>
   <div class="content-width-g">
     <div class="heading-container-g">
-    <h2>Our office</h2>
+      <h2>Our office</h2>
       <p>If you want to meet with us in person.</p>
     </div>
     <div class="offices-container">
-      <app-office-card
-        city="Warsaw"
-        address="Aleje Jerozolimskie 134 02-305, Warsaw, Poland"
-        email="contact@ardium.pl"
-        phone="+48 667 447 776"
-      />
+      @for (office of OFFICES; track $index) {
+      <app-office-card [city]="office.city" [address]="office.address" [email]="office.email" [phone]="office.phone" />
+      }
     </div>
   </div>
 </section>
