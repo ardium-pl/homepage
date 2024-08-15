@@ -127,3 +127,16 @@ h2 {
     max-width: 1320px;
   }
 }
+
+.image-cover-g {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+  }
+}

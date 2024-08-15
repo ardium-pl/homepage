@@ -3,11 +3,7 @@ footer {
   position: relative;
   border-top: 1px solid rgba(var(--clr-main-rgb), 0.2);
 }
-.image-underlay {
-  background-image: url('/footer-bg.jpg');
-  position: absolute;
-  inset: 0;
-  z-index: -1;
+.image-underlay img {
   opacity: 0.2;
 }
 ul {

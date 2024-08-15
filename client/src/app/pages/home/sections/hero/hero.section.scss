@@ -8,17 +8,7 @@ section {
   align-items: center;
   justify-content: center;
 }
-.bg-pattern {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  background-image: url('/pattern1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.bg-pattern img {
   opacity: 0.2;
 }
 .hero-container {
@@ -61,7 +51,7 @@ section {
   );
 }
 
-img {
+.image-column img {
   width: 80%;
   margin: 0 auto;
 }
@@ -85,7 +75,7 @@ img {
       width: 85%;
     }
   }
-  img {
+  .image-column img {
     width: 100%;
     position: relative;
     bottom: 4rem;
