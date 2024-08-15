@@ -9,13 +9,13 @@
     <nav [class.open]="isOpen()">
       <ul>
         <li>
-          <a [routerLink]="[]" fragment="home-section" (click)="scrollTo('home-section')">Home</a>
+          <a (click)="scrollTo('home-section')">Home</a>
         </li>
         <li>
-          <a [routerLink]="[]" fragment="services-section" (click)="scrollTo('services-section')">Services</a>
+          <a (click)="scrollTo('services-section')">Services</a>
         </li>
         <li>
-          <a [routerLink]="[]" fragment="contact-section" (click)="scrollTo('contact-section')">Contact</a>
+          <a (click)="scrollTo('contact-section')">Contact</a>
         </li>
       </ul>
     </nav>

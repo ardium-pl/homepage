@@ -8,12 +8,17 @@ import { PreHeadingComponent } from '@components/pre-heading/pre-heading.compone
   standalone: true,
   imports: [PreHeadingComponent, ButtonComponent],
   templateUrl: './hero.section.html',
-  styleUrl: './hero.section.scss'
+  styleUrl: './hero.section.scss',
 })
 export class HeroSection {
   private readonly router = inject(Router);
 
   onContactUsClick() {
-    this.router.navigateByUrl('#contact')
+    this.router.navigateByUrl('#contact-section');
+
+    const element = document.getElementById('contact-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
