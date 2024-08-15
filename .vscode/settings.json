@@ -4,9 +4,7 @@
       "splitTerminals": [
         {
           "name": "ng",
-          "commands": [
-            "cd client"
-          ]
+          "commands": ["cd client"]
         }
       ]
     },

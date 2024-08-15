@@ -8,7 +8,7 @@ import { Component, input } from '@angular/core';
   styleUrl: './hamburger-menu.component.scss',
   host: {
     '[class.open]': 'open()',
-  }
+  },
 })
 export class HamburgerMenuComponent {
   readonly open = input.required<boolean>();

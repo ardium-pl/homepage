@@ -8,9 +8,9 @@ button {
   padding: 0.75rem;
   border-radius: 9999px;
 
-    &:hover {
-      background-color: rgba(var(--clr-white-rgb), 0.08);
-    }
+  &:hover {
+    background-color: rgba(var(--clr-white-rgb), 0.08);
+  }
   &:active {
     background-color: rgba(var(--clr-white-rgb), 0.15);
   }

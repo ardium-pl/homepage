@@ -1,4 +1,4 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 export const customValidators: {
   readonly email: ValidatorFn;
@@ -18,10 +18,10 @@ export const customValidators: {
 const ERROR_MAP: Record<string, string> = {
   required: $localize`:@@form-errors.required:Please enter something here`,
   email: $localize`:@@form-errors.email:Please enter a valid email`,
-}
+};
 
 export function translateError(control: AbstractControl<any>): string {
-  const {touched, errors} = control;
+  const { touched, errors } = control;
   if (!touched || !errors) return '';
 
   const err = Object.keys(errors);

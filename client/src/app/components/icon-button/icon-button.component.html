@@ -1,8 +1,3 @@
-<button
-  [disabled]="disabled()"
-  [tabIndex]="disabled() ? -1 : undefined"
-  [id]="htmlId()"
-  [type]="type()"
->
+<button [disabled]="disabled()" [tabIndex]="disabled() ? -1 : undefined" [id]="htmlId()" [type]="type()">
   <ng-content />
 </button>

@@ -6,7 +6,7 @@ import { coerceBooleanProperty } from '@ardium-ui/devkit';
   standalone: true,
   imports: [],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  styleUrl: './card.component.scss',
 })
 export class CardComponent {
   readonly annotated = input<boolean, any>(false, { transform: v => coerceBooleanProperty(v) });
