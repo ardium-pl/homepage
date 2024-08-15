@@ -12,7 +12,7 @@ import { OfficeCardComponent } from '../../../../components/office-card/office-c
 export class OfficesSection {
   readonly OFFICES = [
     {
-      city: 'Warsaw',
+      city: $localize`:@@offices.city.warsaw:Warsaw`,
       address: ADDRESS,
       email: EMAIL,
       phone: PHONE,

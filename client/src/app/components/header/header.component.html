@@ -9,13 +9,13 @@
     <nav [class.open]="isOpen()">
       <ul>
         <li>
-          <a (click)="scrollTo('home-section')">Home</a>
+          <a (click)="scrollTo('home-section')" i18n="@@header.home">Home</a>
         </li>
         <li>
-          <a (click)="scrollTo('services-section')">Services</a>
+          <a (click)="scrollTo('services-section')" i18n="@@header.services">Services</a>
         </li>
         <li>
-          <a (click)="scrollTo('contact-section')">Contact</a>
+          <a (click)="scrollTo('contact-section')" i18n="@@header.contact">Contact</a>
         </li>
       </ul>
     </nav>

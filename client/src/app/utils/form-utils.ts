@@ -16,8 +16,8 @@ export const customValidators: {
 };
 
 const ERROR_MAP: Record<string, string> = {
-  required: 'Please enter something here',
-  email: 'Please enter a valid email',
+  required: $localize`:@@form-errors.required:Please enter something here`,
+  email: $localize`:@@form-errors.email:Please enter a valid email`,
 }
 
 export function translateError(control: AbstractControl<any>): string {

@@ -1,7 +1,7 @@
 <section>
   <div class="scroll-anchor" id="contact-section"></div>
   <div class="content-width-g">
-    <h2>Have&nbsp;any&nbsp;questions? Let's&nbsp;answer&nbsp;them</h2>
+    <h2 i18n="@@contact.title">Have&nbsp;any&nbsp;questions? Let's&nbsp;answer&nbsp;them</h2>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <fieldset>
         <app-form-field
@@ -35,7 +35,7 @@
         inputId="message"
         [errorText]="translateError(form.controls.subject)"
       />
-      <app-button appearance="filled" type="submit">Send your message</app-button>
+      <app-button appearance="filled" type="submit" i18n="@@contact.send">Send your message</app-button>
     </form>
   </div>
 </section>

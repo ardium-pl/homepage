@@ -26,6 +26,14 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "pl": {
+            "translation": "locales/messages.pl.xlf"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -37,6 +45,7 @@
               "zone.js",
               "@angular/localize/init"
             ],
+            "localize": true,
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
