@@ -162,10 +162,10 @@
         <source> We specialize in eliminating extensive Excel usage by automating data flows and
           moderation. Whether it&apos;s creating full web apps or automations within Excel, we
           tackle even the most complex and unique business processes. </source>
-        <target> Specjalizujemy się w eliminowaniu rozbudowanego wykorzystania Excela poprzez
-          automatyzację przepływów danych i moderacji. Niezależnie od tego, czy tworzymy pełne
-          aplikacje webowe, czy automatyzacje w samym Excelu, zajmujemy się nawet najbardziej
-          skomplikowanymi i unikalnymi procesami biznesowymi. </target>
+        <target> Specjalizujemy się w redukcji zaawansowanego użycia Excela, automatyzując
+          przepływy danych i moderację. Tworzymy aplikacje webowe i automatyzacje w Excelu, radząc
+          sobie ze
+          złożonymi i unikalnymi procesami biznesowymi. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/home/sections/services/services.section.html</context>
@@ -185,9 +185,9 @@
         <source> We integrate LLMs and create custom GPTs that interact with your company data,
           helping you process long texts such as legal documents and emails. Our solutions enhance
           your business operations with intelligent automation. </source>
-        <target> Integrujemy LLM i tworzymy niestandardowe GPT, które współpracują z danymi Twojej
-          firmy, pomagając przetwarzać długie teksty, takie jak dokumenty prawne i e-maile. Nasze
-          rozwiązania ulepszają operacje biznesowe dzięki inteligentnej automatyzacji. </target>
+        <target> Integrujemy modele językowe i tworzymy dostosowane GPT, współpracujące z danymi
+          firmy. Ułatwiamy przetwarzanie obszernych tekstów, jak dokumenty prawne czy e-maile,
+          poprzez inteligentną automatyzację. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/home/sections/services/services.section.html</context>
@@ -196,7 +196,7 @@
       </trans-unit>
       <trans-unit id="services.software.title" datatype="html">
         <source>Custom Software Solutions</source>
-        <target>Niestandardowe oprogramowanie</target>
+        <target>Dopasowane rozwiązania</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/home/sections/services/services.section.html</context>
@@ -207,10 +207,9 @@
         <source> We develop fully customized software solutions with a focus on great design and
           user experience. Our automated apps seamlessly fit into your business processes, ensuring
           efficiency and ease of use for all your employees. </source>
-        <target> Opracowujemy w pełni dostosowane rozwiązania programowe, koncentrując się na
-          doskonałym designie i doświadczeniach użytkowników. Nasze zautomatyzowane aplikacje
-          idealnie wpasowują się w Twoje procesy biznesowe, zapewniając wydajność i łatwość
-          użytkowania dla wszystkich Twoich pracowników. </target>
+        <target> Tworzymy w pełni dostosowane oprogramowanie z naciskiem na design i wygodę
+          użytkowników. Nasze aplikacje automatycznie integrują się z procesami biznesowymi,
+          zwiększając efektywność i łatwość użytkowania dla pracowników. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/home/sections/services/services.section.html</context>

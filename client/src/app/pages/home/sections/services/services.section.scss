@@ -14,6 +14,10 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+
+  p {
+    font-size: 1rem;
+  }
 }
 app-card {
   app-card-icon {
@@ -33,10 +37,22 @@ app-card {
 @media only screen and (min-width: 992px) {
   .card-area {
     grid-template-columns: 1fr 1fr 1fr;
+
+    p {
+      font-size: 0.9375rem;
+    }
   }
   app-card {
     app-card-icon {
       width: 3rem;
     }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .card-area p {
+    font-size: 1rem;
+  }
+  app-card {
+    aspect-ratio: unset;
   }
 }

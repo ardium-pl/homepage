@@ -74,6 +74,9 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "pl": {
+              "localize": ["pl"]
             }
           },
           "defaultConfiguration": "production"
@@ -86,6 +89,9 @@
             },
             "development": {
               "buildTarget": "client2:build:development"
+            },
+            "pl": {
+              "buildTarget": "client2:build:development,pl"
             }
           },
           "defaultConfiguration": "development"
