@@ -1,0 +1,13 @@
+<div class="card-container" [class.annotated]="annotated()">
+  @if (!noIcon()) {
+    <div class="card-icon">
+      <ng-content select="app-card-icon" />
+    </div>
+  }
+  <div class="card-title">
+    <ng-content select="app-card-title" />
+  </div>
+  <div class="card-content">
+    <ng-content select="app-card-content" />
+  </div>
+</div>

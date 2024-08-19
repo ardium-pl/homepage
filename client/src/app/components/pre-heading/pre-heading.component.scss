@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  width: max-content;
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  color: var(--clr-main);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: left;
+  text-transform: uppercase;
+  z-index: 5;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0.375em;
+    aspect-ratio: 1 / 1;
+    border-radius: 9999px;
+    transform: translate(0, -50%);
+    background-color: var(--clr-main);
+  }
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  :host {
+    font-size: 0.875rem;
+  }
+}

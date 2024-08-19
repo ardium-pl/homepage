@@ -1,10 +1,23 @@
-<header>
-  <img class="logo" src="assets/ardium_logo.png" alt="logo" routerLink="/home" />
-  <nav>
-    <ul class="navigation">
-      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-      <!-- <li><a routerLink="/products" routerLinkActive="active">Products</a></li> -->
-      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-    </ul>
-  </nav>
+<header [class.is-scrolled]="isScrolled()">
+  <div class="content-width-g header-container">
+    <div class="logo">
+      <img src="ardium_logo.png" alt="Ardium logo" />
+    </div>
+    <app-icon-button (click)="isOpen.set(!isOpen())">
+      <app-hamburger-menu [open]="isOpen()" />
+    </app-icon-button>
+    <nav [class.open]="isOpen()">
+      <ul>
+        <li>
+          <a (click)="scrollTo('home-section')" i18n="@@header.home">Home</a>
+        </li>
+        <li>
+          <a (click)="scrollTo('services-section')" i18n="@@header.services">Services</a>
+        </li>
+        <li>
+          <a (click)="scrollTo('contact-section')" i18n="@@header.contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>

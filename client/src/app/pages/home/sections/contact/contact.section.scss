@@ -1,0 +1,48 @@
+section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll-anchor {
+  position: absolute;
+  top: -4rem;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+form {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+app-button {
+  margin-top: 1.5rem;
+}
+
+@media only screen and (max-width: 576px) {
+  h2 {
+    font-size: min(2.5rem, calc((100vw - 3rem) * 0.08));
+  }
+}
+@media only screen and (min-width: 768px) {
+  section {
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+  }
+  .scroll-anchor {
+    top: 0.55rem;
+  }
+  fieldset {
+    grid-template-columns: 1fr 1fr;
+  }
+}

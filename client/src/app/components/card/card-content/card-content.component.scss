@@ -1,0 +1,17 @@
+:host {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.85;
+}
+
+@media only screen and (min-width: 768px) {
+  :host {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  :host {
+    font-size: 1.1rem;
+  }
+}

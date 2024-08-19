@@ -1,0 +1,58 @@
+section {
+  padding: 5rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll-anchor {
+  position: absolute;
+  top: -3rem;
+}
+
+.card-area {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  p {
+    font-size: 1rem;
+  }
+}
+app-card {
+  app-card-icon {
+    width: 3.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card-area {
+    grid-template-columns: 1fr 1fr;
+  }
+  app-card {
+    aspect-ratio: 1;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .card-area {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    p {
+      font-size: 0.9375rem;
+    }
+  }
+  app-card {
+    app-card-icon {
+      width: 3rem;
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .card-area p {
+    font-size: 1rem;
+  }
+  app-card {
+    aspect-ratio: unset;
+  }
+}

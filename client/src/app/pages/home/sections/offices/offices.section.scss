@@ -1,0 +1,19 @@
+section {
+  padding: 5rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h2 {
+  text-align: center;
+}
+.offices-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.heading-container-g p {
+  text-align: center;
+}

@@ -1,4 +1,33 @@
-<footer class="footer">
-  <h3 class="center">Reach out!</h3>
-  <app-contact-info withLinkedIn></app-contact-info>
+<footer>
+  <div class="image-underlay image-cover-g">
+    <img src="footer-bg.jpg" aria-hidden="true" />
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <div class="icon-container">
+          <icon-envelope />
+        </div>
+        <a [href]="email.href">{{ email.text }}</a>
+      </li>
+      <li>
+        <div class="icon-container">
+          <icon-location-pin />
+        </div>
+        <a [href]="address.href">{{ address.text }}</a>
+      </li>
+      <li>
+        <div class="icon-container">
+          <icon-smartphone />
+        </div>
+        <a [href]="phone.href" [innerHTML]="phone.text"></a>
+      </li>
+      <li>
+        <div class="icon-container">
+          <icon-brand-linkedin />
+        </div>
+        <a [href]="linkedin.href">{{ linkedin.text }}</a>
+      </li>
+    </ul>
+  </nav>
 </footer>
