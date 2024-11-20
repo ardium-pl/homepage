@@ -9,7 +9,7 @@
     "watch": "cd client && npm run watch",
     "server": "cd server && nodemon",
     "front": "cd client && ng serve",
-    "prettier": "npx prettier --write ."
+    "prettier": "prettier --write ."
   },
   "license": "MIT",
   "devDependencies": {
