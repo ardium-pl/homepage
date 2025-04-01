@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { StaffCardComponent } from '@components/staff-card/staff-card.component';
 import arrayShuffle from 'array-shuffle';
+import { PreHeadingComponent } from "../../../../components/pre-heading/pre-heading.component";
 
 export interface StaffData {
   imgSrc: string;
@@ -13,7 +14,7 @@ export interface StaffData {
 @Component({
   selector: 'app-staff-section',
   standalone: true,
-  imports: [StaffCardComponent],
+  imports: [StaffCardComponent, PreHeadingComponent],
   templateUrl: './staff.section.html',
   styleUrl: './staff.section.scss',
 })
