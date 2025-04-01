@@ -1,0 +1,18 @@
+<section>
+  <div class="content-width-g">
+    <div class="heading-container-g">
+      <h2 i18n="@@staff.title">Meet the crew</h2>
+    </div>
+    <div class="staff-container">
+      @for (person of staffData(); track person.name) {
+      <app-staff-card
+        [imgSrc]="person.imgSrc"
+        [name]="person.name"
+        [jobTitle]="person.jobTitle"
+        [nationality]="person.nationality"
+        [linkedInName]="person.linkedInLink"
+      />
+      }
+    </div>
+  </div>
+</section>
