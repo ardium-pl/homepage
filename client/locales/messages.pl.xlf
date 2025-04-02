@@ -91,8 +91,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="contact.title" datatype="html">
-        <source>Have any questions? Let's answer them</source>
-        <target>Masz jakieś pytania? Odpowiemy na nie</target>
+        <source>Have any questions? Let's answer them</source>
+        <target>Masz jakieś pytania? Odpowiemy na nie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/contact/contact.section.html</context>
           <context context-type="linenumber">4,5</context>
@@ -107,25 +107,24 @@
         </context-group>
       </trans-unit>
       <trans-unit id="hero.pre-heading" datatype="html">
-        <source>Business automation</source>
-        <target>Automatyzacja biznesu</target>
+        <source>AI for business</source>
+        <target>AI dla biznesu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/hero/hero.section.html</context>
           <context context-type="linenumber">10,11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="hero.title" datatype="html">
-        <source>Empowering Business Growth Through Automation Solutions</source>
-        <target>Wspieramy rozwój biznesu poprzez rozwiązania automatyzacji</target>
+        <source>We support business development on the AI front</source>
+        <target>Wspieramy rozwój biznesu na płaszczyźnie AI</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/hero/hero.section.html</context>
           <context context-type="linenumber">11,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="hero.subtitle" datatype="html">
-        <source> At Ardium, we create fully custom software tailored to your needs, with a focus on exceptional design and comprehensive employee training. </source>
-        <target state="needs-adaptation"> W Ardium tworzymy w pełni spersonalizowane oprogramowanie dostosowane do Twoich
-          potrzeb, z naciskiem na wyjątkowy design i kompleksowe szkolenie pracowników. </target>
+        <source> At Ardium, we help organizations reengineer their processes in the face of new opportunities created by big language models. </source>
+        <target state="needs-adaptation"> W Ardium pomagamy organizacjom przebudowywać procesy w obliczu nowych możliwości stwarzanych przez duże modele językowe. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/hero/hero.section.html</context>
           <context context-type="linenumber">14,16</context>
@@ -188,55 +187,48 @@
         </context-group>
       </trans-unit>
       <trans-unit id="services.excel.title" datatype="html">
-        <source>Excel automation</source>
-        <target>Automatyzacja Excela</target>
+        <source>Smart OCR</source>
+        <target>Smart OCR</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">12,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="services.excel.description" datatype="html">
-        <source> We specialize in eliminating extensive Excel usage by automating data flows and moderation. Whether it's creating full web apps or automations within Excel, we tackle even the most complex and unique business processes. </source>
-        <target state="needs-adaptation"> Specjalizujemy się w redukcji zaawansowanego użycia Excela, automatyzując
-          przepływy danych i moderację. Tworzymy aplikacje webowe i automatyzacje w Excelu, radząc
-          sobie ze
-          złożonymi i unikalnymi procesami biznesowymi. </target>
+        <source>  We specialize in automatically extracting structured data from documents. We extract information from invoices, receipts, sales quotes, legal and logistics documents - quickly, accurately and in a form ready for further use. </source>
+        <target state="needs-adaptation"> Specjalizujemy się w automatycznym wyciąganiu ustrukturyzowanych danych z dokumentów. Pozyskujemy informacje z faktur, paragonów, ofert handlowych, dokumentów prawnych oraz logistycznych — szybko, precyzyjnie i w formie gotowej do dalszego wykorzystania. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">15,18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="services.ai.title" datatype="html">
-        <source>AI Integration</source>
-        <target>Integracja AI</target>
+        <source>Data Indexing</source>
+        <target>Indeksowanie Danych</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">23,24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="services.ai.description" datatype="html">
-        <source> We integrate LLMs and create custom GPTs that interact with your company data, helping you process long texts such as legal documents and emails. Our solutions enhance your business operations with intelligent automation. </source>
-        <target state="needs-adaptation"> Integrujemy modele językowe i tworzymy dostosowane GPT, współpracujące z danymi
-          firmy. Ułatwiamy przetwarzanie obszernych tekstów, jak dokumenty prawne czy e-maile,
-          poprzez inteligentną automatyzację. </target>
+        <source> We tag documents and images according to the categories established by the client, based on their content. In this way, we organize the company's information resources, creating a structured source of knowledge - accessible to both employees and automated systems. </source>
+        <target state="needs-adaptation"> Oznaczamy dokumenty i zdjęcia zgodnie z ustalonymi przez klienta kategoriami, bazując na ich treści. Dzięki temu porządkujemy firmowe zasoby informacyjne, tworząc uporządkowane źródło wiedzy – dostępne zarówno dla pracowników, jak i systemów automatycznych. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">26,28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="services.software.title" datatype="html">
-        <source>Custom Software Solutions</source>
-        <target>Dopasowane rozwiązania</target>
+        <source>Business Intelligence</source>
+        <target>Business Intelligence</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">34,35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="services.software.description" datatype="html">
-        <source> We develop fully customized software solutions with a focus on great design and user experience. Our automated apps seamlessly fit into your business processes, ensuring efficiency and ease of use for all your employees. </source>
-        <target state="needs-adaptation"> Tworzymy w pełni dostosowane oprogramowanie z naciskiem na design i wygodę
-          użytkowników. Nasze aplikacje automatycznie integrują się z procesami biznesowymi,
-          zwiększając efektywność i łatwość użytkowania dla pracowników. </target>
+        <source> We implement analytics based on data from raw, unmodified databases. We enable you to ask questions and get answers without having to prepare reports in advance - quickly, intuitively and on the fly. </source>
+        <target state="needs-adaptation"> Wdrażamy analitykę opartą na danych pochodzących z surowych, niemodyfikowanych baz. Umożliwiamy zadawanie pytań i uzyskiwanie odpowiedzi bez konieczności wcześniejszego przygotowywania raportów – szybko, intuicyjnie i na bieżąco. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">37,40</context>
