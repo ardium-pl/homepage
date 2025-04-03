@@ -38,7 +38,8 @@
         <source>Email:</source>
         <target>Email:</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/office-card/office-card.component.html</context>
+          <context context-type="sourcefile">
+            src/app/components/office-card/office-card.component.html</context>
           <context context-type="linenumber">11,12</context>
         </context-group>
       </trans-unit>
@@ -46,8 +47,72 @@
         <source>Phone:</source>
         <target>Telefon:</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/office-card/office-card.component.html</context>
+          <context context-type="sourcefile">
+            src/app/components/office-card/office-card.component.html</context>
           <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="extended-about.about-us.title" datatype="html">
+        <source>About us</source>
+        <target>O nas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/sections/extended-about/extended-about.component.html</context>
+          <context context-type="linenumber">6,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="extended-about.about-us.content1" datatype="html">
+        <source> We specialize in advanced production deployments of large language models. We
+          believe that the key to effectively utilizing AI in an organization is the precise
+          configuration of models. We provide comprehensive support—from the initial idea, through
+          model customization, to integration with corporate tools and maintaining the solution in
+          the chosen environment. </source>
+        <target> Specjalizujemy się w zaawansowanych wdrożeniach produkcyjnych dużych modeli
+          językowych. Wierzymy, że kluczem do skutecznego wykorzystania AI w organizacji jest
+          precyzyjna konfiguracja modeli. Zapewniamy kompleksowe wsparcie — od pomysłu, przez
+          dostosowanie modelu, aż po integrację z firmowymi narzędziami i utrzymanie rozwiązania w
+          wybranym środowisku.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/sections/extended-about/extended-about.component.html</context>
+          <context context-type="linenumber">9,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="extended-about.about-us.content2" datatype="html">
+        <source> We most often work with unstructured data derived from documents in various
+          formats. Together with our clients, we design processes that enable the model to operate
+          autonomously—without the need for constant supervision. </source>
+        <target> Najczęściej pracujemy z nieustrukturyzowanymi danymi pochodzącymi z dokumentów w
+          najróżniejszych formatach. Wspólnie z klientem projektujemy procesy, które umożliwiają
+          modelowi samodzielne działanie — bez konieczności stałego nadzoru.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/sections/extended-about/extended-about.component.html</context>
+          <context context-type="linenumber">15,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="extended-about.about-senetic-collab.title" datatype="html">
+        <source>Our Collaboration with Senetic</source>
+        <target>Nasza współpraca z Senetic</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/sections/extended-about/extended-about.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="extended-about.about-senetic-collab.content" datatype="html">
+        <source> We collaborate with Senetic on implementations within the Microsoft ecosystem. We
+          create the best configurations for our clients that enable the reliable utilization of
+          Azure AI capabilities. In turn, Senetic is responsible for managing areas related to
+          compliance, hosting, and direct communication with the software manufacturer. </source>
+        <target>Współpracujemy z firmą Senetic przy wdrożeniach w ekosystemie Microsoft.
+          Tworzymy dla klientów najlepsze konfiguracje, które umożliwiają niezawodne wykorzystanie
+          możliwości Azure AI. Z kolei Senetic odpowiada za obsługę obszarów związanych z
+          compliance, hostingiem oraz bezpośrednim kontaktem z producentem oprogramowania.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/sections/extended-about/extended-about.component.html</context>
+          <context context-type="linenumber">33,37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="staff.pre-heading" datatype="html">
@@ -94,7 +159,8 @@
         <source>Have any questions? Let's answer them</source>
         <target>Masz jakieś pytania? Odpowiemy na nie</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/contact/contact.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/contact/contact.section.html</context>
           <context context-type="linenumber">4,5</context>
         </context-group>
       </trans-unit>
@@ -102,7 +168,8 @@
         <source>Send your message</source>
         <target>Wyślij wiadomość</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/contact/contact.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/contact/contact.section.html</context>
           <context context-type="linenumber">38,39</context>
         </context-group>
       </trans-unit>
@@ -123,8 +190,10 @@
         </context-group>
       </trans-unit>
       <trans-unit id="hero.subtitle" datatype="html">
-        <source> At Ardium, we create fully custom software tailored to your needs, with a focus on exceptional design and comprehensive employee training. </source>
-        <target state="needs-adaptation"> W Ardium tworzymy w pełni spersonalizowane oprogramowanie dostosowane do Twoich
+        <source> At Ardium, we create fully custom software tailored to your needs, with a focus on
+          exceptional design and comprehensive employee training. </source>
+        <target state="needs-adaptation"> W Ardium tworzymy w pełni spersonalizowane oprogramowanie
+          dostosowane do Twoich
           potrzeb, z naciskiem na wyjątkowy design i kompleksowe szkolenie pracowników. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/hero/hero.section.html</context>
@@ -143,7 +212,8 @@
         <source>Our office</source>
         <target>Nasze biuro</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/offices/offices.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/offices/offices.section.html</context>
           <context context-type="linenumber">4,5</context>
         </context-group>
       </trans-unit>
@@ -151,7 +221,8 @@
         <source>If you want to meet with us in person.</source>
         <target>Jeśli chcesz spotkać się z nami osobiście.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/offices/offices.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/offices/offices.section.html</context>
           <context context-type="linenumber">5,7</context>
         </context-group>
       </trans-unit>
@@ -167,7 +238,8 @@
         <source>Services</source>
         <target>Usługi</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">5,6</context>
         </context-group>
       </trans-unit>
@@ -175,7 +247,8 @@
         <source>Services we offer</source>
         <target>Usługi, które oferujemy</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">6,7</context>
         </context-group>
       </trans-unit>
@@ -183,7 +256,8 @@
         <source>This is what exactly are we good at.</source>
         <target>Dokładnie w tym jesteśmy dobrzy.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">7,9</context>
         </context-group>
       </trans-unit>
@@ -191,18 +265,23 @@
         <source>Excel automation</source>
         <target>Automatyzacja Excela</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">12,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="services.excel.description" datatype="html">
-        <source> We specialize in eliminating extensive Excel usage by automating data flows and moderation. Whether it's creating full web apps or automations within Excel, we tackle even the most complex and unique business processes. </source>
-        <target state="needs-adaptation"> Specjalizujemy się w redukcji zaawansowanego użycia Excela, automatyzując
+        <source> We specialize in eliminating extensive Excel usage by automating data flows and
+          moderation. Whether it's creating full web apps or automations within Excel, we tackle
+          even the most complex and unique business processes. </source>
+        <target state="needs-adaptation"> Specjalizujemy się w redukcji zaawansowanego użycia
+          Excela, automatyzując
           przepływy danych i moderację. Tworzymy aplikacje webowe i automatyzacje w Excelu, radząc
           sobie ze
           złożonymi i unikalnymi procesami biznesowymi. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">15,18</context>
         </context-group>
       </trans-unit>
@@ -210,17 +289,22 @@
         <source>AI Integration</source>
         <target>Integracja AI</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">23,24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="services.ai.description" datatype="html">
-        <source> We integrate LLMs and create custom GPTs that interact with your company data, helping you process long texts such as legal documents and emails. Our solutions enhance your business operations with intelligent automation. </source>
-        <target state="needs-adaptation"> Integrujemy modele językowe i tworzymy dostosowane GPT, współpracujące z danymi
+        <source> We integrate LLMs and create custom GPTs that interact with your company data,
+          helping you process long texts such as legal documents and emails. Our solutions enhance
+          your business operations with intelligent automation. </source>
+        <target state="needs-adaptation"> Integrujemy modele językowe i tworzymy dostosowane GPT,
+          współpracujące z danymi
           firmy. Ułatwiamy przetwarzanie obszernych tekstów, jak dokumenty prawne czy e-maile,
           poprzez inteligentną automatyzację. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">26,28</context>
         </context-group>
       </trans-unit>
@@ -228,17 +312,22 @@
         <source>Custom Software Solutions</source>
         <target>Dopasowane rozwiązania</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">34,35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="services.software.description" datatype="html">
-        <source> We develop fully customized software solutions with a focus on great design and user experience. Our automated apps seamlessly fit into your business processes, ensuring efficiency and ease of use for all your employees. </source>
-        <target state="needs-adaptation"> Tworzymy w pełni dostosowane oprogramowanie z naciskiem na design i wygodę
+        <source> We develop fully customized software solutions with a focus on great design and
+          user experience. Our automated apps seamlessly fit into your business processes, ensuring
+          efficiency and ease of use for all your employees. </source>
+        <target state="needs-adaptation"> Tworzymy w pełni dostosowane oprogramowanie z naciskiem na
+          design i wygodę
           użytkowników. Nasze aplikacje automatycznie integrują się z procesami biznesowymi,
           zwiększając efektywność i łatwość użytkowania dla pracowników. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
+          <context context-type="sourcefile">
+            src/app/pages/home/sections/services/services.section.html</context>
           <context context-type="linenumber">37,40</context>
         </context-group>
       </trans-unit>
