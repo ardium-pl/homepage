@@ -1,0 +1,17 @@
+<img [src]="imgSrc()" [alt]="name()" />
+
+<div class="info">
+  <div class="name-and-title">
+    <div class="name">{{ name() }}</div>
+    <div class="job-title">{{ jobTitle() }}</div>
+  </div>
+
+  <div class="other-info">
+    <div class="nationality">{{ nationality() | uppercase }}</div>
+    <div class="links">
+      <a [href]="linkedInLink()">
+        <icon-brand-linkedin />
+      </a>
+    </div>
+  </div>
+</div>
