@@ -190,8 +190,10 @@
         </context-group>
       </trans-unit>
       <trans-unit id="hero.subtitle" datatype="html">
-        <source> At Ardium, we help organizations reengineer their processes in the face of new opportunities created by big language models. </source>
-        <target state="needs-adaptation"> W Ardium pomagamy organizacjom przebudowywać procesy w obliczu nowych możliwości stwarzanych przez duże modele językowe. </target>
+        <source> At Ardium, we help organizations reengineer their processes in the face of new
+          opportunities created by large language models. </source>
+        <target> W Ardium pomagamy organizacjom przebudowywać procesy w obliczu nowych możliwości
+          stwarzanych przez duże modele językowe. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/hero/hero.section.html</context>
           <context context-type="linenumber">14,16</context>
@@ -268,8 +270,13 @@
         </context-group>
       </trans-unit>
       <trans-unit id="services.excel.description" datatype="html">
-        <source>  We specialize in automatically extracting structured data from documents. We extract information from invoices, receipts, sales quotes, legal and logistics documents - quickly, accurately and in a form ready for further use. </source>
-        <target state="needs-adaptation"> Specjalizujemy się w automatycznym wyciąganiu ustrukturyzowanych danych z dokumentów. Pozyskujemy informacje z faktur, paragonów, ofert handlowych, dokumentów prawnych oraz logistycznych — szybko, precyzyjnie i w formie gotowej do dalszego wykorzystania. </target>
+        <source> We specialize in automatically extracting structured data from documents. We
+          extract information from invoices, receipts, sales quotes, legal and logistics documents -
+          quickly, accurately and in a form ready for further use. </source>
+        <target> Specjalizujemy się w automatycznym wyciąganiu ustrukturyzowanych danych z
+          dokumentów. Pozyskujemy informacje z faktur, paragonów, ofert handlowych, dokumentów
+          prawnych oraz logistycznych — szybko, precyzyjnie i w formie gotowej do dalszego
+          wykorzystania. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/home/sections/services/services.section.html</context>
@@ -286,8 +293,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="services.ai.description" datatype="html">
-        <source> We tag documents and images according to the categories established by the client, based on their content. In this way, we organize the company's information resources, creating a structured source of knowledge - accessible to both employees and automated systems. </source>
-        <target state="needs-adaptation"> Oznaczamy dokumenty i zdjęcia zgodnie z ustalonymi przez klienta kategoriami, bazując na ich treści. Dzięki temu porządkujemy firmowe zasoby informacyjne, tworząc uporządkowane źródło wiedzy – dostępne zarówno dla pracowników, jak i systemów automatycznych. </target>
+        <source> We tag documents and images according to the categories established by the client,
+          based on their content. In this way, we organize the company's information resources,
+          creating a structured source of knowledge - accessible to both employees and automated
+          systems. </source>
+        <target> Oznaczamy dokumenty i zdjęcia zgodnie z ustalonymi przez klienta kategoriami,
+          bazując na ich treści. Dzięki temu porządkujemy firmowe zasoby informacyjne, tworząc
+          uporządkowane źródło wiedzy – dostępne zarówno dla pracowników, jak i systemów
+          automatycznych. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/home/sections/services/services.section.html</context>
@@ -304,8 +317,12 @@
         </context-group>
       </trans-unit>
       <trans-unit id="services.software.description" datatype="html">
-        <source> We implement analytics based on data from raw, unmodified databases. We enable you to ask questions and get answers without having to prepare reports in advance - quickly, intuitively and on the fly. </source>
-        <target state="needs-adaptation"> Wdrażamy analitykę opartą na danych pochodzących z surowych, niemodyfikowanych baz. Umożliwiamy zadawanie pytań i uzyskiwanie odpowiedzi bez konieczności wcześniejszego przygotowywania raportów – szybko, intuicyjnie i na bieżąco. </target>
+        <source> We implement analytics based on data from raw, unmodified databases. We enable you
+          to ask questions and get answers without having to prepare reports in advance - quickly,
+          intuitively and on the fly. </source>
+        <target> Wdrażamy analitykę opartą na danych pochodzących z surowych, niemodyfikowanych baz.
+          Umożliwiamy zadawanie pytań i uzyskiwanie odpowiedzi bez konieczności wcześniejszego
+          przygotowywania raportów – szybko, intuicyjnie i na bieżąco. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/home/sections/services/services.section.html</context>
