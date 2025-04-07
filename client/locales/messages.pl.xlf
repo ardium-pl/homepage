@@ -108,8 +108,9 @@
           optimizations and license advisory. </source>
         <target>Współpracujemy z firmą Senetic przy wdrożeniach w ekosystemie Microsoft.
           Tworzymy dla klientów najlepsze konfiguracje, które umożliwiają niezawodne wykorzystanie
-          możliwości Azure AI. Z kolei Senetic odpowiada za obsługę obszarów związanych z
-          compliance, hostingiem oraz bezpośrednim kontaktem z producentem oprogramowania.</target>
+          możliwości Azure AI. Z kolei Senetic jako jeden z największych partnerów Microsoft CSP
+          jest odpowiedzialny za zarządzanie obszarami związanymi z zarządzaniem subskrypcjami
+          klientów, w tym optymalizacją kosztów i doradztwem licencyjnym.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/about/sections/extended-about/extended-about.component.html</context>
