@@ -7,6 +7,7 @@
     "serve:en": "ng serve",
     "serve:pl": "ng serve --configuration=pl",
     "build": "ng build",
+    "build:development": "ng build --configuration=development",
     "watch": "ng build --watch --configuration development",
     "extract-i18n": "ng extract-i18n --out-file locales/generated/messages.xlf",
     "test": "ng test"
