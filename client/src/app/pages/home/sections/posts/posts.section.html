@@ -1,0 +1,20 @@
+<section>
+  <div class="scroll-anchor" id="services-section"></div>
+  <div class="content-width-g">
+    <div class="heading-container-g">
+      <app-pre-heading i18n="@@posts.pre-heading">Posts</app-pre-heading>
+      <h2 i18n="@@posts.title">Latest Posts</h2>
+      <p i18n="@@posts.subtitle">Check out our recent articles and updates.</p>
+    </div>
+    <div class="posts">
+      @for (post of posts(); track post._id) {
+      <app-card>
+        <app-card-title>{{ post.title }}</app-card-title>
+        <app-card-content>
+          <app-sanity-image [image]="post.thumbnail" width="240" [alt]="post.title" />
+        </app-card-content>
+      </app-card>
+      }
+    </div>
+  </div>
+</section>
