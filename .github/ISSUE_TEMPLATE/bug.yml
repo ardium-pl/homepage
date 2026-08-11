@@ -1,0 +1,72 @@
+name: "[Bug] Błąd"
+description: "Template błędu"
+title: "[Bug] "
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Wypełnij wszystkie sekcje. Im więcej opisane poniżej, tym mniej pytań w trakcie.
+
+  - type: textarea
+    id: user_context
+    attributes:
+      label: "Kontekst użycia"
+      description: "Kto używa i w jakich scenariuszach."
+      placeholder: "Np. aplikacja X, strona Y, widok Z..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: short_description
+    attributes:
+      label: "Krótki opis"
+      description: "Ogólny opis, na czym polega problem"
+      placeholder: |
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: full_description
+    attributes:
+      label: "Kroki reprodukcyjne"
+      description: "Szczegółowy opis problemu i kroki do jego odtworzenia"
+      placeholder: |
+        - Gdzie wejść
+        - Co kliknąć
+        - Jakie dane wprowadzić
+        - Jakie akcje wykonać
+        - Co się dzieje
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "Oczekiwane zachowanie"
+      description: "Jakie zachowanie jest oczekiwane"
+      placeholder: |
+        - Co powinno się wydarzyć
+        - Jakie zmiany powinny nastąpić
+    validations:
+      required: true
+
+  - type: textarea
+    id: docs_and_attachments
+    attributes:
+      label: "Dokumentacja / załączniki"
+      description: "Linki do doc, diagramów, Figmy"
+      value: |
+        - Figma: figma.com/design/Ki1kUI45FPTn6PHW1iJRjt/Sportvita
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: "Uwagi / dodatkowe informacje"
+      placeholder: "Dodatkowe informacje..."
+    validations:
+      required: false

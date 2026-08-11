@@ -1,0 +1,121 @@
+name: "[FE] Task frontowy"
+description: "Template zadania frontendowego"
+title: "[FE] "
+labels: ["frontend", "task"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Wypełnij wszystkie sekcje. Im więcej opisane poniżej, tym mniej pytań w trakcie.
+
+  - type: textarea
+    id: user_context
+    attributes:
+      label: "Kontekst użycia"
+      description: "Kto używa i w jakich scenariuszach."
+      placeholder: "Np. aplikacja X, strona Y, widok Z..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical_solution_overview
+    attributes:
+      label: "Opis rozwiązania technicznego"
+      description: "Co dokładnie zmieniamy (na wysokim poziomie)."
+      placeholder: |
+        - Co dodajemy/zmieniamy:
+        - Gdzie (komponent/strona/serwis):
+        - Style
+    validations:
+      required: true
+
+  - type: textarea
+    id: full_description
+    attributes:
+      label: "Pełny opis"
+      description: "Co dokładnie ma być zrobione i w jaki sposób"
+      placeholder: |
+        - Co edytować
+        - Na czym się wzorować
+        - Jakich komponentów użyć
+        - Jakie style stworzyć
+        - Co ma się zadziać w przypadku błędu
+    validations:
+      required: true
+
+  - type: textarea
+    id: docs_and_attachments
+    attributes:
+      label: "Dokumentacja / załączniki"
+      description: "Linki do doc, diagramów, Figmy"
+      value: |
+        - Figma: figma.com/design/Ki1kUI45FPTn6PHW1iJRjt/Sportvita
+    validations:
+      required: false
+
+  - type: textarea
+    id: technical_requirements
+    attributes:
+      label: "Wymaganie techniczne"
+      description: "Szczegółowe informacje dotyczące implementacji"
+      value: |
+        ### Zmienne CSSowe
+        
+        Do definiowania kolorów zawsze używać zmiennych CSSowych, które są już zdefiniowane w `styles.scss`. Jeśli jakiejś zmiennej brakuje, można ją dodać. Jeśli jednak kolor oryginalny różni się od istniejącego o zaledwie kilka cyferek, to można zastosować istniejący.
+
+        ### Responsywność
+        
+        Wszystkie style i media query definiujemy w podejściu mobile-first, czyli najpierw implementujemy style na najmniejszym możliwym ekranie, a z pomocą media query dodajemy coraz więcej styli dla coraz większych ekranów (nie na odwrót).
+        
+        Stosujemy nowoczesny sposób definiowania media query (bez żadnych `min-width`, `max-width` i innych pierdół):
+        ```scss
+        @media (width >= 36rem) {
+          // ...
+        }
+        ```
+        
+        Wartości używane jako "breakpointy" powinny być ustandaryzowane dla całej aplikacji, a dokładnie:
+        - rozmiar `xs` - poniżej 36rem (576px) - to jest rozmiar bazowy, traktujemy go jako najmniejszy.
+        - rozmiar `sm` - powyżej 36rem (576px)
+        - rozmiar `md` - powyżej 48rem (768px)
+        - rozmiar `lg` - powyżej 60rem (960px)
+        - rozmiar `xl` - powyżej 72rem (1152px)
+        - rozmiar `2xl` - powyżej 84rem (1344px) - prawdopodobnie nie będzie potrzebny, ale warto mieć
+        
+        Jeśli na oryginalnej stronie jakieś wartości są inne niż te powyższe, należy zastosować po prostu najbliższą z tych powyżej.
+
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Kryteria akceptacji (FE)"
+      description: "Checklisty muszą być testowalne. Dopisz swoje, usuń zbędne."
+      value: |
+        - [ ] Wszystko działa zgodnie z opisem.
+        - [ ] Style są zgodne z Figmą (poza opisanymi wyjątkami).
+        - [ ] Zaimplementowano spójnie z innymi częściami aplikacji, zarówno wizualnie jak i pod względem kodu.
+        - [ ] Rozwiązanie jest responsywne i w podejściu mobile-first.
+        - [ ] Kod nie jest niepotrzebnie zduplikowany
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: "Uwagi / dodatkowe informacje"
+      placeholder: "Dodatkowe informacje..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: testing_instructions
+    attributes:
+      label: "Instrukcja dla testerów"
+      description: "Checklisty muszą być testowalne. Dopisz swoje, usuń zbędne."
+      value: |
+        - Wszędzie ma być użyta czcionka `Inter`, rozmiary i wagi zgodnie z designem.
+    validations:
+      required: true

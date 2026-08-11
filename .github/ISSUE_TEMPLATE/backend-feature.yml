@@ -1,0 +1,93 @@
+name: "[BE] Task backendowy"
+description: "Template zadania backend (API/DB/statusy) – krótko i konkretnie"
+title: "[BE] <UZUPEŁNIJ NAZWĘ TASKA>"
+labels: ["backend", "task"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Wypełnij sekcje poniżej. Im bardziej testowalne AC i konkretne endpointy/model, tym mniej pytań w trakcie.
+
+  - type: textarea
+    id: business_goal
+    attributes:
+      label: "Cel biznesowy"
+      description: "Jaka wartość biznesowa z tego wynika (1–3 zdania)."
+      placeholder: "Np. umożliwienie nowego procesu X poprzez dodanie statusów Y..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: user_context
+    attributes:
+      label: "Kontekst użycia"
+      description: "Kto używa (FE/inny serwis/batch) i w jakich scenariuszach."
+      placeholder: "Np. FE ekran X, serwis Y, job Z..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical_solution_overview
+    attributes:
+      label: "Opis rozwiązania technicznego"
+      description: "Co dokładnie zmieniamy (na wysokim poziomie)."
+      placeholder: |
+        - Co dodajemy/zmieniamy:
+        - Gdzie (moduł/serwis):
+        - DB: tabele/kolumny/statusy/migracje (zarys):
+    validations:
+      required: true
+
+  - type: textarea
+    id: api_endpoints
+    attributes:
+      label: "Endpointy API (jeśli dotyczy)"
+      description: "Nowe/zmienione endpointy + krótko kontrakt i walidacje."
+      placeholder: |
+        - GET /...
+        - POST /...
+
+        Kontrakt (zarys):
+        - Request:
+        - Response:
+        - Walidacje:
+        - Kody błędów:
+    validations:
+      required: false
+
+  - type: textarea
+    id: docs_and_attachments
+    attributes:
+      label: "Dokumentacja / załączniki"
+      description: "Linki do doc, diagramów, screenów, epików."
+      placeholder: |
+        - Epic:
+        - Dokumentacja:
+        - Diagramy:
+        - Screeny/załączniki:
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Kryteria akceptacji (BE)"
+      description: "Checklisty muszą być testowalne. Dopisz swoje, usuń zbędne."
+      value: |
+        - [ ] Endpointy działają zgodnie z opisem (statusy, kontrakt danych, walidacje).
+        - [ ] Przy błędach biznesowych zwracane są odpowiednie kody i komunikaty.
+        - [ ] Zmiany w danych są trwałe i spójne (transakcje / rollback).
+        - [ ] DB zmiany są poprawne (FK/constraints/indeksy) + uwzględniona wydajność.
+        - [ ] Dodane testy (unit i/lub integracyjne) adekwatnie do zmiany.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: "Uwagi / dodatkowe informacje"
+      description: "Rollout, feature flag, monitoring, migracje, ryzyka wdrożeniowe."
+      placeholder: "Np. rollout etapami, migracja danych, monitoring metryk, okno serwisowe..."
+    validations:
+      required: false
