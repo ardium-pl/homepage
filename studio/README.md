@@ -144,14 +144,14 @@ schemaTypes/index.ts
 Example:
 
 ```ts
-import {homePage} from './documents/homePage'
-import {localizedString} from './objects/localizedString'
-import {localizedText} from './objects/localizedText'
+import {homepage} from './documents/homepage'
+import {localizedString} from './objects/localized-string'
+import {localizedText} from './objects/localized-text'
 
 export const schemaTypes = [
   localizedString,
   localizedText,
-  homePage,
+  homepage,
 ]
 ```
 
@@ -162,7 +162,7 @@ Documents represent standalone content stored in Sanity.
 Examples:
 
 ```text
-homePage
+homepage
 service
 clientLogo
 post
@@ -262,7 +262,7 @@ Example:
 
 ```ts
 export const singletonTypes = new Set([
-  'homePage',
+  'homepage',
 ])
 ```
 
@@ -270,7 +270,7 @@ When adding another singleton, add its schema type to the same set:
 
 ```ts
 export const singletonTypes = new Set([
-  'homePage',
+  'homepage',
   'siteSettings',
 ])
 ```
@@ -287,14 +287,14 @@ Example:
 
 ```ts
 S.listItem()
-  .id('homePage')
-  .schemaType('homePage')
+  .id('homepage')
+  .schemaType('homepage')
   .title('Homepage')
   .child(
     S.editor()
-      .id('homePage')
-      .schemaType('homePage')
-      .documentId('homePage'),
+      .id('homepage')
+      .schemaType('homepage')
+      .documentId('homepage'),
   )
 ```
 
