@@ -7,6 +7,7 @@ interface SendEmailInput {
 }
 
 const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL?.trim();
+const sesSenderEmail = process.env.AWS_SENDER_EMAIL?.trim();
 const sesClient = new SESClient({
   region: process.env.AWS_REGION,
 });
@@ -24,6 +25,7 @@ export async function sendEmail({ content, subject, senderEmail }: SendEmailInpu
   assertNonEmptyString(subject, 'subject');
   assertEmail(senderEmail, 'senderEmail');
   assertEmail(recipientEmail, 'CONTACT_RECIPIENT_EMAIL');
+  assertEmail(sesSenderEmail, 'AWS_SENDER_EMAIL');
 
   const command = new SendEmailCommand({
     Destination: {
@@ -41,7 +43,8 @@ export async function sendEmail({ content, subject, senderEmail }: SendEmailInpu
         Data: subject,
       },
     },
-    Source: senderEmail,
+    Source: sesSenderEmail,
+    ReplyToAddresses: [senderEmail],
   });
 
   try {
