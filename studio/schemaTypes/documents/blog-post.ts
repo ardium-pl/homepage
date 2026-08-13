@@ -17,10 +17,10 @@ export const blogPost = defineType({
       type: 'image',
       fields: [
         {
-          name: 'altName',
+          name: 'altText',
           type: 'localizedString',
           title: 'Alternative text',
-        },
+        }
       ],
       validation: (rule) => rule.required(),
     }),
