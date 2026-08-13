@@ -1,8 +1,11 @@
 <app-card annotated noIcon>
   <app-card-title>{{ city() }}</app-card-title>
   <app-card-content>
+    @if (address()) {
     <a class="address" [href]="addressHref()" target="_blank">{{ address() }}</a>
+    }
     <div class="contact-info">
+      @if (email()) {
       <div class="contact-info-item">
         <div class="contact-info-icon">
           <icon-envelope />
@@ -12,6 +15,8 @@
           <a class="contact-info-value" [href]="emailHref()" [innerHTML]="email()"></a>
         </div>
       </div>
+      }
+      @if (phone()) {
       <div class="contact-info-item">
         <div class="contact-info-icon">
           <icon-call-calling />
@@ -21,6 +26,7 @@
           <a class="contact-info-value phone-value" [href]="phoneHref()" [innerHTML]="phone()"></a>
         </div>
       </div>
+      }
     </div>
   </app-card-content>
 </app-card>

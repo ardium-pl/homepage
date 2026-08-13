@@ -11,7 +11,14 @@ export class ContactInfoService {
   private request?: Promise<ContactInfo | null>;
 
   getContactInfo(): Promise<ContactInfo | null> {
-    this.request ??= this.sanity.fetch<ContactInfo | null>(CONTACT_INFO_QUERY, { language: this.locale.language });
+    this.request ??= this.sanity
+      .fetch<ContactInfo | null>(CONTACT_INFO_QUERY, { language: this.locale.language })
+      .then((contactInfo) => {
+        if (!contactInfo) return null;
+
+        const hasContent = Object.values(contactInfo).some((value) => value.length > 0);
+        return hasContent ? contactInfo : null;
+      });
     return this.request;
   }
 }

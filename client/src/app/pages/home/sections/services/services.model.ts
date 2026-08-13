@@ -2,7 +2,7 @@ export interface ServiceItem {
   key: string;
   title: string;
   description: string;
-  iconUrl: string;
+  iconUrl: string | null;
 }
 
 export interface ServicesContent {

@@ -3,18 +3,30 @@
   <div class="content-width-g">
     @if (content(); as services) {
     <div class="heading-container-g">
+      @if (services.preHeading) {
       <app-pre-heading>{{ services.preHeading }}</app-pre-heading>
+      }
+      @if (services.title) {
       <h2>{{ services.title }}</h2>
+      }
+      @if (services.subtitle) {
       <p>{{ services.subtitle }}</p>
+      }
     </div>
     <div class="card-area">
       @for (service of services.list; track service.key) {
       <app-card>
         <app-card-icon>
+          @if (service.iconUrl) {
           <span class="service-icon" [style.--service-icon-url]="'url(' + service.iconUrl + ')'" aria-hidden="true"></span>
+          }
         </app-card-icon>
+        @if (service.title) {
         <app-card-title>{{ service.title }}</app-card-title>
+        }
+        @if (service.description) {
         <app-card-content><p>{{ service.description }}</p></app-card-content>
+        }
       </app-card>
       }
     </div>
