@@ -15,7 +15,7 @@ export const portableText = defineType({
           name: 'altText',
           type: 'string',
           title: 'Alternative text',
-        }
+        },
         {
           name: 'caption',
           type: 'string',

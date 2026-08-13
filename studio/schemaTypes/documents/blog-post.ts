@@ -20,7 +20,7 @@ export const blogPost = defineType({
           name: 'altText',
           type: 'localizedString',
           title: 'Alternative text',
-        }
+        },
       ],
       validation: (rule) => rule.required(),
     }),
@@ -63,4 +63,11 @@ export const blogPost = defineType({
       validation: (rule) => rule.required(),
     }),
   ],
+
+  preview: {
+    select: {
+      title: 'title.pl',
+      media: 'mainImage',
+    },
+  },
 })

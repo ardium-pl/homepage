@@ -30,7 +30,7 @@ export const services = defineType({
       type: 'array',
       of: [
         {
-          name: 'item',
+          name: 'serviceItem',
           title: 'Service',
           type: 'object',
           fields: [

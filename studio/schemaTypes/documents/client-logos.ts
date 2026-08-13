@@ -12,7 +12,7 @@ export const clientLogos = defineType({
       type: 'array',
       of: [
         {
-          name: 'item',
+          name: 'clientLogoItem',
           title: 'Client logo',
           type: 'object',
           fields: [
