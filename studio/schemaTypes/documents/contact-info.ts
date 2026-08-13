@@ -12,8 +12,8 @@ export const contactInfo = defineType({
       type: 'object',
       fields: [
         defineField({
-          name: 'number',
-          title: 'Number',
+          name: 'value',
+          title: 'Value',
           type: 'string',
           validation: (rule) => rule.required(),
         }),
@@ -43,8 +43,26 @@ export const contactInfo = defineType({
       ],
     }),
     defineField({
-      name: 'address',
-      title: 'Address',
+      name: 'email',
+      title: 'Email',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'value',
+          title: 'Value',
+          type: 'string',
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: 'link',
+          title: 'Link',
+          type: 'url',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'linkedin',
+      title: 'LinkedIn',
       type: 'object',
       fields: [
         defineField({
@@ -61,4 +79,12 @@ export const contactInfo = defineType({
       ],
     }),
   ],
+
+  preview: {
+    prepare() {
+      return {
+        title: 'Contact Info',
+      }
+    },
+  },
 })

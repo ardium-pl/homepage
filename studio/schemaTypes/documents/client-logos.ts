@@ -7,12 +7,12 @@ export const clientLogos = defineType({
   description: 'logos of client companies',
   fields: [
     defineField({
-      name: 'clientLogoList',
+      name: 'list',
       title: 'Client logo list',
       type: 'array',
       of: [
         {
-          name: 'clientLogo',
+          name: 'item',
           title: 'Client logo',
           type: 'object',
           fields: [
@@ -33,4 +33,12 @@ export const clientLogos = defineType({
       ],
     }),
   ],
+
+  preview: {
+    prepare() {
+      return {
+        title: 'Client Logos',
+      }
+    },
+  },
 })

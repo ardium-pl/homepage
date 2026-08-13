@@ -31,6 +31,18 @@ export const blogPost = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'url',
+      title: 'URL',
+      type: 'url',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'type',
       title: 'Post type',
       type: 'string',
