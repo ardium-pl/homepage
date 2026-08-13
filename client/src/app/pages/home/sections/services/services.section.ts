@@ -1,7 +1,7 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CardModule } from '@components/card';
 import { PreHeadingComponent } from '@components/pre-heading';
-import { ServicesContent } from './services.model';
+import { createAsyncContent } from '@utils/async-content';
 import { ServicesService } from './services.service';
 
 @Component({
@@ -14,18 +14,9 @@ import { ServicesService } from './services.service';
 export class ServicesSection {
   private readonly servicesService = inject(ServicesService);
 
-  readonly content = signal<ServicesContent | null>(null);
-  readonly loading = signal(true);
-  readonly error = signal(false);
+  private readonly contentState = createAsyncContent(() => this.servicesService.getServices());
 
-  constructor() {
-    void this.servicesService
-      .getServices()
-      .then((content) => {
-        this.content.set(content);
-        this.error.set(!content);
-      })
-      .catch(() => this.error.set(true))
-      .finally(() => this.loading.set(false));
-  }
+  readonly content = this.contentState.content;
+  readonly loading = this.contentState.loading;
+  readonly error = this.contentState.error;
 }

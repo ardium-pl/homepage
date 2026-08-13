@@ -2,7 +2,7 @@
   <app-card-title>{{ city() }}</app-card-title>
   <app-card-content>
     @if (address()) {
-    <a class="address" [href]="addressHref()" target="_blank">{{ address() }}</a>
+    <a class="address" [href]="addressHref()" target="_blank" rel="noopener noreferrer">{{ address() }}</a>
     }
     <div class="contact-info">
       @if (email()) {
@@ -12,7 +12,7 @@
         </div>
         <div class="contact-info-text">
           <div class="contact-info-name" i18n="@@offices.card.email">Email:</div>
-          <a class="contact-info-value" [href]="emailHref()" [innerHTML]="email()"></a>
+          <a class="contact-info-value" [href]="emailHref()">{{ email() }}</a>
         </div>
       </div>
       }
@@ -23,7 +23,7 @@
         </div>
         <div class="contact-info-text">
           <div class="contact-info-name" i18n="@@offices.card.phone">Phone:</div>
-          <a class="contact-info-value phone-value" [href]="phoneHref()" [innerHTML]="phone()"></a>
+          <a class="contact-info-value phone-value" [href]="phoneHref()">{{ phone() }}</a>
         </div>
       </div>
       }

@@ -1,10 +1,10 @@
-import { Component, inject, signal } from '@angular/core';
-import { ContactInfo } from '../../content/contact-info/contact-info.model';
+import { Component, inject } from '@angular/core';
 import { ContactInfoService } from '../../content/contact-info/contact-info.service';
 import { BrandLinkedinIcon } from '../../icons/brand-linkedin.icon';
 import { EnvelopeIcon } from '../../icons/envelope.icon';
 import { LocationPinIcon } from '../../icons/location-pin.icon';
 import { SmartphoneIcon } from '../../icons/smartphone.icon';
+import { createAsyncContent } from '../../utils/async-content';
 import { createMailto } from '../../utils/mailto';
 import { createUniversalMapLink } from '../../utils/maps-link';
 
@@ -18,20 +18,11 @@ import { createUniversalMapLink } from '../../utils/maps-link';
 export class FooterComponent {
   private readonly contactInfoService = inject(ContactInfoService);
 
-  readonly contactInfo = signal<ContactInfo | null>(null);
-  readonly loading = signal(true);
-  readonly error = signal(false);
+  private readonly contactInfoState = createAsyncContent(() => this.contactInfoService.getContactInfo());
 
-  constructor() {
-    void this.contactInfoService
-      .getContactInfo()
-      .then((contactInfo) => {
-        this.contactInfo.set(contactInfo);
-        this.error.set(!contactInfo);
-      })
-      .catch(() => this.error.set(true))
-      .finally(() => this.loading.set(false));
-  }
+  readonly contactInfo = this.contactInfoState.content;
+  readonly loading = this.contactInfoState.loading;
+  readonly error = this.contactInfoState.error;
 
   readonly createMailto = createMailto;
   readonly createMapLink = createUniversalMapLink;

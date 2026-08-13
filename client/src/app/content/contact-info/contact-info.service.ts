@@ -18,6 +18,10 @@ export class ContactInfoService {
 
         const hasContent = Object.values(contactInfo).some((value) => value.length > 0);
         return hasContent ? contactInfo : null;
+      })
+      .catch((error: unknown) => {
+        this.request = undefined;
+        throw error;
       });
     return this.request;
   }
