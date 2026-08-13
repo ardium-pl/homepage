@@ -13,12 +13,12 @@ export const portableText = defineType({
       fields: [
         {
           name: 'altName',
-          type: 'localizedString',
+          type: 'string',
           title: 'Alternative text',
         },
         {
           name: 'caption',
-          type: 'localizedString',
+          type: 'string',
           title: 'Caption',
         },
       ],

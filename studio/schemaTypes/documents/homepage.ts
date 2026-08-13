@@ -12,16 +12,27 @@ export const homepage = defineType({
       type: 'object',
       fields: [
         defineField({
+          name: 'preHeading',
+          title: 'Pre-heading',
+          type: 'localizedString',
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
           name: 'title',
           title: 'Title',
           type: 'localizedString',
           validation: (rule) => rule.required(),
         }),
-
         defineField({
-          name: 'description',
-          title: 'Description',
+          name: 'subtitle',
+          title: 'Subtitle',
           type: 'localizedText',
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: 'contactButtonText',
+          title: 'Contact button text',
+          type: 'localizedString',
           validation: (rule) => rule.required(),
         }),
 

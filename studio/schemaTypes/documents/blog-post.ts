@@ -15,6 +15,13 @@ export const blogPost = defineType({
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',
+      fields: [
+        {
+          name: 'altName',
+          type: 'localizedString',
+          title: 'Alternative text',
+        },
+      ],
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -37,9 +44,9 @@ export const blogPost = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'url',
-      title: 'URL',
-      type: 'url',
+      name: 'urlSlug',
+      title: 'URL Slug',
+      type: 'slug',
       validation: (rule) => rule.required(),
     }),
     defineField({

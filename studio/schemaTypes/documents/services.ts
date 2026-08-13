@@ -7,6 +7,24 @@ export const services = defineType({
   description: 'A list of services offered by the company.',
   fields: [
     defineField({
+      name: 'preHeading',
+      title: 'Pre-heading',
+      type: 'localizedString',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'localizedString',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'localizedText',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'list',
       title: 'Service list',
       type: 'array',
