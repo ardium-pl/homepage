@@ -5,8 +5,17 @@
       <p i18n="@@offices.subtitle">If you want to meet with us in person.</p>
     </div>
     <div class="offices-container">
-      @for (office of OFFICES; track $index) {
-      <app-office-card [city]="office.city" [address]="office.address" [email]="office.email" [phone]="office.phone" />
+      @if (contactInfo(); as contact) {
+      <app-office-card
+        [city]="city"
+        [address]="contact.address"
+        [email]="contact.email"
+        [phone]="contact.phoneNumber"
+      />
+      } @else if (loading()) {
+      <p i18n="@@common.loading">Loading...</p>
+      } @else if (error()) {
+      <p i18n="@@common.contact-unavailable">Contact information is currently unavailable.</p>
       }
     </div>
   </div>

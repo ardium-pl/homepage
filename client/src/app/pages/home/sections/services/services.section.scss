@@ -22,6 +22,21 @@ section {
 app-card {
   app-card-icon {
     width: 3.5rem;
+
+    .service-icon {
+      aspect-ratio: 1;
+      background-color: var(--clr-main);
+      display: block;
+      mask-image: var(--service-icon-url);
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      width: 100%;
+      -webkit-mask-image: var(--service-icon-url);
+      -webkit-mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+    }
   }
 }
 

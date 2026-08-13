@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { ADDRESS, EMAIL, PHONE } from '@utils/contact-const';
+import { Component, inject, signal } from '@angular/core';
+import { ContactInfo } from '../../../../content/contact-info/contact-info.model';
+import { ContactInfoService } from '../../../../content/contact-info/contact-info.service';
 import { OfficeCardComponent } from '../../../../components/office-card/office-card.component';
 
 @Component({
@@ -10,12 +11,21 @@ import { OfficeCardComponent } from '../../../../components/office-card/office-c
   styleUrl: './offices.section.scss',
 })
 export class OfficesSection {
-  readonly OFFICES = [
-    {
-      city: $localize`:@@offices.city.warsaw:Warsaw`,
-      address: ADDRESS,
-      email: EMAIL,
-      phone: PHONE,
-    },
-  ];
+  private readonly contactInfoService = inject(ContactInfoService);
+
+  readonly contactInfo = signal<ContactInfo | null>(null);
+  readonly loading = signal(true);
+  readonly error = signal(false);
+  readonly city = $localize`:@@offices.city.warsaw:Warsaw`;
+
+  constructor() {
+    void this.contactInfoService
+      .getContactInfo()
+      .then((contactInfo) => {
+        this.contactInfo.set(contactInfo);
+        this.error.set(!contactInfo);
+      })
+      .catch(() => this.error.set(true))
+      .finally(() => this.loading.set(false));
+  }
 }

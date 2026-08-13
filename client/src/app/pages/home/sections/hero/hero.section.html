@@ -4,21 +4,26 @@
   </div>
   <div class="particles"></div>
   <div class="hero-container content-width-g">
+    @if (hero(); as content) {
     <div class="text-column">
       <div class="heading-container">
         <div class="striped-decor"></div>
-        <app-pre-heading i18n="@@hero.pre-heading">AI for business</app-pre-heading>
-        <h1 i18n="@@hero.title">We support business development on the AI front</h1>
+        <app-pre-heading>{{ content.preHeading }}</app-pre-heading>
+        <h1>{{ content.title }}</h1>
       </div>
-      <p i18n="@@hero.subtitle">
-        At Ardium, we help organizations reengineer their processes in the face of new opportunities created by big
-        language models.
-      </p>
-      <app-button (click)="onContactUsClick()" i18n="@@hero.contact-us">Contact Us</app-button>
+      <p>{{ content.subtitle }}</p>
+      <app-button (click)="onContactUsClick()">{{ content.contactButtonText }}</app-button>
     </div>
     <div class="image-column">
-      <img src="hero-image.png" aria-hidden="true" />
+      @if (content.imageUrl) {
+      <img [src]="content.imageUrl" alt="" />
+      }
     </div>
+    } @else if (loading()) {
+    <p i18n="@@common.loading">Loading...</p>
+    } @else if (error()) {
+    <p i18n="@@common.content-unavailable">Content is currently unavailable.</p>
+    }
   </div>
 </section>
  

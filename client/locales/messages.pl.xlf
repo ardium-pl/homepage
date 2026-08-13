@@ -371,6 +371,18 @@
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="common.loading" datatype="html">
+        <source>Loading...</source>
+        <target>Ładowanie...</target>
+      </trans-unit>
+      <trans-unit id="common.content-unavailable" datatype="html">
+        <source>Content is currently unavailable.</source>
+        <target>Treść jest obecnie niedostępna.</target>
+      </trans-unit>
+      <trans-unit id="common.contact-unavailable" datatype="html">
+        <source>Contact information is currently unavailable.</source>
+        <target>Dane kontaktowe są obecnie niedostępne.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
