@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { ADDRESS, EMAIL, PHONE } from '@utils/contact-const';
+import { Component, inject } from '@angular/core';
+import { createAsyncContent } from '@utils/async-content';
+import { ContactInfoService } from '../../../../content/contact-info/contact-info.service';
 import { OfficeCardComponent } from '../../../../components/office-card/office-card.component';
 
 @Component({
@@ -10,12 +11,12 @@ import { OfficeCardComponent } from '../../../../components/office-card/office-c
   styleUrl: './offices.section.scss',
 })
 export class OfficesSection {
-  readonly OFFICES = [
-    {
-      city: $localize`:@@offices.city.warsaw:Warsaw`,
-      address: ADDRESS,
-      email: EMAIL,
-      phone: PHONE,
-    },
-  ];
+  private readonly contactInfoService = inject(ContactInfoService);
+
+  private readonly contactInfoState = createAsyncContent(() => this.contactInfoService.getContactInfo());
+
+  readonly contactInfo = this.contactInfoState.content;
+  readonly loading = this.contactInfoState.loading;
+  readonly error = this.contactInfoState.error;
+  readonly city = $localize`:@@offices.city.warsaw:Warsaw`;
 }

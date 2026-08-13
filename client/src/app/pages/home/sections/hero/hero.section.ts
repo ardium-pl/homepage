@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonComponent } from '@components/button';
 import { PreHeadingComponent } from '@components/pre-heading/pre-heading.component';
+import { createAsyncContent } from '@utils/async-content';
+import { HeroService } from './hero.service';
 
 @Component({
   selector: 'app-hero-section',
@@ -12,6 +14,13 @@ import { PreHeadingComponent } from '@components/pre-heading/pre-heading.compone
 })
 export class HeroSection {
   private readonly router = inject(Router);
+  private readonly heroService = inject(HeroService);
+
+  private readonly heroState = createAsyncContent(() => this.heroService.getHero());
+
+  readonly hero = this.heroState.content;
+  readonly loading = this.heroState.loading;
+  readonly error = this.heroState.error;
 
   onContactUsClick() {
     this.router.navigateByUrl('#contact-section');

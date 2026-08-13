@@ -1,44 +1,39 @@
 <section>
   <div class="scroll-anchor" id="services-section"></div>
   <div class="content-width-g">
+    @if (content(); as services) {
     <div class="heading-container-g">
-      <app-pre-heading i18n="@@services.pre-heading">Services</app-pre-heading>
-      <h2 i18n="@@services.title">Services we offer</h2>
-      <p i18n="@@services.subtitle">This is what exactly are we good at.</p>
+      @if (services.preHeading) {
+      <app-pre-heading>{{ services.preHeading }}</app-pre-heading>
+      }
+      @if (services.title) {
+      <h2>{{ services.title }}</h2>
+      }
+      @if (services.subtitle) {
+      <p>{{ services.subtitle }}</p>
+      }
     </div>
     <div class="card-area">
+      @for (service of services.list; track service.key) {
       <app-card>
-        <app-card-icon><icon-scan-ai /></app-card-icon>
-        <app-card-title i18n="@@services.excel.title">Smart OCR</app-card-title>
-        <app-card-content>
-          <p i18n="@@services.excel.description">
-            We specialize in automatically extracting structured data from documents. We extract information from
-            invoices, receipts, sales quotes, legal and logistics documents - quickly, accurately and in a form ready
-            for further use.
-          </p>
-        </app-card-content>
+        <app-card-icon>
+          @if (service.iconUrl) {
+          <span class="service-icon" [style.--service-icon-url]="'url(' + service.iconUrl + ')'" aria-hidden="true"></span>
+          }
+        </app-card-icon>
+        @if (service.title) {
+        <app-card-title>{{ service.title }}</app-card-title>
+        }
+        @if (service.description) {
+        <app-card-content><p>{{ service.description }}</p></app-card-content>
+        }
       </app-card>
-      <app-card>
-        <app-card-icon><icon-database-ai /></app-card-icon>
-        <app-card-title i18n="@@services.ai.title">Data Indexing</app-card-title>
-        <app-card-content>
-          <p i18n="@@services.ai.description">
-            We tag documents and images according to the categories established by the client, based on their content.
-            In this way, we organize the company's information resources, creating a structured source of knowledge -
-            accessible to both employees and automated systems.
-          </p>
-        </app-card-content>
-      </app-card>
-      <app-card>
-        <app-card-icon><icon-message-ellipsis /></app-card-icon>
-        <app-card-title i18n="@@services.software.title">Business Intelligence</app-card-title>
-        <app-card-content>
-          <p i18n="@@services.software.description">
-            We implement analytics based on data from raw, unmodified databases. We enable you to ask questions and get
-            answers without having to prepare reports in advance - quickly, intuitively and on the fly.
-          </p>
-        </app-card-content>
-      </app-card>
+      }
     </div>
+    } @else if (loading()) {
+    <p i18n="@@common.loading">Loading...</p>
+    } @else if (error()) {
+    <p i18n="@@common.content-unavailable">Content is currently unavailable.</p>
+    }
   </div>
 </section>

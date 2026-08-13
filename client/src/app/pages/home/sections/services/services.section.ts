@@ -1,15 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CardModule } from '@components/card';
 import { PreHeadingComponent } from '@components/pre-heading';
-import { ArdIconDatabaseAi } from "../../../../icons/database-ai.icon";
-import { ArdIconMessageEllipsis } from "../../../../icons/message-ellipsis.icon";
-import { ArdIconScanAi } from "../../../../icons/scan-ai.icon";
+import { createAsyncContent } from '@utils/async-content';
+import { ServicesService } from './services.service';
 
 @Component({
   selector: 'app-services-section',
   standalone: true,
-  imports: [CardModule, PreHeadingComponent, ArdIconScanAi, ArdIconDatabaseAi, ArdIconMessageEllipsis],
+  imports: [CardModule, PreHeadingComponent],
   templateUrl: './services.section.html',
   styleUrl: './services.section.scss',
 })
-export class ServicesSection {}
+export class ServicesSection {
+  private readonly servicesService = inject(ServicesService);
+
+  private readonly contentState = createAsyncContent(() => this.servicesService.getServices());
+
+  readonly content = this.contentState.content;
+  readonly loading = this.contentState.loading;
+  readonly error = this.contentState.error;
+}

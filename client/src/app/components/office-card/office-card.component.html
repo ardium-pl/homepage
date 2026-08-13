@@ -1,26 +1,32 @@
 <app-card annotated noIcon>
   <app-card-title>{{ city() }}</app-card-title>
   <app-card-content>
-    <a class="address" [href]="addressHref()" target="_blank">{{ address() }}</a>
+    @if (address()) {
+    <a class="address" [href]="addressHref()" target="_blank" rel="noopener noreferrer">{{ address() }}</a>
+    }
     <div class="contact-info">
+      @if (email()) {
       <div class="contact-info-item">
         <div class="contact-info-icon">
           <icon-envelope />
         </div>
         <div class="contact-info-text">
           <div class="contact-info-name" i18n="@@offices.card.email">Email:</div>
-          <a class="contact-info-value" [href]="emailHref()" [innerHTML]="email()"></a>
+          <a class="contact-info-value" [href]="emailHref()">{{ email() }}</a>
         </div>
       </div>
+      }
+      @if (phone()) {
       <div class="contact-info-item">
         <div class="contact-info-icon">
           <icon-call-calling />
         </div>
         <div class="contact-info-text">
           <div class="contact-info-name" i18n="@@offices.card.phone">Phone:</div>
-          <a class="contact-info-value phone-value" [href]="phoneHref()" [innerHTML]="phone()"></a>
+          <a class="contact-info-value phone-value" [href]="phoneHref()">{{ phone() }}</a>
         </div>
       </div>
+      }
     </div>
   </app-card-content>
 </app-card>
