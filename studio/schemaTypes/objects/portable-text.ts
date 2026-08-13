@@ -12,10 +12,10 @@ export const portableText = defineType({
       type: 'image',
       fields: [
         {
-          name: 'altName',
+          name: 'altText',
           type: 'string',
           title: 'Alternative text',
-        },
+        }
         {
           name: 'caption',
           type: 'string',
