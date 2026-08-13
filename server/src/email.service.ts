@@ -8,11 +8,7 @@ interface SendEmailInput {
 
 const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL?.trim();
 const sesClient = new SESClient({
-  region: process.env.AWS_REGION || 'eu-north-1',
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID || '',
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || '',
-  },
+  region: process.env.AWS_REGION,
 });
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
