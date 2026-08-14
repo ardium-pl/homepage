@@ -1,12 +1,12 @@
 <section class="blog-hero">
   <div class="hero-pattern" aria-hidden="true"></div>
   <div class="content-width-g hero-content">
-    <app-pre-heading i18n="@@blog.preheading">Wiedza</app-pre-heading>
+    <app-pre-heading i18n="@@blog.preheading">Knowledge</app-pre-heading>
     <h1>Blog &amp; Case Studies</h1>
     <div class="hero-line" aria-hidden="true"></div>
     <p i18n="@@blog.description">
-      Praktyczna wiedza o AI w biznesie — rzeczywiste projekty,<br />
-      narzędzia i spostrzeżenia z pracy z klientami.
+      Practical knowledge about AI in business — real projects,<br />
+      tools and insights from working with clients.
     </p>
   </div>
 </section>
@@ -31,7 +31,7 @@
         (click)="activeType.set('blog')"
         i18n="@@blog.postsTab"
       >
-        Wpisy
+        Posts
       </button>
     </div>
 
@@ -47,7 +47,7 @@
           <time>{{ post.date }}</time>
           <h2>{{ post.title }}</h2>
           <p>{{ post.summary }}</p>
-          <a [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Czytaj więcej →</a>
+          <a [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Read more →</a>
         </div>
       </article>
       }

@@ -388,24 +388,40 @@
         <target>Blog</target>
       </trans-unit>
       <trans-unit id="blog.preheading" datatype="html">
-        <source>Wiedza</source>
+        <source>Knowledge</source>
         <target>Wiedza</target>
       </trans-unit>
       <trans-unit id="blog.description" datatype="html">
-        <source> Praktyczna wiedza o AI w biznesie — rzeczywiste projekty,<x id="LINE_BREAK" ctype="lb"/> narzędzia i spostrzeżenia z pracy z klientami. </source>
+        <source> Practical knowledge about AI in business — real projects,<x id="LINE_BREAK" ctype="lb"/> tools and insights from working with clients. </source>
         <target> Praktyczna wiedza o AI w biznesie — rzeczywiste projekty,<x id="LINE_BREAK" ctype="lb"/> narzędzia i spostrzeżenia z pracy z klientami. </target>
       </trans-unit>
       <trans-unit id="blog.postsTab" datatype="html">
-        <source> Wpisy </source>
+        <source> Posts </source>
         <target> Wpisy </target>
       </trans-unit>
       <trans-unit id="blog.readMore" datatype="html">
-        <source>Czytaj więcej →</source>
+        <source>Read more →</source>
         <target>Czytaj więcej →</target>
       </trans-unit>
       <trans-unit id="blogPost.back" datatype="html">
-        <source>← Powrót do bloga</source>
+        <source>← Back to blog</source>
         <target>← Powrót do bloga</target>
+      </trans-unit>
+      <trans-unit id="homeBlog.preheading" datatype="html">
+        <source>Posts</source>
+        <target>Wpisy</target>
+      </trans-unit>
+      <trans-unit id="homeBlog.title" datatype="html">
+        <source>From our blog</source>
+        <target>Z naszego bloga</target>
+      </trans-unit>
+      <trans-unit id="homeBlog.subtitle" datatype="html">
+        <source>See our latest news</source>
+        <target>Zobacz nasze aktualności</target>
+      </trans-unit>
+      <trans-unit id="homeBlog.allPosts" datatype="html">
+        <source>All posts →</source>
+        <target>Wszystkie wpisy →</target>
       </trans-unit>
     </body>
   </file>
