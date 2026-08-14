@@ -1,16 +1,16 @@
 <div class="portable-content" [class.compact]="compact()">
-  @for (node of nodes(); track node._key) {
-    @if (node._type === 'image') {
+  @for (node of renderNodes(); track node._key) {
+    @if (node._type === 'list') {
+      <ng-container *ngTemplateOutlet="list; context: { $implicit: node }" />
+    } @else if (node._type === 'image') {
       @if (node.imageUrl) {
       <figure>
         <img [src]="node.imageUrl" [alt]="node.altText || ''" />
         @if (node.caption) { <figcaption>{{ node.caption }}</figcaption> }
       </figure>
       }
-    } @else if (node.listItem === 'bullet') {
-      <ul><li><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></li></ul>
-    } @else if (node.listItem === 'number') {
-      <ol><li><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></li></ol>
+    } @else if (node.style === 'h1') {
+      <h2><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h2>
     } @else if (node.style === 'h2') {
       <h2><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h2>
     } @else if (node.style === 'h3') {
@@ -25,18 +25,54 @@
   }
 </div>
 
+<ng-template #list let-value>
+  @if (value.kind === 'number') {
+  <ol>
+    @for (item of value.items; track item.block._key) {
+    <li>
+      <ng-container *ngTemplateOutlet="spans; context: { $implicit: item.block }" />
+      @for (child of item.children; track child._key) {
+      <ng-container *ngTemplateOutlet="list; context: { $implicit: child }" />
+      }
+    </li>
+    }
+  </ol>
+  } @else {
+  <ul>
+    @for (item of value.items; track item.block._key) {
+    <li>
+      <ng-container *ngTemplateOutlet="spans; context: { $implicit: item.block }" />
+      @for (child of item.children; track child._key) {
+      <ng-container *ngTemplateOutlet="list; context: { $implicit: child }" />
+      }
+    </li>
+    }
+  </ul>
+  }
+</ng-template>
+
 <ng-template #spans let-block>
   @for (span of block.children || []; track span._key) {
-    @if (span.marks?.length && linkFor(block, span.marks[0]); as href) {
-      <a [href]="href" target="_blank" rel="noopener noreferrer">{{ span.text }}</a>
-    } @else if (hasMark(span.marks, 'strong')) {
-      <strong>{{ span.text }}</strong>
-    } @else if (hasMark(span.marks, 'em')) {
-      <em>{{ span.text }}</em>
-    } @else if (hasMark(span.marks, 'code')) {
-      <code>{{ span.text }}</code>
+  <ng-container *ngTemplateOutlet="marks; context: { span, block, index: 0 }" />
+  }
+</ng-template>
+
+<ng-template #marks let-span="span" let-block="block" let-index="index">
+  @if (index >= (span.marks?.length || 0)) {
+  <span class="text-span">{{ span.text }}</span>
+  } @else {
+    @if (linkFor(block, span.marks[index]); as href) {
+    <a [href]="href" target="_blank" rel="noopener noreferrer">
+      <ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" />
+    </a>
+    } @else if (span.marks[index] === 'strong') {
+    <strong><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></strong>
+    } @else if (span.marks[index] === 'em') {
+    <em><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></em>
+    } @else if (span.marks[index] === 'code') {
+    <code><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></code>
     } @else {
-      {{ span.text }}
+    <ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" />
     }
   }
 </ng-template>

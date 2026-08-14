@@ -423,6 +423,34 @@
         <source>All posts →</source>
         <target>Wszystkie wpisy →</target>
       </trans-unit>
+      <trans-unit id="header.logoLabel" datatype="html">
+        <source>Ardium - home page</source>
+        <target>Ardium - strona główna</target>
+      </trans-unit>
+      <trans-unit id="blog.categoriesLabel" datatype="html">
+        <source>Post categories</source>
+        <target>Kategorie wpisów</target>
+      </trans-unit>
+      <trans-unit id="blog.type.caseStudy" datatype="html">
+        <source>Case Study</source>
+        <target>Case Study</target>
+      </trans-unit>
+      <trans-unit id="blog.type.blog" datatype="html">
+        <source>Post</source>
+        <target>Wpis</target>
+      </trans-unit>
+      <trans-unit id="blog.emptyCategory" datatype="html">
+        <source>There are no posts in this category yet.</source>
+        <target>Nie ma jeszcze wpisów w tej kategorii.</target>
+      </trans-unit>
+      <trans-unit id="blogPost.notFoundTitle" datatype="html">
+        <source>Post not found</source>
+        <target>Nie znaleziono wpisu</target>
+      </trans-unit>
+      <trans-unit id="blogPost.notFoundText" datatype="html">
+        <source>The requested post does not exist or is no longer available.</source>
+        <target>Wybrany wpis nie istnieje lub nie jest już dostępny.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -16,6 +16,7 @@ export interface PortableTextBlock {
   _type: 'block';
   style?: string;
   listItem?: 'bullet' | 'number';
+  level?: number;
   children?: PortableTextSpan[];
   markDefs?: PortableTextMarkDefinition[];
 }
@@ -29,6 +30,20 @@ export interface PortableTextImage {
 }
 
 export type PortableTextNode = PortableTextBlock | PortableTextImage;
+
+export interface PortableTextListItem {
+  block: PortableTextBlock;
+  children: PortableTextList[];
+}
+
+export interface PortableTextList {
+  _type: 'list';
+  _key: string;
+  kind: 'bullet' | 'number';
+  items: PortableTextListItem[];
+}
+
+export type PortableTextRenderNode = PortableTextNode | PortableTextList;
 
 export interface BlogPostDetails {
   id: string;

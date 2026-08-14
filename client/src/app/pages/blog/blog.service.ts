@@ -11,7 +11,7 @@ export class BlogService {
   private readonly sanity = inject(SanityService);
   private readonly locale = inject(LocaleService);
 
-  getPosts(): Promise<BlogPost[] | null> {
+  getPosts(): Promise<BlogPost[]> {
     return this.sanity
       .fetch<SanityBlogPost[]>(BLOG_POSTS_QUERY, { language: this.locale.language })
       .then((posts) => {
@@ -23,7 +23,7 @@ export class BlogService {
             date: this.formatDate(post.publishedAt),
           }));
 
-        return validPosts.length ? validPosts : null;
+        return validPosts;
       });
   }
 

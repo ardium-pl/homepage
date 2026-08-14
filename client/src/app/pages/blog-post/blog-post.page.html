@@ -20,6 +20,12 @@
       <app-portable-content [nodes]="content.content" />
     } @else if (loading()) {
       <p class="state-message" i18n="@@common.loading">Loading...</p>
+    } @else if (notFound()) {
+      <div class="state-message">
+        <h1 i18n="@@blogPost.notFoundTitle">Post not found</h1>
+        <p i18n="@@blogPost.notFoundText">The requested post does not exist or is no longer available.</p>
+        <a routerLink="/blog" class="back-link" i18n="@@blogPost.back">← Back to blog</a>
+      </div>
     } @else if (error()) {
       <p class="state-message" i18n="@@common.content-unavailable">Content is currently unavailable.</p>
     }

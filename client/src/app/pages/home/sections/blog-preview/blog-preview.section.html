@@ -15,7 +15,7 @@
       <article class="post-card" [class.featured]="first">
         <div class="post-image">
           <img [src]="post.imageUrl" [alt]="post.imageAlt" />
-          <span class="badge">{{ post.type === 'caseStudy' ? 'Case Study' : 'Wpis' }}</span>
+          <span class="badge">{{ typeLabel(post.type) }}</span>
         </div>
         <div class="post-body">
           <time>{{ post.date }}</time>

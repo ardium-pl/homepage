@@ -23,4 +23,10 @@ export class BlogPage {
   readonly visiblePosts = computed(() =>
     (this.posts() ?? []).filter((post) => post.type === this.activeType()),
   );
+
+  typeLabel(type: BlogPostType): string {
+    return type === 'caseStudy'
+      ? $localize`:@@blog.type.caseStudy:Case Study`
+      : $localize`:@@blog.type.blog:Post`;
+  }
 }

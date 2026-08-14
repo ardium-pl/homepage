@@ -13,7 +13,7 @@
 
 <section class="posts-section">
   <div class="content-width-g posts-content">
-    <div class="tabs" role="tablist" aria-label="Kategorie wpisów">
+    <div class="tabs" role="tablist" aria-label="Post categories" i18n-aria-label="@@blog.categoriesLabel">
       <button
         type="button"
         role="tab"
@@ -36,12 +36,13 @@
     </div>
 
     @if (posts()) {
+    @if (visiblePosts().length) {
     <div class="posts-grid">
       @for (post of visiblePosts(); track post.id) {
       <article class="post-card">
         <div class="post-image">
           <img [src]="post.imageUrl" [alt]="post.imageAlt" />
-          <span class="badge">{{ post.type === 'caseStudy' ? 'Case Study' : 'Wpis' }}</span>
+          <span class="badge">{{ typeLabel(post.type) }}</span>
         </div>
         <div class="post-body">
           <time>{{ post.date }}</time>
@@ -52,6 +53,9 @@
       </article>
       }
     </div>
+    } @else {
+    <p class="state-message" i18n="@@blog.emptyCategory">There are no posts in this category yet.</p>
+    }
     } @else if (loading()) {
     <p class="state-message" i18n="@@common.loading">Loading...</p>
     } @else if (error()) {
