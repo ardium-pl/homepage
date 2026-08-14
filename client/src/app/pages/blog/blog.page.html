@@ -47,7 +47,7 @@
           <time>{{ post.date }}</time>
           <h2>{{ post.title }}</h2>
           <p>{{ post.summary }}</p>
-          <a [routerLink]="['/blog', post.slug]" i18n="@@blog.readMore">Czytaj więcej →</a>
+          <a [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Czytaj więcej →</a>
         </div>
       </article>
       }
