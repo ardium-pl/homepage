@@ -383,6 +383,26 @@
         <source>Contact information is currently unavailable.</source>
         <target>Dane kontaktowe są obecnie niedostępne.</target>
       </trans-unit>
+      <trans-unit id="header.blog" datatype="html">
+        <source>Blog</source>
+        <target>Blog</target>
+      </trans-unit>
+      <trans-unit id="blog.preheading" datatype="html">
+        <source>Wiedza</source>
+        <target>Wiedza</target>
+      </trans-unit>
+      <trans-unit id="blog.description" datatype="html">
+        <source> Praktyczna wiedza o AI w biznesie — rzeczywiste projekty,<x id="LINE_BREAK" ctype="lb"/> narzędzia i spostrzeżenia z pracy z klientami. </source>
+        <target> Praktyczna wiedza o AI w biznesie — rzeczywiste projekty,<x id="LINE_BREAK" ctype="lb"/> narzędzia i spostrzeżenia z pracy z klientami. </target>
+      </trans-unit>
+      <trans-unit id="blog.postsTab" datatype="html">
+        <source> Wpisy </source>
+        <target> Wpisy </target>
+      </trans-unit>
+      <trans-unit id="blog.readMore" datatype="html">
+        <source>Czytaj więcej →</source>
+        <target>Czytaj więcej →</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

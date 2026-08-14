@@ -32,4 +32,8 @@ export class HeaderComponent {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  closeMenu(): void {
+    this.isOpen.set(false);
+  }
 }
