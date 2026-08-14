@@ -71,6 +71,10 @@
     <em><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></em>
     } @else if (span.marks[index] === 'code') {
     <code><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></code>
+    } @else if (span.marks[index] === 'underline') {
+    <u><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></u>
+    } @else if (span.marks[index] === 'strike-through') {
+    <s><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></s>
     } @else {
     <ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" />
     }

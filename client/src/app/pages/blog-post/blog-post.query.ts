@@ -1,5 +1,9 @@
 export const BLOG_POST_QUERY = `*[
-  _type == "blogPost" && urlSlug.current == $slug
+  _type == "blogPost" &&
+  type in ["blog", "caseStudy"] &&
+  urlSlug.current == $slug &&
+  defined(publishedAt) &&
+  publishedAt <= now()
 ][0] {
   "id": _id,
   "title": coalesce(title[$language], title.en, title.pl, ""),

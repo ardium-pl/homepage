@@ -1,7 +1,8 @@
 export const BLOG_POSTS_QUERY = `*[
   _type == "blogPost" &&
   type in ["blog", "caseStudy"] &&
-  defined(publishedAt)
+  defined(publishedAt) &&
+  publishedAt <= now()
 ] | order(publishedAt desc) {
   "id": _id,
   type,
