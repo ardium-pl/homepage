@@ -11,6 +11,7 @@ import { PortableTextBlock, PortableTextMarkDefinition, PortableTextNode } from 
 })
 export class PortableContentComponent {
   readonly nodes = input.required<PortableTextNode[]>();
+  readonly compact = input(false);
 
   linkFor(block: PortableTextBlock, markKey: string): string | null {
     const definition: PortableTextMarkDefinition | undefined = block.markDefs?.find(

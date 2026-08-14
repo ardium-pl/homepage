@@ -1,4 +1,4 @@
-<div class="portable-content">
+<div class="portable-content" [class.compact]="compact()">
   @for (node of nodes(); track node._key) {
     @if (node._type === 'image') {
       @if (node.imageUrl) {

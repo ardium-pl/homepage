@@ -73,3 +73,33 @@ code {
   border-radius: 0.2rem;
   background: rgba(var(--clr-white-rgb), 0.08);
 }
+
+.portable-content.compact {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+
+  p,
+  ul,
+  ol,
+  blockquote {
+    margin-bottom: 0.75rem;
+  }
+
+  h2,
+  h3,
+  h4 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.4;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25rem;
+  }
+
+  ul + ul,
+  ol + ol {
+    margin-top: -0.75rem;
+  }
+}

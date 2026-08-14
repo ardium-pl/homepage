@@ -2,12 +2,13 @@ import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PreHeadingComponent } from '@components/pre-heading';
 import { BlogService } from '@pages/blog/blog.service';
+import { PortableContentComponent } from '@pages/blog-post/components/portable-content/portable-content.component';
 import { createAsyncContent } from '@utils/async-content';
 
 @Component({
   selector: 'app-blog-preview-section',
   standalone: true,
-  imports: [RouterLink, PreHeadingComponent],
+  imports: [RouterLink, PreHeadingComponent, PortableContentComponent],
   templateUrl: './blog-preview.section.html',
   styleUrl: './blog-preview.section.scss',
 })

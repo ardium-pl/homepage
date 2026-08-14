@@ -1,3 +1,5 @@
+import { PortableTextNode } from '@pages/blog-post/blog-post.model';
+
 export type BlogPostType = 'caseStudy' | 'blog';
 
 export interface BlogPost {
@@ -7,6 +9,7 @@ export interface BlogPost {
   date: string;
   title: string;
   summary: string;
+  contentPreview: PortableTextNode[];
   imageUrl: string;
   imageAlt: string;
   slug: string;

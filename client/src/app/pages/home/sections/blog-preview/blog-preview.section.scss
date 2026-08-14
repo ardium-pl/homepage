@@ -144,12 +144,33 @@ section {
 }
 
 .featured .post-body {
-  h3 { font-size: 1.25rem; }
+  h3 {
+    font-size: 1.25rem;
+  }
 
   p {
     -webkit-line-clamp: 14;
     font-size: 1rem;
     line-height: 1.45;
+  }
+}
+
+.content-preview {
+  display: block;
+  min-height: 0;
+  overflow: hidden;
+  flex: 2;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2rem;
+    pointer-events: none;
+    background: linear-gradient(transparent, rgba(0, 5, 49, 0.96));
   }
 }
 
@@ -182,10 +203,16 @@ section {
   .featured .post-body p {
     -webkit-line-clamp: 3;
   }
+
+  .content-preview {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 575px) {
-  section { padding: 3.5rem 0; }
+  section {
+    padding: 3.5rem 0;
+  }
 
   .heading-bottom {
     align-items: flex-start;
