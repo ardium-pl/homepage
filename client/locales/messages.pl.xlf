@@ -403,6 +403,10 @@
         <source>Czytaj więcej →</source>
         <target>Czytaj więcej →</target>
       </trans-unit>
+      <trans-unit id="blogPost.back" datatype="html">
+        <source>← Powrót do bloga</source>
+        <target>← Powrót do bloga</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -1,0 +1,68 @@
+.post-section {
+  padding: 5rem 0;
+}
+
+.post-container,
+.post-heading,
+.intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-container { gap: 1.5rem; }
+.post-heading { gap: 1rem; }
+.intro { gap: 0.75rem; }
+
+.back-link {
+  width: max-content;
+  color: var(--clr-main);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+h1 {
+  max-width: 52rem;
+  margin: 0;
+  font-size: clamp(2rem, 3.5vw, 2.375rem);
+  font-weight: 700;
+  line-height: 1.38;
+}
+
+.intro p {
+  max-width: 52rem;
+  color: rgba(var(--clr-white-rgb), 0.6);
+  font-size: 1.125rem;
+  line-height: 1.62;
+}
+
+.accent-line {
+  width: 5rem;
+  height: 2px;
+  background: var(--clr-main);
+}
+
+.divider {
+  height: 1px;
+  margin: 0.5rem 0 1rem;
+  background: rgba(var(--clr-main-rgb), 0.2);
+}
+
+.main-image {
+  margin: 0 0 1.5rem;
+
+  img {
+    width: 100%;
+    max-height: 40rem;
+    object-fit: cover;
+    border: 1px solid rgba(var(--clr-main-rgb), 0.25);
+    border-radius: 0.5rem;
+  }
+}
+
+.state-message { min-height: 20rem; }
+
+@media only screen and (max-width: 575px) {
+  .post-section { padding: 3.5rem 0; }
+}

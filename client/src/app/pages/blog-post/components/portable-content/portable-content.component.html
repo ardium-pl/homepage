@@ -1,0 +1,42 @@
+<div class="portable-content">
+  @for (node of nodes(); track node._key) {
+    @if (node._type === 'image') {
+      @if (node.imageUrl) {
+      <figure>
+        <img [src]="node.imageUrl" [alt]="node.altText || ''" />
+        @if (node.caption) { <figcaption>{{ node.caption }}</figcaption> }
+      </figure>
+      }
+    } @else if (node.listItem === 'bullet') {
+      <ul><li><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></li></ul>
+    } @else if (node.listItem === 'number') {
+      <ol><li><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></li></ol>
+    } @else if (node.style === 'h2') {
+      <h2><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h2>
+    } @else if (node.style === 'h3') {
+      <h3><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h3>
+    } @else if (node.style === 'h4') {
+      <h4><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h4>
+    } @else if (node.style === 'blockquote') {
+      <blockquote><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></blockquote>
+    } @else {
+      <p><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></p>
+    }
+  }
+</div>
+
+<ng-template #spans let-block>
+  @for (span of block.children || []; track span._key) {
+    @if (span.marks?.length && linkFor(block, span.marks[0]); as href) {
+      <a [href]="href" target="_blank" rel="noopener noreferrer">{{ span.text }}</a>
+    } @else if (hasMark(span.marks, 'strong')) {
+      <strong>{{ span.text }}</strong>
+    } @else if (hasMark(span.marks, 'em')) {
+      <em>{{ span.text }}</em>
+    } @else if (hasMark(span.marks, 'code')) {
+      <code>{{ span.text }}</code>
+    } @else {
+      {{ span.text }}
+    }
+  }
+</ng-template>

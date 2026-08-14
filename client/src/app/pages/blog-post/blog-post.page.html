@@ -1,0 +1,27 @@
+<app-post-hero />
+
+<section class="post-section">
+  <div class="content-width-g post-container">
+    @if (post(); as content) {
+      <header class="post-heading">
+        <a routerLink="/blog" class="back-link" i18n="@@blogPost.back">← Powrót do bloga</a>
+        <div class="intro">
+          <h1>{{ content.title }}</h1>
+          <p>{{ content.summary }}</p>
+          <div class="accent-line" aria-hidden="true"></div>
+        </div>
+      </header>
+      <div class="divider"></div>
+      @if (content.imageUrl) {
+      <figure class="main-image">
+        <img [src]="content.imageUrl" [alt]="content.imageAlt" />
+      </figure>
+      }
+      <app-portable-content [nodes]="content.content" />
+    } @else if (loading()) {
+      <p class="state-message" i18n="@@common.loading">Loading...</p>
+    } @else if (error()) {
+      <p class="state-message" i18n="@@common.content-unavailable">Content is currently unavailable.</p>
+    }
+  </div>
+</section>

@@ -1,0 +1,21 @@
+.post-hero {
+  box-sizing: border-box;
+  height: 26.25rem;
+  max-height: 80rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid var(--clr-main);
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  background: url('/pattern1.jpg') center / cover no-repeat;
+  opacity: 0.2;
+}
+
+@media only screen and (max-width: 575px) {
+  .post-hero {
+    height: 20rem;
+  }
+}

@@ -1,4 +1,5 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { PreHeadingComponent } from '@components/pre-heading/pre-heading.component';
 import { createAsyncContent } from '@utils/async-content';
 import { BlogPostType } from './blog.model';
@@ -7,7 +8,7 @@ import { BlogService } from './blog.service';
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [PreHeadingComponent],
+  imports: [PreHeadingComponent, RouterLink],
   templateUrl: './blog.page.html',
   styleUrl: './blog.page.scss',
 })
