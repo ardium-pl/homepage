@@ -35,6 +35,7 @@ export class ClientLogosSection {
   constructor() {
     effect(() => {
       if (!this.logos() || !isPlatformBrowser(this.platformId)) return;
+      if (this.initializationTimer) clearTimeout(this.initializationTimer);
       this.initializationTimer = setTimeout(() => {
         this.initializationTimer = undefined;
         void this.initializeCarousel();
@@ -69,6 +70,10 @@ export class ClientLogosSection {
 
   onPointerUp(event: PointerEvent): void {
     if (event.pointerId !== this.pointerId) return;
+    const element = this.carousel?.nativeElement;
+    if (element?.hasPointerCapture(event.pointerId)) {
+      element.releasePointerCapture(event.pointerId);
+    }
     this.pointerId = undefined;
     this.resumeAutoPlay();
   }
@@ -103,8 +108,10 @@ export class ClientLogosSection {
     if (!element || this.destroyed) return;
 
     this.resizeObserver?.disconnect();
-    this.reducedMotionQuery ??= window.matchMedia('(prefers-reduced-motion: reduce)');
-    this.reducedMotionQuery.addEventListener('change', this.onReducedMotionChange);
+    if (!this.reducedMotionQuery) {
+      this.reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      this.reducedMotionQuery.addEventListener('change', this.onReducedMotionChange);
+    }
     this.resizeObserver = new ResizeObserver(() => this.centerOnMiddleCopy());
     this.resizeObserver.observe(element);
 
