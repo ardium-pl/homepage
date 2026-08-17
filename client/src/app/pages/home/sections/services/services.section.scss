@@ -4,10 +4,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.scroll-anchor {
-  position: absolute;
-  top: -3rem;
+  scroll-margin-top: 5rem;
 }
 
 .card-area {
