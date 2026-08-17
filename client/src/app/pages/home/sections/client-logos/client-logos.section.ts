@@ -147,13 +147,22 @@ export class ClientLogosSection {
     if (!element || this.reducedMotionQuery?.matches) return;
 
     this.timer = setInterval(() => {
-      const firstItem = element.querySelector<HTMLElement>('.logo-item');
-      if (!firstItem || !this.copyWidth || this.copyWidth <= element.clientWidth) return;
+      if (!this.copyWidth) return;
 
-      const styles = getComputedStyle(element);
-      const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
-      element.scrollBy({ left: firstItem.offsetWidth + gap, behavior: 'smooth' });
-    }, 3500);
+      const itemPositions = Array.from(element.querySelectorAll<HTMLElement>('.logo-item')).map(
+        item => item.offsetLeft - element.offsetLeft
+      );
+      let nextPosition = itemPositions.find(position => position > element.scrollLeft + 2);
+      if (nextPosition === undefined) return;
+
+      const maxScrollLeft = element.scrollWidth - element.clientWidth;
+      if (nextPosition >= maxScrollLeft - 2) {
+        element.scrollLeft -= this.copyWidth;
+        nextPosition -= this.copyWidth;
+      }
+
+      element.scrollTo({ left: nextPosition, behavior: 'smooth' });
+    }, 4500);
   }
 
   private stopAutoPlay(): void {
