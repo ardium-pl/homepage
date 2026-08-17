@@ -1,8 +1,6 @@
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto;
   height: 5rem;
   z-index: 10;
   transition: background-color 0.3s ease-in-out;
@@ -31,10 +29,7 @@ img {
 nav {
   position: fixed;
   z-index: 5;
-  left: 100%;
-  right: 0;
-  top: 0;
-  bottom: 50%;
+  inset: 0 0 50% 100%;
   padding: 6rem 1rem;
   background-color: rgba(var(--clr-black-rgb), 0.6);
   overflow: hidden;
@@ -43,8 +38,7 @@ nav {
     bottom 0.2s ease-in-out;
 
   &.open {
-    left: 0;
-    bottom: 0;
+    inset: 0;
   }
 
   ul {
@@ -125,18 +119,8 @@ app-icon-button {
     }
   }
   .blog-link {
-    position: relative;
-    margin-left: 1rem;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: -1rem;
-      width: 1px;
-      background: rgba(var(--clr-white-rgb), 0.75);
-    }
+    padding-left: 1rem;
+    border-left: 1px solid rgba(var(--clr-white-rgb), 0.75);
   }
 }
 @media only screen and (min-width: 768px) {

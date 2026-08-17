@@ -2,6 +2,7 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PreHeadingComponent } from '@components/pre-heading/pre-heading.component';
 import { createAsyncContent } from '@utils/async-content';
+import { blogPostTypeLabel } from '@utils/blog-post';
 import { BlogPostType } from './blog.model';
 import { BlogService } from './blog.service';
 
@@ -23,10 +24,5 @@ export class BlogPage {
   readonly visiblePosts = computed(() =>
     (this.posts() ?? []).filter((post) => post.type === this.activeType()),
   );
-
-  typeLabel(type: BlogPostType): string {
-    return type === 'caseStudy'
-      ? $localize`:@@blog.type.caseStudy:Case Study`
-      : $localize`:@@blog.type.blog:Post`;
-  }
+  readonly typeLabel = blogPostTypeLabel;
 }

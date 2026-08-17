@@ -22,7 +22,7 @@ export class PortableContentComponent {
 
   linkFor(block: PortableTextBlock, markKey: string): string | null {
     const definition: PortableTextMarkDefinition | undefined = block.markDefs?.find(
-      (mark) => mark._key === markKey && mark._type === 'link',
+      mark => mark._key === markKey && mark._type === 'link'
     );
     return definition?.href ?? null;
   }
@@ -46,7 +46,7 @@ export class PortableContentComponent {
         const block = nodes[index];
         if (block._type !== 'block' || !block.listItem) break;
 
-        const level = Math.max(1, block.level ?? 1);
+        const level = Math.min(Math.max(1, block.level ?? 1), stack.length + 1);
         while (stack.length >= level) stack.pop();
 
         let list: PortableTextList;
@@ -55,9 +55,10 @@ export class PortableContentComponent {
 
         if (level === 1) {
           const previousRoot = roots.at(-1);
-          list = previousRoot?.kind === block.listItem
-            ? previousRoot
-            : { _type: 'list', _key: `list-${block._key}`, kind: block.listItem, items: [] };
+          list =
+            previousRoot?.kind === block.listItem
+              ? previousRoot
+              : { _type: 'list', _key: `list-${block._key}`, kind: block.listItem, items: [] };
           if (list !== previousRoot) roots.push(list);
         } else if (existing?.kind === block.listItem) {
           list = existing;

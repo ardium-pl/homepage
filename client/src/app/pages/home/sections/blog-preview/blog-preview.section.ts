@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PreHeadingComponent } from '@components/pre-heading';
 import { BlogService } from '@pages/blog/blog.service';
-import { BlogPostType } from '@pages/blog/blog.model';
 import { PortableContentComponent } from '@pages/blog-post/components/portable-content/portable-content.component';
 import { createAsyncContent } from '@utils/async-content';
+import { blogPostTypeLabel } from '@utils/blog-post';
 
 @Component({
   selector: 'app-blog-preview-section',
@@ -18,10 +18,5 @@ export class BlogPreviewSection {
   private readonly postsState = createAsyncContent(() => this.blogService.getPreviewPosts());
 
   readonly posts = this.postsState.content;
-
-  typeLabel(type: BlogPostType): string {
-    return type === 'caseStudy'
-      ? $localize`:@@blog.type.caseStudy:Case Study`
-      : $localize`:@@blog.type.blog:Post`;
-  }
+  readonly typeLabel = blogPostTypeLabel;
 }
