@@ -5,6 +5,8 @@ import { BlogPost, BlogPostPreview } from './blog.model';
 import { BLOG_POSTS_QUERY, BLOG_PREVIEW_QUERY } from './blog.query';
 
 type SanityBlogPost = Omit<BlogPost, 'date'>;
+type SanityBlogPostPreview = Omit<BlogPostPreview, 'date'>;
+type DatedPost<T extends SanityBlogPost> = T & Pick<BlogPost, 'date'>;
 
 @Injectable({ providedIn: 'root' })
 export class BlogService {
@@ -16,10 +18,10 @@ export class BlogService {
   }
 
   getPreviewPosts(): Promise<BlogPostPreview[]> {
-    return this.fetchPosts<BlogPostPreview>(BLOG_PREVIEW_QUERY);
+    return this.fetchPosts<SanityBlogPostPreview>(BLOG_PREVIEW_QUERY);
   }
 
-  private fetchPosts<T extends SanityBlogPost>(query: string): Promise<(T & BlogPost)[]> {
+  private fetchPosts<T extends SanityBlogPost>(query: string): Promise<DatedPost<T>[]> {
     return this.sanity.fetch<T[]>(query, { language: this.locale.language }).then((posts) =>
       posts
         .filter((post) => post.title && post.summary && post.imageUrl && post.slug)
