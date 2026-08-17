@@ -1,3 +1,5 @@
+import type { PortableTextNode } from '@pages/blog-post/blog-post.model';
+
 export type BlogPostType = 'caseStudy' | 'blog';
 
 export interface BlogPost {
@@ -15,4 +17,3 @@ export interface BlogPost {
 export interface BlogPostPreview extends BlogPost {
   contentPreview: PortableTextNode[];
 }
-import { PortableTextNode } from '@pages/blog-post/blog-post.model';

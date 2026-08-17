@@ -2,7 +2,7 @@
   <div class="hero-pattern" aria-hidden="true"></div>
   <div class="content-width-g hero-content">
     <app-pre-heading i18n="@@blog.preheading">Knowledge</app-pre-heading>
-    <h1>Blog &amp; Case Studies</h1>
+    <h1 i18n="@@blog.title">Blog &amp; Case Studies</h1>
     <div class="hero-line" aria-hidden="true"></div>
     <p i18n="@@blog.description">
       Practical knowledge about AI in business — real projects,<br />
@@ -20,6 +20,7 @@
         [attr.aria-selected]="activeType() === 'caseStudy'"
         [class.active]="activeType() === 'caseStudy'"
         (click)="activeType.set('caseStudy')"
+        i18n="@@blog.caseStudiesTab"
       >
         Case Studies
       </button>
@@ -45,7 +46,7 @@
           <span class="badge">{{ typeLabel(post.type) }}</span>
         </div>
         <div class="post-body">
-          <time>{{ post.date }}</time>
+          <time [attr.datetime]="post.publishedAt">{{ post.date }}</time>
           <h2>{{ post.title }}</h2>
           <p>{{ post.summary }}</p>
           <a [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Read more →</a>

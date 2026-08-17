@@ -391,6 +391,10 @@
         <source>Knowledge</source>
         <target>Wiedza</target>
       </trans-unit>
+      <trans-unit id="blog.title" datatype="html">
+        <source>Blog &amp; Case Studies</source>
+        <target>Blog &amp; Case Studies</target>
+      </trans-unit>
       <trans-unit id="blog.description" datatype="html">
         <source> Practical knowledge about AI in business — real projects,<x id="LINE_BREAK" ctype="lb"/> tools and insights from working with clients. </source>
         <target> Praktyczna wiedza o AI w biznesie — rzeczywiste projekty,<x id="LINE_BREAK" ctype="lb"/> narzędzia i spostrzeżenia z pracy z klientami. </target>
@@ -398,6 +402,10 @@
       <trans-unit id="blog.postsTab" datatype="html">
         <source> Posts </source>
         <target> Wpisy </target>
+      </trans-unit>
+      <trans-unit id="blog.caseStudiesTab" datatype="html">
+        <source> Case Studies </source>
+        <target> Case Studies </target>
       </trans-unit>
       <trans-unit id="blog.readMore" datatype="html">
         <source>Read more →</source>

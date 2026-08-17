@@ -18,7 +18,7 @@
           <span class="badge">{{ typeLabel(post.type) }}</span>
         </div>
         <div class="post-body">
-          <time>{{ post.date }}</time>
+          <time [attr.datetime]="post.publishedAt">{{ post.date }}</time>
           <h3><a [routerLink]="['/blog', post.slug]" fragment="article">{{ post.title }}</a></h3>
           <p>{{ post.summary }}</p>
           @if (first && post.contentPreview.length) {
