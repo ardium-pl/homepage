@@ -56,18 +56,6 @@ h1 {
   background: rgba(var(--clr-main-rgb), 0.2);
 }
 
-.main-image {
-  margin: 0 0 1.5rem;
-
-  img {
-    width: 100%;
-    max-height: 40rem;
-    object-fit: cover;
-    border: 1px solid rgba(var(--clr-main-rgb), 0.25);
-    border-radius: 0.5rem;
-  }
-}
-
 .state-message {
   min-height: 20rem;
 }

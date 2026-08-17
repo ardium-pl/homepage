@@ -1,3 +1,6 @@
-<section class="post-hero" aria-hidden="true">
-  <div class="pattern"></div>
+<section class="post-hero">
+  @if (imageUrl(); as src) {
+    <img [src]="src" [alt]="imageAlt()" />
+  }
+  <div class="overlay" aria-hidden="true"></div>
 </section>

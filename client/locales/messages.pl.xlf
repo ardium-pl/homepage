@@ -396,8 +396,8 @@
         <target>Blog &amp; Case Studies</target>
       </trans-unit>
       <trans-unit id="blog.description" datatype="html">
-        <source> Practical knowledge about AI in business — real projects,<x id="LINE_BREAK" ctype="lb"/> tools and insights from working with clients. </source>
-        <target> Praktyczna wiedza o AI w biznesie — rzeczywiste projekty,<x id="LINE_BREAK" ctype="lb"/> narzędzia i spostrzeżenia z pracy z klientami. </target>
+        <source> Practical knowledge about AI in business — real projects,<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> tools and insights from working with clients. </source>
+        <target> Praktyczna wiedza o AI w biznesie — rzeczywiste projekty,<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> narzędzia i spostrzeżenia z pracy z klientami. </target>
       </trans-unit>
       <trans-unit id="blog.postsTab" datatype="html">
         <source> Posts </source>

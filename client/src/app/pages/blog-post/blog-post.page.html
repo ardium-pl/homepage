@@ -1,4 +1,4 @@
-<app-post-hero />
+<app-post-hero [imageUrl]="post()?.imageUrl ?? null" [imageAlt]="post()?.imageAlt ?? ''" />
 
 <section class="post-section" id="article">
   <div class="content-width-g post-container">
@@ -12,11 +12,6 @@
         </div>
       </header>
       <div class="divider"></div>
-      @if (content.imageUrl) {
-      <figure class="main-image">
-        <img [src]="content.imageUrl" [alt]="content.imageAlt" />
-      </figure>
-      }
       <app-portable-content [nodes]="content.content" />
     } @else if (loading()) {
       <p class="state-message" i18n="@@common.loading">Loading...</p>

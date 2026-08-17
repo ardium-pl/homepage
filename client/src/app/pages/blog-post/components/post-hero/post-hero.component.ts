@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-post-hero',
@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './post-hero.component.html',
   styleUrl: './post-hero.component.scss',
 })
-export class PostHeroComponent {}
+export class PostHeroComponent {
+  readonly imageUrl = input<string | null>(null);
+  readonly imageAlt = input('');
+}

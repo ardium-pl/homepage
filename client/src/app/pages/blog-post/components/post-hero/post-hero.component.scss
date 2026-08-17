@@ -7,11 +7,20 @@
   border-bottom: 4px solid var(--clr-main);
 }
 
-.pattern {
+.post-hero img,
+.overlay {
   position: absolute;
   inset: 0;
-  background: url('/blog-hero-pattern.jpg') center / cover no-repeat;
-  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+}
+
+.post-hero img {
+  object-fit: cover;
+}
+
+.overlay {
+  background: rgba(6, 9, 34, 0.58);
 }
 
 @media only screen and (max-width: 575px) {
