@@ -24,7 +24,7 @@ export const aboutUsPage = defineType({
           validation: (rule) => rule.required(),
         }),
         defineField({
-          name: 'aboutUsConents',
+          name: 'aboutUsContents',
           title: 'About Us Contents',
           type: 'array',
           of: [
@@ -35,16 +35,19 @@ export const aboutUsPage = defineType({
               fields: [
                 defineField({
                   name: 'title',
+                  title: 'Title',
                   type: 'localizedString',
                   validation: (rule) => rule.required(),
                 }),
                 defineField({
                   name: 'content',
+                  title: 'Content',
                   type: 'localizedText',
                   validation: (rule) => rule.required(),
                 }),
                 defineField({
                   name: 'image',
+                  title: 'Image',
                   type: 'image',
                   validation: (rule) => rule.required(),
                 }),
