@@ -20,7 +20,9 @@ export class ClientLogosSection {
   private timer?: ReturnType<typeof setInterval>;
   private resizeObserver?: ResizeObserver;
   private reducedMotionQuery?: MediaQueryList;
+  private initializationTimer?: ReturnType<typeof setTimeout>;
   private resetTimer?: ReturnType<typeof setTimeout>;
+  private destroyed = false;
   private pointerId?: number;
   private pointerX = 0;
   private pointerScrollLeft = 0;
@@ -33,13 +35,18 @@ export class ClientLogosSection {
   constructor() {
     effect(() => {
       if (!this.logos() || !isPlatformBrowser(this.platformId)) return;
-      setTimeout(() => this.initializeCarousel());
+      this.initializationTimer = setTimeout(() => {
+        this.initializationTimer = undefined;
+        void this.initializeCarousel();
+      });
     });
 
     this.destroyRef.onDestroy(() => {
+      this.destroyed = true;
       this.stopAutoPlay();
       this.resizeObserver?.disconnect();
       this.reducedMotionQuery?.removeEventListener('change', this.onReducedMotionChange);
+      if (this.initializationTimer) clearTimeout(this.initializationTimer);
       if (this.resetTimer) clearTimeout(this.resetTimer);
     });
   }
@@ -91,14 +98,22 @@ export class ClientLogosSection {
     if (element?.scrollWidth) element.scrollLeft = element.scrollWidth / this.copies.length;
   }
 
-  private initializeCarousel(): void {
+  private async initializeCarousel(): Promise<void> {
+    const element = this.carousel?.nativeElement;
+    if (!element || this.destroyed) return;
+
     this.resizeObserver?.disconnect();
     this.reducedMotionQuery ??= window.matchMedia('(prefers-reduced-motion: reduce)');
     this.reducedMotionQuery.addEventListener('change', this.onReducedMotionChange);
+    this.resizeObserver = new ResizeObserver(() => this.centerOnMiddleCopy());
+    this.resizeObserver.observe(element);
+
+    const images = Array.from(element.querySelectorAll<HTMLImageElement>('.logo-item img'));
+    await Promise.allSettled(images.map((image) => image.decode()));
+
+    if (this.destroyed || this.carousel?.nativeElement !== element) return;
     this.centerOnMiddleCopy();
     this.startAutoPlay();
-    this.resizeObserver = new ResizeObserver(() => this.centerOnMiddleCopy());
-    if (this.carousel) this.resizeObserver.observe(this.carousel.nativeElement);
   }
 
   private startAutoPlay(): void {
