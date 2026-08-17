@@ -17,6 +17,10 @@
       <h3><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h3>
     } @else if (node.style === 'h4') {
       <h4><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h4>
+    } @else if (node.style === 'h5') {
+      <h5><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h5>
+    } @else if (node.style === 'h6') {
+      <h6><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h6>
     } @else if (node.style === 'blockquote') {
       <blockquote><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></blockquote>
     } @else {
