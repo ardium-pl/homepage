@@ -9,22 +9,33 @@
         @if (node.caption) { <figcaption>{{ node.caption }}</figcaption> }
       </figure>
       }
-    } @else if (node.style === 'h1') {
-      <h2><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h2>
-    } @else if (node.style === 'h2') {
-      <h2><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h2>
-    } @else if (node.style === 'h3') {
-      <h3><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h3>
-    } @else if (node.style === 'h4') {
-      <h4><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h4>
-    } @else if (node.style === 'h5') {
-      <h5><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h5>
-    } @else if (node.style === 'h6') {
-      <h6><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h6>
-    } @else if (node.style === 'blockquote') {
-      <blockquote><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></blockquote>
     } @else {
-      <p><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></p>
+      @switch (node.style) {
+        @case ('h1') {
+          <h2><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h2>
+        }
+        @case ('h2') {
+          <h2><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h2>
+        }
+        @case ('h3') {
+          <h3><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h3>
+        }
+        @case ('h4') {
+          <h4><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h4>
+        }
+        @case ('h5') {
+          <h5><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h5>
+        }
+        @case ('h6') {
+          <h6><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h6>
+        }
+        @case ('blockquote') {
+          <blockquote><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></blockquote>
+        }
+        @default {
+          <p><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></p>
+        }
+      }
     }
   }
 </div>
