@@ -21,11 +21,11 @@ export class ClientLogosSection {
   private resizeObserver?: ResizeObserver;
   private reducedMotionQuery?: MediaQueryList;
   private initializationTimer?: ReturnType<typeof setTimeout>;
-  private resetTimer?: ReturnType<typeof setTimeout>;
   private destroyed = false;
   private pointerId?: number;
   private pointerX = 0;
   private pointerScrollLeft = 0;
+  private copyWidth = 0;
 
   private readonly contentState = createAsyncContent(() => this.clientLogosService.getClientLogos());
   readonly logos = this.contentState.content;
@@ -48,7 +48,6 @@ export class ClientLogosSection {
       this.resizeObserver?.disconnect();
       this.reducedMotionQuery?.removeEventListener('change', this.onReducedMotionChange);
       if (this.initializationTimer) clearTimeout(this.initializationTimer);
-      if (this.resetTimer) clearTimeout(this.resetTimer);
     });
   }
 
@@ -58,6 +57,7 @@ export class ClientLogosSection {
     this.pointerId = event.pointerId;
     this.pointerX = event.clientX;
     this.pointerScrollLeft = element.scrollLeft;
+    element.classList.add('dragging');
     element.setPointerCapture(event.pointerId);
     this.pauseAutoPlay();
   }
@@ -74,20 +74,25 @@ export class ClientLogosSection {
     if (element?.hasPointerCapture(event.pointerId)) {
       element.releasePointerCapture(event.pointerId);
     }
+    element?.classList.remove('dragging');
     this.pointerId = undefined;
     this.resumeAutoPlay();
   }
 
   onScroll(): void {
     const element = this.carousel?.nativeElement;
-    if (!element || this.resetTimer) return;
+    if (!element || !this.copyWidth) return;
 
-    this.resetTimer = setTimeout(() => {
-      this.resetTimer = undefined;
-      const copyWidth = element.scrollWidth / this.copies.length;
-      if (element.scrollLeft < copyWidth * 0.5) element.scrollLeft += copyWidth;
-      if (element.scrollLeft > copyWidth * 1.5) element.scrollLeft -= copyWidth;
-    }, 100);
+    const edgeTolerance = 2;
+    const maxScrollLeft = element.scrollWidth - element.clientWidth;
+
+    if (element.scrollLeft <= edgeTolerance) {
+      element.scrollLeft += this.copyWidth;
+      if (this.pointerId !== undefined) this.pointerScrollLeft += this.copyWidth;
+    } else if (element.scrollLeft >= maxScrollLeft - edgeTolerance) {
+      element.scrollLeft -= this.copyWidth;
+      if (this.pointerId !== undefined) this.pointerScrollLeft -= this.copyWidth;
+    }
   }
 
   pauseAutoPlay(): void {
@@ -100,7 +105,20 @@ export class ClientLogosSection {
 
   private centerOnMiddleCopy(): void {
     const element = this.carousel?.nativeElement;
-    if (element?.scrollWidth) element.scrollLeft = element.scrollWidth / this.copies.length;
+    this.copyWidth = this.measureCopyWidth();
+    const middleCopy = element?.querySelector<HTMLElement>('.logo-item[data-copy="1"]');
+    if (element && middleCopy) element.scrollLeft = middleCopy.offsetLeft - element.offsetLeft;
+  }
+
+  private measureCopyWidth(): number {
+    const element = this.carousel?.nativeElement;
+    const firstCopy = element?.querySelector<HTMLElement>('.logo-item[data-copy="0"]');
+    const middleCopy = element?.querySelector<HTMLElement>('.logo-item[data-copy="1"]');
+
+    if (!firstCopy || !middleCopy) return 0;
+
+    const width = middleCopy.offsetLeft - firstCopy.offsetLeft;
+    return width > 0 ? width : 0;
   }
 
   private async initializeCarousel(): Promise<void> {
@@ -116,7 +134,7 @@ export class ClientLogosSection {
     this.resizeObserver.observe(element);
 
     const images = Array.from(element.querySelectorAll<HTMLImageElement>('.logo-item img'));
-    await Promise.allSettled(images.map((image) => image.decode()));
+    await Promise.allSettled(images.map(image => image.decode()));
 
     if (this.destroyed || this.carousel?.nativeElement !== element) return;
     this.centerOnMiddleCopy();
@@ -130,8 +148,7 @@ export class ClientLogosSection {
 
     this.timer = setInterval(() => {
       const firstItem = element.querySelector<HTMLElement>('.logo-item');
-      const originalWidth = element.scrollWidth / this.copies.length;
-      if (!firstItem || originalWidth <= element.clientWidth) return;
+      if (!firstItem || !this.copyWidth || this.copyWidth <= element.clientWidth) return;
 
       const styles = getComputedStyle(element);
       const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;

@@ -20,7 +20,7 @@
     i18n-aria-label="@@clientLogos.carouselLabel"
   >
     @for (copy of copies; track copy) { @for (logo of clientLogos; track logo.key) {
-    <div class="logo-item" [attr.aria-hidden]="copy === 1 ? null : true">
+    <div class="logo-item" [attr.data-copy]="copy" [attr.aria-hidden]="copy === 1 ? null : true">
       <img [src]="logo.logoUrl" [alt]="logo.name" loading="lazy" draggable="false" />
     </div>
     } }

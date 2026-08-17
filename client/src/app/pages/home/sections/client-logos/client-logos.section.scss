@@ -74,6 +74,10 @@ section {
   &:active {
     cursor: grabbing;
   }
+
+  &.dragging {
+    scroll-snap-type: none;
+  }
 }
 
 .logo-item {
