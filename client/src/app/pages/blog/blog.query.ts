@@ -18,7 +18,11 @@ export const BLOG_PREVIEW_QUERY = `*[
   _type == "blogPost" &&
   type in ["blog", "caseStudy"] &&
   defined(publishedAt) &&
-  publishedAt <= now()
+  publishedAt <= now() &&
+  defined(urlSlug.current) &&
+  defined(mainImage.asset) &&
+  coalesce(title[$language], title.en, title.pl, "") != "" &&
+  coalesce(summary[$language], summary.en, summary.pl, "") != ""
 ] | order(publishedAt desc)[0...3] {
   "id": _id,
   type,
