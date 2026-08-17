@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { LocaleService } from '../../services/locale.service';
 import { SanityService } from '../../services/sanity.service';
-import { BlogPost } from './blog.model';
-import { BLOG_POSTS_QUERY } from './blog.query';
+import { BlogPost, BlogPostPreview } from './blog.model';
+import { BLOG_POSTS_QUERY, BLOG_PREVIEW_QUERY } from './blog.query';
 
 type SanityBlogPost = Omit<BlogPost, 'date'>;
 
@@ -12,19 +12,23 @@ export class BlogService {
   private readonly locale = inject(LocaleService);
 
   getPosts(): Promise<BlogPost[]> {
-    return this.sanity
-      .fetch<SanityBlogPost[]>(BLOG_POSTS_QUERY, { language: this.locale.language })
-      .then((posts) => {
-        const validPosts = posts
-          .filter((post) => post.title && post.summary && post.imageUrl)
-          .map((post) => ({
-            ...post,
-            imageAlt: post.imageAlt || post.title,
-            date: this.formatDate(post.publishedAt),
-          }));
+    return this.fetchPosts(BLOG_POSTS_QUERY);
+  }
 
-        return validPosts;
-      });
+  getPreviewPosts(): Promise<BlogPostPreview[]> {
+    return this.fetchPosts<BlogPostPreview>(BLOG_PREVIEW_QUERY);
+  }
+
+  private fetchPosts<T extends SanityBlogPost>(query: string): Promise<(T & BlogPost)[]> {
+    return this.sanity.fetch<T[]>(query, { language: this.locale.language }).then((posts) =>
+      posts
+        .filter((post) => post.title && post.summary && post.imageUrl && post.slug)
+        .map((post) => ({
+          ...post,
+          imageAlt: post.imageAlt || post.title,
+          date: this.formatDate(post.publishedAt),
+        })),
+    );
   }
 
   private formatDate(value: string): string {

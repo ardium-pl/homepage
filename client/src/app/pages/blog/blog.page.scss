@@ -94,65 +94,15 @@ h1 {
 }
 
 .post-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid rgba(var(--clr-main-rgb), 0.35);
   border-top-width: 4px;
-  border-radius: 0.5rem;
   background: rgba(0, 5, 49, 0.38);
 }
 
 .post-image {
   height: 10rem;
-  position: relative;
-  overflow: hidden;
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, rgba(6, 9, 34, 0.65), transparent);
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.badge {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  background: var(--clr-main);
-  color: var(--clr-dark-blue);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
 }
 
 .post-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1.5rem;
-
-  time {
-    color: rgba(var(--clr-white-rgb), 0.55);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
-
   h2 {
     margin: 0;
     font-size: 1.0625rem;
@@ -160,21 +110,6 @@ h1 {
     line-height: 1.38;
   }
 
-  p {
-    flex: 1;
-    color: rgba(var(--clr-white-rgb), 0.65);
-    font-size: 0.875rem;
-    line-height: 1.62;
-  }
-
-  a {
-    width: max-content;
-    color: var(--clr-main);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-  }
 }
 
 @media only screen and (min-width: 768px) {

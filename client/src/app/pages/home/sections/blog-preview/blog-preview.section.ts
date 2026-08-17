@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PreHeadingComponent } from '@components/pre-heading';
 import { BlogService } from '@pages/blog/blog.service';
@@ -15,9 +15,9 @@ import { createAsyncContent } from '@utils/async-content';
 })
 export class BlogPreviewSection {
   private readonly blogService = inject(BlogService);
-  private readonly postsState = createAsyncContent(() => this.blogService.getPosts());
+  private readonly postsState = createAsyncContent(() => this.blogService.getPreviewPosts());
 
-  readonly posts = computed(() => this.postsState.content()?.slice(0, 3) ?? []);
+  readonly posts = this.postsState.content;
 
   typeLabel(type: BlogPostType): string {
     return type === 'caseStudy'
