@@ -79,14 +79,13 @@ section {
 .logo-item {
   align-items: center;
   display: flex;
-  flex: 0 0 9.125rem;
-  height: 3rem;
+  flex: 0 0 auto;
+  height: 2.5rem;
   justify-content: center;
   scroll-snap-align: start;
 
   img {
-    max-height: 100%;
-    max-width: 100%;
+    height: 100%;
     object-fit: contain;
     width: auto;
   }

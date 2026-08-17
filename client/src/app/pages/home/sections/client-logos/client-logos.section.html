@@ -19,13 +19,11 @@
     aria-label="Client logos"
     i18n-aria-label="@@clientLogos.carouselLabel"
   >
-    @for (copy of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]; track copy) {
-      @for (logo of clientLogos; track logo.key) {
-      <div class="logo-item">
-        <img [src]="logo.logoUrl" [alt]="logo.name" loading="lazy" draggable="false" />
-      </div>
-      }
-    }
+    @for (copy of copies; track copy) { @for (logo of clientLogos; track logo.key) {
+    <div class="logo-item" [attr.aria-hidden]="copy === 1 ? null : true">
+      <img [src]="logo.logoUrl" [alt]="logo.name" loading="lazy" draggable="false" />
+    </div>
+    } }
   </div>
   <div class="bottom-line" aria-hidden="true"><span></span></div>
 </section>

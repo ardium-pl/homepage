@@ -12,11 +12,14 @@ import { ClientLogosService } from './client-logos.service';
 export class ClientLogosSection {
   @ViewChild('carousel') private carousel?: ElementRef<HTMLElement>;
 
+  readonly copies = [0, 1, 2] as const;
+
   private readonly clientLogosService = inject(ClientLogosService);
   private readonly destroyRef = inject(DestroyRef);
   private readonly platformId = inject(PLATFORM_ID);
   private timer?: ReturnType<typeof setInterval>;
   private resizeObserver?: ResizeObserver;
+  private reducedMotionQuery?: MediaQueryList;
   private resetTimer?: ReturnType<typeof setTimeout>;
   private pointerId?: number;
   private pointerX = 0;
@@ -36,6 +39,7 @@ export class ClientLogosSection {
     this.destroyRef.onDestroy(() => {
       this.stopAutoPlay();
       this.resizeObserver?.disconnect();
+      this.reducedMotionQuery?.removeEventListener('change', this.onReducedMotionChange);
       if (this.resetTimer) clearTimeout(this.resetTimer);
     });
   }
@@ -68,9 +72,9 @@ export class ClientLogosSection {
 
     this.resetTimer = setTimeout(() => {
       this.resetTimer = undefined;
-      const copyWidth = element.scrollWidth / 15;
-      if (element.scrollLeft < copyWidth * 6.5) element.scrollLeft += copyWidth;
-      if (element.scrollLeft > copyWidth * 7.5) element.scrollLeft -= copyWidth;
+      const copyWidth = element.scrollWidth / this.copies.length;
+      if (element.scrollLeft < copyWidth * 0.5) element.scrollLeft += copyWidth;
+      if (element.scrollLeft > copyWidth * 1.5) element.scrollLeft -= copyWidth;
     }, 100);
   }
 
@@ -84,11 +88,13 @@ export class ClientLogosSection {
 
   private centerOnMiddleCopy(): void {
     const element = this.carousel?.nativeElement;
-    if (element?.scrollWidth) element.scrollLeft = (element.scrollWidth / 15) * 7;
+    if (element?.scrollWidth) element.scrollLeft = element.scrollWidth / this.copies.length;
   }
 
   private initializeCarousel(): void {
     this.resizeObserver?.disconnect();
+    this.reducedMotionQuery ??= window.matchMedia('(prefers-reduced-motion: reduce)');
+    this.reducedMotionQuery.addEventListener('change', this.onReducedMotionChange);
     this.centerOnMiddleCopy();
     this.startAutoPlay();
     this.resizeObserver = new ResizeObserver(() => this.centerOnMiddleCopy());
@@ -98,11 +104,11 @@ export class ClientLogosSection {
   private startAutoPlay(): void {
     this.stopAutoPlay();
     const element = this.carousel?.nativeElement;
-    if (!element) return;
+    if (!element || this.reducedMotionQuery?.matches) return;
 
     this.timer = setInterval(() => {
       const firstItem = element.querySelector<HTMLElement>('.logo-item');
-      const originalWidth = element.scrollWidth / 15;
+      const originalWidth = element.scrollWidth / this.copies.length;
       if (!firstItem || originalWidth <= element.clientWidth) return;
 
       const styles = getComputedStyle(element);
@@ -115,4 +121,9 @@ export class ClientLogosSection {
     if (this.timer) clearInterval(this.timer);
     this.timer = undefined;
   }
+
+  private readonly onReducedMotionChange = (): void => {
+    if (this.reducedMotionQuery?.matches) this.stopAutoPlay();
+    else this.startAutoPlay();
+  };
 }
