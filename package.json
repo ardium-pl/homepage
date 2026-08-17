@@ -4,11 +4,11 @@
   "description": "",
   "author": "",
   "scripts": {
-    "start": "node server/index.js",
-    "build": "cd client && npm install && npm run build && cd ../server && npm install",
-    "build:development": "cd client && npm install && npm run build:development && cd ../server && npm install",
+    "start": "npm --prefix server start",
+    "build": "cd client && npm install && npm run build && cd ../server && npm install && npm run build",
+    "build:development": "cd client && npm install && npm run build:development && cd ../server && npm install && npm run build",
     "watch": "cd client && npm run watch",
-    "server": "cd server && nodemon",
+    "server": "npm --prefix server run dev",
     "front": "cd client && ng serve",
     "prettier": "prettier --write ."
   },

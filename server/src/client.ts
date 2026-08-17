@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const router = express.Router();
-
-const angularAppPath = path.join(__dirname, '../dist/homepage/browser');
+const serverRoot = path.resolve(__dirname, '..');
+const angularAppPath = path.join(serverRoot, '../dist/homepage/browser');
 
 const locales = fs.readdirSync(angularAppPath);
 

@@ -4,6 +4,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
 import clientRouter from './client.js';
+import emailRouter from './email.router.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -11,6 +12,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
+app.use(emailRouter);
 app.use(clientRouter);
 
 console.log('[Server] Starting up...');
