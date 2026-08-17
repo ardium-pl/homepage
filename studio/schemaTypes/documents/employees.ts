@@ -31,7 +31,7 @@ export const employees = defineType({
             defineField({
               name: 'linkedIn',
               title: 'LinkedIn',
-              type: 'string',
+              type: 'url',
               validation: (rule) => rule.required(),
             }),
             defineField({
