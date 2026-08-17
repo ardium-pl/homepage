@@ -1,0 +1,67 @@
+<section class="blog-hero">
+  <img class="hero-pattern" src="pattern1.jpg" alt="" />
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="content-width-g hero-content">
+    <app-pre-heading i18n="@@blog.preheading">Knowledge</app-pre-heading>
+    <h1 i18n="@@blog.title">Blog &amp; Case Studies</h1>
+    <div class="hero-line" aria-hidden="true"></div>
+    <p i18n="@@blog.description">
+      Practical knowledge about AI in business — real projects,<br />
+      tools and insights from working with clients.
+    </p>
+  </div>
+</section>
+
+<section class="posts-section">
+  <div class="content-width-g posts-content">
+    <div class="tabs" role="tablist" aria-label="Post categories" i18n-aria-label="@@blog.categoriesLabel">
+      <button
+        type="button"
+        role="tab"
+        [attr.aria-selected]="activeType() === 'caseStudy'"
+        [class.active]="activeType() === 'caseStudy'"
+        (click)="activeType.set('caseStudy')"
+        i18n="@@blog.caseStudiesTab"
+      >
+        Case Studies
+      </button>
+      <button
+        type="button"
+        role="tab"
+        [attr.aria-selected]="activeType() === 'blog'"
+        [class.active]="activeType() === 'blog'"
+        (click)="activeType.set('blog')"
+        i18n="@@blog.postsTab"
+      >
+        Posts
+      </button>
+    </div>
+
+    @if (posts()) {
+    @if (visiblePosts().length) {
+    <div class="posts-grid">
+      @for (post of visiblePosts(); track post.id) {
+      <article class="post-card">
+        <div class="post-image">
+          <img [src]="post.imageUrl" [alt]="post.imageAlt" />
+          <span class="badge">{{ typeLabel(post.type) }}</span>
+        </div>
+        <div class="post-body">
+          <time [attr.datetime]="post.publishedAt">{{ post.date }}</time>
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.summary }}</p>
+          <a [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Read more →</a>
+        </div>
+      </article>
+      }
+    </div>
+    } @else {
+    <p class="state-message" i18n="@@blog.emptyCategory">There are no posts in this category yet.</p>
+    }
+    } @else if (loading()) {
+    <p class="state-message" i18n="@@common.loading">Loading...</p>
+    } @else if (error()) {
+    <p class="state-message" i18n="@@common.content-unavailable">Content is currently unavailable.</p>
+    }
+  </div>
+</section>

@@ -23,11 +23,6 @@ export class HeroSection {
   readonly error = this.heroState.error;
 
   onContactUsClick() {
-    this.router.navigateByUrl('#contact-section');
-
-    const element = document.getElementById('contact-section');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    void this.router.navigate([], { fragment: 'contact-section' });
   }
 }

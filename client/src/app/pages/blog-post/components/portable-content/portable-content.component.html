@@ -1,0 +1,97 @@
+<div class="portable-content" [class.compact]="compact()">
+  @for (node of renderNodes(); track node._key) {
+    @if (node._type === 'list') {
+      <ng-container *ngTemplateOutlet="list; context: { $implicit: node }" />
+    } @else if (node._type === 'image') {
+      @if (node.imageUrl) {
+      <figure>
+        <img [src]="node.imageUrl" [alt]="node.altText || ''" />
+        @if (node.caption) { <figcaption>{{ node.caption }}</figcaption> }
+      </figure>
+      }
+    } @else {
+      @switch (node.style) {
+        @case ('h1') {
+          <h2><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h2>
+        }
+        @case ('h2') {
+          <h2><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h2>
+        }
+        @case ('h3') {
+          <h3><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h3>
+        }
+        @case ('h4') {
+          <h4><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h4>
+        }
+        @case ('h5') {
+          <h5><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h5>
+        }
+        @case ('h6') {
+          <h6><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></h6>
+        }
+        @case ('blockquote') {
+          <blockquote><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></blockquote>
+        }
+        @default {
+          <p><ng-container *ngTemplateOutlet="spans; context: { $implicit: node }" /></p>
+        }
+      }
+    }
+  }
+</div>
+
+<ng-template #list let-value>
+  @if (value.kind === 'number') {
+  <ol>
+    @for (item of value.items; track item.block._key) {
+    <li>
+      <ng-container *ngTemplateOutlet="spans; context: { $implicit: item.block }" />
+      @for (child of item.children; track child._key) {
+      <ng-container *ngTemplateOutlet="list; context: { $implicit: child }" />
+      }
+    </li>
+    }
+  </ol>
+  } @else {
+  <ul>
+    @for (item of value.items; track item.block._key) {
+    <li>
+      <ng-container *ngTemplateOutlet="spans; context: { $implicit: item.block }" />
+      @for (child of item.children; track child._key) {
+      <ng-container *ngTemplateOutlet="list; context: { $implicit: child }" />
+      }
+    </li>
+    }
+  </ul>
+  }
+</ng-template>
+
+<ng-template #spans let-block>
+  @for (span of block.children || []; track span._key) {
+  <ng-container *ngTemplateOutlet="marks; context: { span, block, index: 0 }" />
+  }
+</ng-template>
+
+<ng-template #marks let-span="span" let-block="block" let-index="index">
+  @if (index >= (span.marks?.length || 0)) {
+  <span class="text-span">{{ span.text }}</span>
+  } @else {
+    @if (linkFor(block, span.marks[index]); as href) {
+    <a [href]="href" target="_blank" rel="noopener noreferrer">
+      <ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" />
+    </a>
+    } @else if (span.marks[index] === 'strong') {
+    <strong><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></strong>
+    } @else if (span.marks[index] === 'em') {
+    <em><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></em>
+    } @else if (span.marks[index] === 'code') {
+    <code><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></code>
+    } @else if (span.marks[index] === 'underline') {
+    <u><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></u>
+    } @else if (span.marks[index] === 'strike-through') {
+    <s><ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" /></s>
+    } @else {
+    <ng-container *ngTemplateOutlet="marks; context: { span, block, index: index + 1 }" />
+    }
+  }
+</ng-template>

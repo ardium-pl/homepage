@@ -1,0 +1,34 @@
+@if (posts()?.length) {
+<section id="blog-section">
+  <div class="content-width-g blog-container">
+    <div class="heading-container">
+      <app-pre-heading i18n="@@homeBlog.preheading">Posts</app-pre-heading>
+      <h2 i18n="@@homeBlog.title">From our blog</h2>
+      <div class="heading-bottom">
+        <p i18n="@@homeBlog.subtitle">See our latest news</p>
+        <a routerLink="/blog" i18n="@@homeBlog.allPosts">All posts →</a>
+      </div>
+    </div>
+
+    <div class="posts-layout">
+      @for (post of posts(); track post.id; let first = $first) {
+      <article class="post-card" [class.featured]="first">
+        <div class="post-image">
+          <img [src]="post.imageUrl" [alt]="post.imageAlt" />
+          <span class="badge">{{ typeLabel(post.type) }}</span>
+        </div>
+        <div class="post-body">
+          <time [attr.datetime]="post.publishedAt">{{ post.date }}</time>
+          <h3><a [routerLink]="['/blog', post.slug]" fragment="article">{{ post.title }}</a></h3>
+          <p>{{ post.summary }}</p>
+          @if (first && post.contentPreview.length) {
+          <app-portable-content class="content-preview" [nodes]="post.contentPreview" [compact]="true" />
+          }
+          <a class="read-more" [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Read more →</a>
+        </div>
+      </article>
+      }
+    </div>
+  </div>
+</section>
+}

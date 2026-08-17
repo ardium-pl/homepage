@@ -1,24 +1,27 @@
 <header [class.is-scrolled]="isScrolled()">
   <div class="content-width-g header-container">
-    <div class="logo">
+    <a class="logo" routerLink="/" aria-label="Ardium - home page" i18n-aria-label="@@header.logoLabel">
       <img src="ardium_logo.png" alt="Ardium logo" />
-    </div>
+    </a>
     <app-icon-button (click)="isOpen.set(!isOpen())">
       <app-hamburger-menu [open]="isOpen()" />
     </app-icon-button>
     <nav [class.open]="isOpen()">
       <ul>
         <li>
-          <a routerLink="/" (click)="scrollTo('home-section')" i18n="@@header.home">Home</a>
+          <a routerLink="/" (click)="closeMenu()" i18n="@@header.home">Home</a>
         </li>
         <li>
-          <a routerLink="/" (click)="scrollTo('services-section')" i18n="@@header.services">Services</a>
+          <a routerLink="/" fragment="services-section" (click)="closeMenu()" i18n="@@header.services">Services</a>
         </li>
         <li>
-          <a routerLink="/" (click)="scrollTo('contact-section')" i18n="@@header.contact">Contact</a>
+          <a routerLink="/" fragment="contact-section" (click)="closeMenu()" i18n="@@header.contact">Contact</a>
         </li>
         <li>
-          <a routerLink="/about" i18n="@@header.about">About us</a>
+          <a routerLink="/about" (click)="closeMenu()" i18n="@@header.about">About us</a>
+        </li>
+        <li class="blog-link">
+          <a routerLink="/blog" (click)="closeMenu()" i18n="@@header.blog">Blog</a>
         </li>
       </ul>
     </nav>

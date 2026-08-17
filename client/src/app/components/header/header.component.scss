@@ -1,8 +1,6 @@
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto;
   height: 5rem;
   z-index: 10;
   transition: background-color 0.3s ease-in-out;
@@ -24,13 +22,14 @@ header {
 img {
   height: 2.5rem;
 }
+.logo {
+  display: block;
+  flex-shrink: 0;
+}
 nav {
   position: fixed;
   z-index: 5;
-  left: 100%;
-  right: 0;
-  top: 0;
-  bottom: 50%;
+  inset: 0 0 50% 100%;
   padding: 6rem 1rem;
   background-color: rgba(var(--clr-black-rgb), 0.6);
   overflow: hidden;
@@ -39,8 +38,7 @@ nav {
     bottom 0.2s ease-in-out;
 
   &.open {
-    left: 0;
-    bottom: 0;
+    inset: 0;
   }
 
   ul {
@@ -119,6 +117,10 @@ app-icon-button {
     &::before {
       background-color: var(--clr-white);
     }
+  }
+  .blog-link {
+    padding-left: 1rem;
+    border-left: 1px solid rgba(var(--clr-white-rgb), 0.75);
   }
 }
 @media only screen and (min-width: 768px) {

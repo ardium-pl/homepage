@@ -1,0 +1,28 @@
+<app-post-hero [imageUrl]="post()?.imageUrl ?? null" [imageAlt]="post()?.imageAlt ?? ''" />
+
+<section class="post-section" id="article">
+  <div class="content-width-g post-container">
+    @if (post(); as content) {
+      <header class="post-heading">
+        <a routerLink="/blog" class="back-link" i18n="@@blogPost.back">← Back to blog</a>
+        <div class="intro">
+          <h1>{{ content.title }}</h1>
+          <p>{{ content.summary }}</p>
+          <div class="accent-line" aria-hidden="true"></div>
+        </div>
+      </header>
+      <div class="divider"></div>
+      <app-portable-content [nodes]="content.content" />
+    } @else if (loading()) {
+      <p class="state-message" i18n="@@common.loading">Loading...</p>
+    } @else if (notFound()) {
+      <div class="state-message">
+        <h1 i18n="@@blogPost.notFoundTitle">Post not found</h1>
+        <p i18n="@@blogPost.notFoundText">The requested post does not exist or is no longer available.</p>
+        <a routerLink="/blog" class="back-link" i18n="@@blogPost.back">← Back to blog</a>
+      </div>
+    } @else if (error()) {
+      <p class="state-message" i18n="@@common.content-unavailable">Content is currently unavailable.</p>
+    }
+  </div>
+</section>
