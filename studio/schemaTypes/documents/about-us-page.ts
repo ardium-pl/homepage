@@ -24,7 +24,7 @@ export const aboutUsPage = defineType({
           validation: (rule) => rule.required(),
         }),
         defineField({
-          name: 'aboutUsConents',
+          name: 'aboutUsContents',
           title: 'About Us Contents',
           type: 'array',
           of: [
