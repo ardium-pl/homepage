@@ -1,6 +1,9 @@
+import {aboutUsPage} from './documents/about-us-page'
+import {blogPage} from './documents/blog-page'
 import {blogPost} from './documents/blog-post'
 import {clientLogos} from './documents/client-logos'
 import {contactInfo} from './documents/contact-info'
+import {employees} from './documents/employees'
 import {homepage} from './documents/homepage'
 import {services} from './documents/services'
 import {localizedPortableText} from './objects/localized-portable-text'
@@ -14,8 +17,11 @@ export const schemaTypes = [
   portableText,
   localizedPortableText,
   homepage,
+  aboutUsPage,
+  blogPage,
   services,
   contactInfo,
   clientLogos,
+  employees,
   blogPost,
 ]

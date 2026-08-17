@@ -12,6 +12,18 @@ export const structure: StructureResolver = (S) =>
         .child(S.editor().id('homepage').schemaType('homepage').documentId('homepage')),
 
       S.listItem()
+        .id('aboutUsPage')
+        .schemaType('aboutUsPage')
+        .title('About Us page')
+        .child(S.editor().id('aboutUsPage').schemaType('aboutUsPage').documentId('aboutUsPage')),
+
+      S.listItem()
+        .id('blogPage')
+        .schemaType('blogPage')
+        .title('Blog page')
+        .child(S.editor().id('blogPage').schemaType('blogPage').documentId('blogPage')),
+
+      S.listItem()
         .id('services')
         .schemaType('services')
         .title('Services')
@@ -28,6 +40,12 @@ export const structure: StructureResolver = (S) =>
         .schemaType('clientLogos')
         .title('Client logos')
         .child(S.editor().id('clientLogos').schemaType('clientLogos').documentId('clientLogos')),
+
+      S.listItem()
+        .id('employees')
+        .schemaType('employees')
+        .title('Employees')
+        .child(S.editor().id('employees').schemaType('employees').documentId('employees')),
 
       ...S.documentTypeListItems().filter((item) => {
         const id = item.getId()
