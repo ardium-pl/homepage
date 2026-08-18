@@ -475,45 +475,6 @@
       <trans-unit id="privacy.title" datatype="html"><source>Privacy Policy</source><target>Polityka prywatności</target></trans-unit>
       <trans-unit id="privacy.subtitle" datatype="html"><source>Learn how we process and protect your personal data.</source><target>Dowiedz się, w jaki sposób przetwarzamy i chronimy Twoje dane osobowe.</target></trans-unit>
       <trans-unit id="privacy.updatedAt" datatype="html"><source>Last updated:</source><target>Ostatnia aktualizacja:</target></trans-unit>
-      <trans-unit id="privacy.intro" datatype="html">
-        <source> This Privacy Policy explains the rules for processing personal data submitted through the contact form available on the Ardium website. </source>
-        <target> Niniejsza Polityka prywatności opisuje zasady przetwarzania danych osobowych przekazywanych za pośrednictwem formularza kontaktowego dostępnego na stronie Ardium. </target>
-      </trans-unit>
-      <trans-unit id="privacy.administratorTitle" datatype="html"><source>1. Data controller</source><target>1. Administrator danych</target></trans-unit>
-      <trans-unit id="privacy.administratorText" datatype="html">
-        <source> The controller of your personal data is Ardium. For matters concerning your personal data, contact us at contact@ardium.pl. </source>
-        <target> Administratorem Twoich danych osobowych jest Ardium. W sprawach dotyczących danych osobowych skontaktuj się z nami pod adresem contact@ardium.pl. </target>
-      </trans-unit>
-      <trans-unit id="privacy.dataTitle" datatype="html"><source>2. What data we process</source><target>2. Jakie dane przetwarzamy</target></trans-unit>
-      <trans-unit id="privacy.dataText" datatype="html">
-        <source> When you use the contact form, we process the data you provide: your name, email address, message subject and message content. We may also process technical information necessary to ensure the security and correct operation of the website. </source>
-        <target> Gdy korzystasz z formularza kontaktowego, przetwarzamy podane przez Ciebie dane: imię, adres e-mail, temat oraz treść wiadomości. Możemy także przetwarzać informacje techniczne niezbędne do zapewnienia bezpieczeństwa i prawidłowego działania strony. </target>
-      </trans-unit>
-      <trans-unit id="privacy.formTitle" datatype="html"><source>3. Contact form</source><target>3. Formularz kontaktowy</target></trans-unit>
-      <trans-unit id="privacy.formText" datatype="html">
-        <source> Providing data is voluntary, but necessary for us to receive your inquiry and respond to it. Please do not include sensitive personal data or information that is not required to handle your inquiry in the message. </source>
-        <target> Podanie danych jest dobrowolne, ale niezbędne, abyśmy mogli otrzymać Twoje zapytanie i na nie odpowiedzieć. Nie umieszczaj w wiadomości wrażliwych danych osobowych ani informacji, które nie są potrzebne do obsługi zapytania. </target>
-      </trans-unit>
-      <trans-unit id="privacy.purposeTitle" datatype="html"><source>4. Purposes and legal basis</source><target>4. Cele i podstawy przetwarzania danych</target></trans-unit>
-      <trans-unit id="privacy.purposeText" datatype="html">
-        <source> We process your data to respond to your inquiry and continue correspondence. The legal basis is our legitimate interest in communicating with website users and, where your inquiry is intended to conclude or perform a contract, taking steps at your request before entering into a contract or performing that contract. </source>
-        <target> Przetwarzamy Twoje dane, aby odpowiedzieć na zapytanie i prowadzić dalszą korespondencję. Podstawą prawną jest nasz prawnie uzasadniony interes polegający na komunikacji z użytkownikami strony, a gdy zapytanie zmierza do zawarcia lub wykonania umowy — podjęcie działań na Twoje żądanie przed zawarciem umowy lub wykonanie tej umowy. </target>
-      </trans-unit>
-      <trans-unit id="privacy.retentionTitle" datatype="html"><source>5. Data retention period</source><target>5. Okres przechowywania danych</target></trans-unit>
-      <trans-unit id="privacy.retentionText" datatype="html">
-        <source> We retain your data for the time needed to handle your inquiry and then for as long as is necessary to establish, pursue or defend possible claims, or until an effective objection is made where processing is based on our legitimate interest. </source>
-        <target> Przechowujemy Twoje dane przez czas potrzebny do obsługi zapytania, a następnie przez okres niezbędny do ustalenia, dochodzenia lub obrony ewentualnych roszczeń albo do chwili skutecznego wniesienia sprzeciwu, gdy podstawą przetwarzania jest nasz prawnie uzasadniony interes. </target>
-      </trans-unit>
-      <trans-unit id="privacy.recipientsTitle" datatype="html"><source>6. Data recipients</source><target>6. Odbiorcy danych</target></trans-unit>
-      <trans-unit id="privacy.recipientsText" datatype="html">
-        <source> Data may be entrusted to service providers that support us in hosting, email and IT services, solely to the extent necessary to provide those services and under appropriate data protection arrangements. </source>
-        <target> Dane mogą być powierzane dostawcom wspierającym nas w zakresie hostingu, poczty elektronicznej i usług IT — wyłącznie w zakresie niezbędnym do świadczenia tych usług i na podstawie odpowiednich ustaleń dotyczących ochrony danych. </target>
-      </trans-unit>
-      <trans-unit id="privacy.rightsTitle" datatype="html"><source>7. Your rights</source><target>7. Twoje prawa</target></trans-unit>
-      <trans-unit id="privacy.rightsText" datatype="html">
-        <source> You have the right to request access to, rectification or erasure of your data, restriction of processing and data portability, and to object to processing. You may also lodge a complaint with the competent data protection authority. </source>
-        <target> Masz prawo żądać dostępu do danych, ich sprostowania lub usunięcia, ograniczenia przetwarzania i przeniesienia danych, a także wnieść sprzeciw wobec przetwarzania. Możesz również złożyć skargę do właściwego organu ochrony danych osobowych. </target>
-      </trans-unit>
       <trans-unit id="footer.privacyPolicy" datatype="html">
         <source>Privacy Policy</source>
         <target>Polityka prywatności</target>
