@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ContactInfoService } from '../../content/contact-info/contact-info.service';
 import { BrandLinkedinIcon } from '../../icons/brand-linkedin.icon';
 import { EnvelopeIcon } from '../../icons/envelope.icon';
@@ -11,7 +12,7 @@ import { createUniversalMapLink } from '../../utils/maps-link';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [EnvelopeIcon, LocationPinIcon, SmartphoneIcon, BrandLinkedinIcon],
+  imports: [RouterLink, EnvelopeIcon, LocationPinIcon, SmartphoneIcon, BrandLinkedinIcon],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
@@ -26,6 +27,7 @@ export class FooterComponent {
 
   readonly createMailto = createMailto;
   readonly createMapLink = createUniversalMapLink;
+  readonly currentYear = new Date().getFullYear();
 
   createPhoneLink(phoneNumber: string): string {
     return `tel:${phoneNumber.replace(/[^+\d]/g, '')}`;

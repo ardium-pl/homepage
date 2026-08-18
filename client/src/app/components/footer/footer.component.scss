@@ -6,6 +6,17 @@ footer {
 .image-underlay img {
   opacity: 0.2;
 }
+.footer-content {
+  display: grid;
+  grid-template-areas:
+    'contacts contacts'
+    'copyright policy';
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+nav {
+  grid-area: contacts;
+}
 ul {
   display: grid;
   justify-content: space-evenly;
@@ -35,8 +46,34 @@ a {
   }
 }
 
+.footer-copyright,
+.footer-policy {
+  color: var(--clr-semi-dark);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.footer-copyright {
+  grid-area: copyright;
+}
+
+.footer-policy {
+  grid-area: policy;
+  justify-self: end;
+  font-size: 0.75rem;
+}
+
 @media only screen and (min-width: 768px) {
   ul {
     grid-template-columns: repeat(4, max-content);
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+  .footer-content {
+    grid-template-areas: 'copyright contacts policy';
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
   }
 }

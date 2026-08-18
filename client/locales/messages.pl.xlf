@@ -514,6 +514,10 @@
         <source> You have the right to request access to, rectification or erasure of your data, restriction of processing and data portability, and to object to processing. You may also lodge a complaint with the competent data protection authority. </source>
         <target> Masz prawo żądać dostępu do danych, ich sprostowania lub usunięcia, ograniczenia przetwarzania i przeniesienia danych, a także wnieść sprzeciw wobec przetwarzania. Możesz również złożyć skargę do właściwego organu ochrony danych osobowych. </target>
       </trans-unit>
+      <trans-unit id="footer.privacyPolicy" datatype="html">
+        <source>Privacy Policy</source>
+        <target>Polityka prywatności</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
