@@ -468,8 +468,8 @@
         <target>Logotypy klientów</target>
       </trans-unit>
       <trans-unit id="contact.privacyNotice" datatype="html">
-        <source> Information about how we process your data can be found in the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/privacy-policy&quot;&gt;"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
-        <target> Informacje dotyczące przetwarzania danych znajdziesz w <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/privacy-policy&quot;&gt;"/>Polityce prywatności<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
+        <source>Information about how we process your data can be found in the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/privacy-policy&quot;&gt;"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
+        <target>Informacje dotyczące przetwarzania danych znajdziesz w <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/privacy-policy&quot;&gt;"/>Polityce prywatności<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</target>
       </trans-unit>
       <trans-unit id="privacy.preheading" datatype="html"><source>Information</source><target>Informacje</target></trans-unit>
       <trans-unit id="privacy.title" datatype="html"><source>Privacy Policy</source><target>Polityka prywatności</target></trans-unit>
