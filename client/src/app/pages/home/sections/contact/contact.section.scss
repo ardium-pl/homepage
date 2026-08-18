@@ -38,12 +38,13 @@ fieldset {
   }
 
   a {
-    color: inherit;
-    text-underline-offset: 0.2em;
+    color: var(--clr-main);
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
 
     &:hover,
     &:focus-visible {
-      color: var(--clr-white);
+      opacity: 0.75;
     }
   }
 }
