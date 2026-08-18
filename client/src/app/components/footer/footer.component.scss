@@ -55,6 +55,14 @@ a {
 
 .footer-copyright {
   grid-area: copyright;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 .footer-policy {
