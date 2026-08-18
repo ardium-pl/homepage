@@ -1,0 +1,177 @@
+import { isPlatformBrowser } from '@angular/common';
+import { Component, DestroyRef, ElementRef, PLATFORM_ID, ViewChild, effect, inject } from '@angular/core';
+import { createAsyncContent } from '@utils/async-content';
+import { ClientLogosService } from './client-logos.service';
+
+@Component({
+  selector: 'app-client-logos-section',
+  standalone: true,
+  templateUrl: './client-logos.section.html',
+  styleUrl: './client-logos.section.scss',
+})
+export class ClientLogosSection {
+  @ViewChild('carousel') private carousel?: ElementRef<HTMLElement>;
+
+  readonly copies = [0, 1, 2] as const;
+
+  private readonly clientLogosService = inject(ClientLogosService);
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly platformId = inject(PLATFORM_ID);
+  private timer?: ReturnType<typeof setInterval>;
+  private resizeObserver?: ResizeObserver;
+  private reducedMotionQuery?: MediaQueryList;
+  private initializationTimer?: ReturnType<typeof setTimeout>;
+  private destroyed = false;
+  private pointerId?: number;
+  private pointerX = 0;
+  private pointerScrollLeft = 0;
+  private copyWidth = 0;
+
+  private readonly contentState = createAsyncContent(() => this.clientLogosService.getClientLogos());
+  readonly logos = this.contentState.content;
+  readonly loading = this.contentState.loading;
+  readonly error = this.contentState.error;
+
+  constructor() {
+    effect(() => {
+      if (!this.logos() || !isPlatformBrowser(this.platformId)) return;
+      if (this.initializationTimer) clearTimeout(this.initializationTimer);
+      this.initializationTimer = setTimeout(() => {
+        this.initializationTimer = undefined;
+        void this.initializeCarousel();
+      });
+    });
+
+    this.destroyRef.onDestroy(() => {
+      this.destroyed = true;
+      this.stopAutoPlay();
+      this.resizeObserver?.disconnect();
+      this.reducedMotionQuery?.removeEventListener('change', this.onReducedMotionChange);
+      if (this.initializationTimer) clearTimeout(this.initializationTimer);
+    });
+  }
+
+  onPointerDown(event: PointerEvent): void {
+    const element = this.carousel?.nativeElement;
+    if (!element) return;
+    this.pointerId = event.pointerId;
+    this.pointerX = event.clientX;
+    this.pointerScrollLeft = element.scrollLeft;
+    element.classList.add('dragging');
+    element.setPointerCapture(event.pointerId);
+    this.pauseAutoPlay();
+  }
+
+  onPointerMove(event: PointerEvent): void {
+    const element = this.carousel?.nativeElement;
+    if (!element || event.pointerId !== this.pointerId) return;
+    element.scrollLeft = this.pointerScrollLeft - (event.clientX - this.pointerX);
+  }
+
+  onPointerUp(event: PointerEvent): void {
+    if (event.pointerId !== this.pointerId) return;
+    const element = this.carousel?.nativeElement;
+    if (element?.hasPointerCapture(event.pointerId)) {
+      element.releasePointerCapture(event.pointerId);
+    }
+    element?.classList.remove('dragging');
+    this.pointerId = undefined;
+    this.resumeAutoPlay();
+  }
+
+  onScroll(): void {
+    const element = this.carousel?.nativeElement;
+    if (!element || !this.copyWidth) return;
+
+    const edgeTolerance = 2;
+    const maxScrollLeft = element.scrollWidth - element.clientWidth;
+
+    if (element.scrollLeft <= edgeTolerance) {
+      element.scrollLeft += this.copyWidth;
+      if (this.pointerId !== undefined) this.pointerScrollLeft += this.copyWidth;
+    } else if (element.scrollLeft >= maxScrollLeft - edgeTolerance) {
+      element.scrollLeft -= this.copyWidth;
+      if (this.pointerId !== undefined) this.pointerScrollLeft -= this.copyWidth;
+    }
+  }
+
+  pauseAutoPlay(): void {
+    this.stopAutoPlay();
+  }
+
+  resumeAutoPlay(): void {
+    this.startAutoPlay();
+  }
+
+  private centerOnMiddleCopy(): void {
+    const element = this.carousel?.nativeElement;
+    this.copyWidth = this.measureCopyWidth();
+    const middleCopy = element?.querySelector<HTMLElement>('.logo-item[data-copy="1"]');
+    if (element && middleCopy) element.scrollLeft = middleCopy.offsetLeft - element.offsetLeft;
+  }
+
+  private measureCopyWidth(): number {
+    const element = this.carousel?.nativeElement;
+    const firstCopy = element?.querySelector<HTMLElement>('.logo-item[data-copy="0"]');
+    const middleCopy = element?.querySelector<HTMLElement>('.logo-item[data-copy="1"]');
+
+    if (!firstCopy || !middleCopy) return 0;
+
+    const width = middleCopy.offsetLeft - firstCopy.offsetLeft;
+    return width > 0 ? width : 0;
+  }
+
+  private async initializeCarousel(): Promise<void> {
+    const element = this.carousel?.nativeElement;
+    if (!element || this.destroyed) return;
+
+    this.resizeObserver?.disconnect();
+    if (!this.reducedMotionQuery) {
+      this.reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      this.reducedMotionQuery.addEventListener('change', this.onReducedMotionChange);
+    }
+    this.resizeObserver = new ResizeObserver(() => this.centerOnMiddleCopy());
+    this.resizeObserver.observe(element);
+
+    const images = Array.from(element.querySelectorAll<HTMLImageElement>('.logo-item img'));
+    await Promise.allSettled(images.map(image => image.decode()));
+
+    if (this.destroyed || this.carousel?.nativeElement !== element) return;
+    this.centerOnMiddleCopy();
+    this.startAutoPlay();
+  }
+
+  private startAutoPlay(): void {
+    this.stopAutoPlay();
+    const element = this.carousel?.nativeElement;
+    if (!element || this.reducedMotionQuery?.matches) return;
+
+    this.timer = setInterval(() => {
+      if (!this.copyWidth) return;
+
+      const itemPositions = Array.from(element.querySelectorAll<HTMLElement>('.logo-item')).map(
+        item => item.offsetLeft - element.offsetLeft
+      );
+      let nextPosition = itemPositions.find(position => position > element.scrollLeft + 2);
+      if (nextPosition === undefined) return;
+
+      const maxScrollLeft = element.scrollWidth - element.clientWidth;
+      if (nextPosition >= maxScrollLeft - 2) {
+        element.scrollLeft -= this.copyWidth;
+        nextPosition -= this.copyWidth;
+      }
+
+      element.scrollTo({ left: nextPosition, behavior: 'smooth' });
+    }, 4500);
+  }
+
+  private stopAutoPlay(): void {
+    if (this.timer) clearInterval(this.timer);
+    this.timer = undefined;
+  }
+
+  private readonly onReducedMotionChange = (): void => {
+    if (this.reducedMotionQuery?.matches) this.stopAutoPlay();
+    else this.startAutoPlay();
+  };
+}

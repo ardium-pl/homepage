@@ -459,6 +459,14 @@
         <source>The requested post does not exist or is no longer available.</source>
         <target>Wybrany wpis nie istnieje lub nie jest już dostępny.</target>
       </trans-unit>
+      <trans-unit id="clientLogos.heading" datatype="html">
+        <source>Trusted us</source>
+        <target>Zaufali nam</target>
+      </trans-unit>
+      <trans-unit id="clientLogos.carouselLabel" datatype="html">
+        <source>Client logos</source>
+        <target>Logotypy klientów</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

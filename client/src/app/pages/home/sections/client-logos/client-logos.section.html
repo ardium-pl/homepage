@@ -1,0 +1,34 @@
+@if (logos(); as clientLogos) {
+<section aria-labelledby="client-logos-title">
+  <div class="section-heading">
+    <span aria-hidden="true"></span>
+    <h2 id="client-logos-title" i18n="@@clientLogos.heading">Trusted us</h2>
+    <span aria-hidden="true"></span>
+  </div>
+
+  <div
+    #carousel
+    class="carousel"
+    (scroll)="onScroll()"
+    (pointerdown)="onPointerDown($event)"
+    (pointermove)="onPointerMove($event)"
+    (pointerup)="onPointerUp($event)"
+    (pointercancel)="onPointerUp($event)"
+    (mouseenter)="pauseAutoPlay()"
+    (mouseleave)="resumeAutoPlay()"
+    aria-label="Client logos"
+    i18n-aria-label="@@clientLogos.carouselLabel"
+  >
+    @for (copy of copies; track copy) { @for (logo of clientLogos; track logo.key) {
+    <div class="logo-item" [attr.data-copy]="copy" [attr.aria-hidden]="copy === 1 ? null : true">
+      <img [src]="logo.logoUrl" [alt]="logo.name" loading="lazy" draggable="false" />
+    </div>
+    } }
+  </div>
+  <div class="bottom-line" aria-hidden="true"><span></span></div>
+</section>
+} @else if (loading()) {
+<section class="placeholder" aria-hidden="true"></section>
+} @else if (error()) {
+<!-- The section is intentionally hidden when Sanity is unavailable. -->
+}
