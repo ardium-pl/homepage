@@ -3,10 +3,7 @@
     <img src="footer-bg.jpg" aria-hidden="true" />
   </div>
   <div class="footer-content">
-    <span class="footer-copyright">
-      &copy; {{ currentYear }} Ardium
-      <img src="favicon.ico" alt="" aria-hidden="true" />
-    </span>
+    <span class="footer-copyright">&copy; {{ currentYear }} Ardium</span>
     <nav>
       @if (contactInfo(); as contact) {
         <ul>
@@ -43,6 +40,9 @@
         <p i18n="@@common.contact-unavailable">Contact information is currently unavailable.</p>
       }
     </nav>
-    <a class="footer-policy" routerLink="/privacy-policy" i18n="@@footer.privacyPolicy">Privacy Policy</a>
+    <div class="footer-policy">
+      <div class="icon-container"><icon-shield-check /></div>
+      <a routerLink="/privacy-policy" i18n="@@footer.privacyPolicy">Privacy Policy</a>
+    </div>
   </div>
 </footer>

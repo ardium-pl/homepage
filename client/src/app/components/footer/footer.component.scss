@@ -55,20 +55,18 @@ a {
 
 .footer-copyright {
   grid-area: copyright;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  img {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
 }
 
 .footer-policy {
   grid-area: policy;
   justify-self: end;
-  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  a {
+    font-size: 0.75rem;
+  }
 }
 
 @media only screen and (min-width: 768px) {
