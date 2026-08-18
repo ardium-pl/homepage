@@ -24,6 +24,12 @@ export const structure: StructureResolver = (S) =>
         .child(S.editor().id('blogPage').schemaType('blogPage').documentId('blogPage')),
 
       S.listItem()
+        .id('privacyPolicy')
+        .schemaType('privacyPolicy')
+        .title('Privacy policy')
+        .child(S.editor().id('privacyPolicy').schemaType('privacyPolicy').documentId('privacyPolicy')),
+
+      S.listItem()
         .id('services')
         .schemaType('services')
         .title('Services')

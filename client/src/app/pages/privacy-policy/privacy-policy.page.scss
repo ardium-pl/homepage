@@ -45,24 +45,18 @@
 article {
   max-width: 56.25rem;
   margin: 0 auto;
-  h2 {
-    margin: 2.5rem 0 0.75rem;
-    font-size: 1.625rem;
-    font-weight: 600;
-    letter-spacing: 0;
-    text-transform: none;
-  }
-  p {
-    color: rgba(var(--clr-white-rgb), 0.8);
-    font-size: 1.0625rem;
-    line-height: 1.75;
-  }
+}
+.updated-at {
+  margin-bottom: 2rem;
+  color: var(--clr-semi-dark);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.status {
+  color: rgba(var(--clr-white-rgb), 0.8);
 }
 @media only screen and (max-width: 575px) {
   .privacy-hero {
     min-height: 26rem;
-  }
-  article h2 {
-    font-size: 1.4rem;
   }
 }

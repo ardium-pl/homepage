@@ -14,48 +14,15 @@
 
 <section class="privacy-content">
   <article>
-    <p i18n="@@privacy.intro">
-      This Privacy Policy explains the rules for processing personal data submitted through the contact form available
-      on the Ardium website.
-    </p>
-    <h2 i18n="@@privacy.administratorTitle">1. Data controller</h2>
-    <p i18n="@@privacy.administratorText">
-      The controller of your personal data is Ardium. For matters concerning your personal data, contact us at
-      contact&#64;ardium.pl.
-    </p>
-    <h2 i18n="@@privacy.dataTitle">2. What data we process</h2>
-    <p i18n="@@privacy.dataText">
-      When you use the contact form, we process the data you provide: your name, email address, message subject and
-      message content. We may also process technical information necessary to ensure the security and correct operation
-      of the website.
-    </p>
-    <h2 i18n="@@privacy.formTitle">3. Contact form</h2>
-    <p i18n="@@privacy.formText">
-      Providing data is voluntary, but necessary for us to receive your inquiry and respond to it. Please do not include
-      sensitive personal data or information that is not required to handle your inquiry in the message.
-    </p>
-    <h2 i18n="@@privacy.purposeTitle">4. Purposes and legal basis</h2>
-    <p i18n="@@privacy.purposeText">
-      We process your data to respond to your inquiry and continue correspondence. The legal basis is our legitimate
-      interest in communicating with website users and, where your inquiry is intended to conclude or perform a
-      contract, taking steps at your request before entering into a contract or performing that contract.
-    </p>
-    <h2 i18n="@@privacy.retentionTitle">5. Data retention period</h2>
-    <p i18n="@@privacy.retentionText">
-      We retain your data for the time needed to handle your inquiry and then for as long as is necessary to establish,
-      pursue or defend possible claims, or until an effective objection is made where processing is based on our
-      legitimate interest.
-    </p>
-    <h2 i18n="@@privacy.recipientsTitle">6. Data recipients</h2>
-    <p i18n="@@privacy.recipientsText">
-      Data may be entrusted to service providers that support us in hosting, email and IT services, solely to the extent
-      necessary to provide those services and under appropriate data protection arrangements.
-    </p>
-    <h2 i18n="@@privacy.rightsTitle">7. Your rights</h2>
-    <p i18n="@@privacy.rightsText">
-      You have the right to request access to, rectification or erasure of your data, restriction of processing and data
-      portability, and to object to processing. You may also lodge a complaint with the competent data protection
-      authority.
-    </p>
+    @if (policy(); as content) {
+      <p class="updated-at">
+        <span i18n="@@privacy.updatedAt">Last updated:</span> {{ content.updatedAt }}
+      </p>
+      <app-portable-content [nodes]="content.content" />
+    } @else if (loading()) {
+      <p class="status" i18n="@@common.loading">Loading...</p>
+    } @else if (error()) {
+      <p class="status" i18n="@@common.content-unavailable">Content is currently unavailable.</p>
+    }
   </article>
 </section>

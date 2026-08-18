@@ -6,6 +6,7 @@ export const singletonTypes = new Set([
   'contactInfo',
   'clientLogos',
   'employees',
+  'privacyPolicy',
 ])
 
 export const singletonActions = new Set(['publish', 'discardChanges', 'restore'])

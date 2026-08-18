@@ -474,6 +474,7 @@
       <trans-unit id="privacy.preheading" datatype="html"><source>Information</source><target>Informacje</target></trans-unit>
       <trans-unit id="privacy.title" datatype="html"><source>Privacy Policy</source><target>Polityka prywatności</target></trans-unit>
       <trans-unit id="privacy.subtitle" datatype="html"><source>Learn how we process and protect your personal data.</source><target>Dowiedz się, w jaki sposób przetwarzamy i chronimy Twoje dane osobowe.</target></trans-unit>
+      <trans-unit id="privacy.updatedAt" datatype="html"><source>Last updated:</source><target>Ostatnia aktualizacja:</target></trans-unit>
       <trans-unit id="privacy.intro" datatype="html">
         <source> This Privacy Policy explains the rules for processing personal data submitted through the contact form available on the Ardium website. </source>
         <target> Niniejsza Polityka prywatności opisuje zasady przetwarzania danych osobowych przekazywanych za pośrednictwem formularza kontaktowego dostępnego na stronie Ardium. </target>
