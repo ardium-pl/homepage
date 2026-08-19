@@ -95,6 +95,9 @@ app-icon-button {
     padding: 0.75rem;
     width: calc(100% - 3rem);
   }
+}
+
+@media only screen and (min-width: 768px) {
   app-icon-button {
     display: none;
   }
@@ -122,8 +125,7 @@ app-icon-button {
     padding-left: 1rem;
     border-left: 1px solid rgba(var(--clr-white-rgb), 0.75);
   }
-}
-@media only screen and (min-width: 768px) {
+
   nav ul {
     gap: 2rem;
   }
