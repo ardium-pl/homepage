@@ -1,9 +1,11 @@
 import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ContactInfoService } from '../../content/contact-info/contact-info.service';
 import { BrandLinkedinIcon } from '../../icons/brand-linkedin.icon';
 import { EnvelopeIcon } from '../../icons/envelope.icon';
 import { LocationPinIcon } from '../../icons/location-pin.icon';
 import { SmartphoneIcon } from '../../icons/smartphone.icon';
+import { ShieldCheckIcon } from '../../icons/shield-check.icon';
 import { createAsyncContent } from '../../utils/async-content';
 import { createMailto } from '../../utils/mailto';
 import { createUniversalMapLink } from '../../utils/maps-link';
@@ -11,7 +13,7 @@ import { createUniversalMapLink } from '../../utils/maps-link';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [EnvelopeIcon, LocationPinIcon, SmartphoneIcon, BrandLinkedinIcon],
+  imports: [RouterLink, EnvelopeIcon, LocationPinIcon, SmartphoneIcon, BrandLinkedinIcon, ShieldCheckIcon],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
@@ -26,6 +28,7 @@ export class FooterComponent {
 
   readonly createMailto = createMailto;
   readonly createMapLink = createUniversalMapLink;
+  readonly currentYear = new Date().getFullYear();
 
   createPhoneLink(phoneNumber: string): string {
     return `tel:${phoneNumber.replace(/[^+\d]/g, '')}`;

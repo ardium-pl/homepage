@@ -34,7 +34,13 @@
         inputId="message"
         [errorText]="translateError(form.controls.subject)"
       />
-      <app-button appearance="filled" type="submit" i18n="@@contact.send">Send your message</app-button>
+      <div class="form-actions">
+        <app-button appearance="filled" type="submit" i18n="@@contact.send">Send your message</app-button>
+        <p i18n="@@contact.privacyNotice">
+          Information about how we process your data can be found in the
+          <a routerLink="/privacy-policy">Privacy Policy</a>.
+        </p>
+      </div>
     </form>
   </div>
 </section>

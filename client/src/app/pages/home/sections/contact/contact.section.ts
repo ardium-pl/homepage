@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { FormFieldTextareaComponent } from '@components/form/form-field/form-field-textarea.component';
 import { FormFieldComponent } from '@components/form/form-field/form-field.component';
 import { customValidators, translateError } from '@utils/form-utils';
@@ -23,7 +24,7 @@ interface FormValues {
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [ReactiveFormsModule, FormFieldComponent, FormFieldTextareaComponent, JsonPipe, ButtonComponent],
+  imports: [ReactiveFormsModule, RouterLink, FormFieldComponent, FormFieldTextareaComponent, JsonPipe, ButtonComponent],
   templateUrl: './contact.section.html',
   styleUrl: './contact.section.scss',
 })
