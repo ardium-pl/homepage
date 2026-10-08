@@ -36,6 +36,24 @@ export const structure: StructureResolver = (S) =>
         .child(S.editor().id('services').schemaType('services').documentId('services')),
 
       S.listItem()
+        .id('industries')
+        .schemaType('industries')
+        .title('Industries')
+        .child(S.editor().id('industries').schemaType('industries').documentId('industries')),
+
+      S.listItem()
+        .id('workflow')
+        .schemaType('workflow')
+        .title('Workflow')
+        .child(S.editor().id('workflow').schemaType('workflow').documentId('workflow')),
+
+      S.listItem()
+        .id('faq')
+        .schemaType('faq')
+        .title('FAQ')
+        .child(S.editor().id('faq').schemaType('faq').documentId('faq')),
+
+      S.listItem()
         .id('contactInfo')
         .schemaType('contactInfo')
         .title('Contact info')

@@ -47,6 +47,18 @@ export const employees = defineType({
               type: 'image',
               validation: (rule) => rule.required(),
             }),
+            defineField({
+              name: 'bio',
+              title: 'Biography',
+              type: 'localizedText',
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'email',
+              title: 'Email',
+              type: 'string',
+              validation: (rule) => rule.required(),
+            }),
           ],
         },
       ],

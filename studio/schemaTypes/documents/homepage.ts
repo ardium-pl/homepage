@@ -35,6 +35,18 @@ export const homepage = defineType({
           type: 'localizedString',
           validation: (rule) => rule.required(),
         }),
+        defineField({
+          name: 'viewCaseStudiesButtonText',
+          title: 'View case studies button text',
+          type: 'localizedString',
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: 'homePageServicesText',
+          title: 'Homepage services text',
+          type: 'localizedPortableText',
+          validation: (rule) => rule.required(),
+        }),
 
         defineField({
           name: 'image',
