@@ -7,22 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const router = express.Router();
 const serverRoot = path.resolve(__dirname, '..');
-const candidateAngularAppPaths = [
-  path.join(serverRoot, '../dist/homepage/browser'),
-  path.join(serverRoot, '../../dist/homepage/browser'),
-  path.join(__dirname, '../dist/homepage/browser'),
-  path.join(__dirname, '../../dist/homepage/browser'),
-  path.join(serverRoot, '../client/dist/browser'),
-  path.join(serverRoot, '../../client/dist/browser'),
-  path.join('/app', 'dist', 'homepage', 'browser'),
-  path.join('/app', 'client', 'dist', 'browser')
-];
-
-const angularAppPath = candidateAngularAppPaths.find((candidate) => fs.existsSync(candidate)) ?? candidateAngularAppPaths[0];
-
-if (!fs.existsSync(path.join(angularAppPath, 'index.html'))) {
-  console.warn(`[Server] Angular app build not found. Checked: ${candidateAngularAppPaths.join(', ')}`);
-}
+const angularAppPath = path.join(serverRoot, '../dist/homepage/browser');
 
 const locales = fs.existsSync(angularAppPath) ? fs.readdirSync(angularAppPath) : [];
 
@@ -40,7 +25,7 @@ router.get('/', (req, res) => {
     return res.redirect('/en/');
   }
 
-  res.sendFile(path.join(angularAppPath, 'index.html'));
+  res.redirect('/pl/');
 });
 
 router.get(['/*', '/:locale/*'], (req, res) => {
