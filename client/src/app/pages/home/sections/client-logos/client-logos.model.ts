@@ -3,4 +3,3 @@ export interface ClientLogo {
   name: string;
   logoUrl: string;
 }
-

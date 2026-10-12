@@ -15,7 +15,7 @@ export class BlogPostService {
         slug,
         language: this.locale.language,
       })
-      .then((post) => {
+      .then(post => {
         if (!post?.title || !post.summary) return null;
         return { ...post, imageAlt: post.imageAlt || post.title };
       });

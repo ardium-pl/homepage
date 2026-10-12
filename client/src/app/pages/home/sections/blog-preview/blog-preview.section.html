@@ -24,7 +24,9 @@
           @if (first && post.contentPreview.length) {
           <app-portable-content class="content-preview" [nodes]="post.contentPreview" [compact]="true" />
           }
-          <a class="read-more" [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Czytaj więcej →</a>
+          <a class="read-more" [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore"
+            >Czytaj więcej →</a
+          >
         </div>
       </article>
       }

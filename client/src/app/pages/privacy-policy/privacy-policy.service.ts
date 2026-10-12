@@ -11,8 +11,8 @@ export class PrivacyPolicyService {
 
   getPolicy(): Promise<PrivacyPolicy | null> {
     return this.sanity
-      .fetch<PrivacyPolicy | null>(PRIVACY_POLICY_QUERY, {language: this.locale.language})
-      .then((policy) => {
+      .fetch<PrivacyPolicy | null>(PRIVACY_POLICY_QUERY, { language: this.locale.language })
+      .then(policy => {
         if (!policy?.updatedAt || !policy.content?.length) return null;
         return {
           ...policy,

@@ -22,14 +22,14 @@ export class BlogService {
   }
 
   private fetchPosts<T extends SanityBlogPost>(query: string): Promise<DatedPost<T>[]> {
-    return this.sanity.fetch<T[]>(query, { language: this.locale.language }).then((posts) =>
+    return this.sanity.fetch<T[]>(query, { language: this.locale.language }).then(posts =>
       posts
-        .filter((post) => post.title && post.summary && post.imageUrl && post.slug)
-        .map((post) => ({
+        .filter(post => post.title && post.summary && post.imageUrl && post.slug)
+        .map(post => ({
           ...post,
           imageAlt: post.imageAlt || post.title,
           date: this.formatDate(post.publishedAt),
-        })),
+        }))
     );
   }
 

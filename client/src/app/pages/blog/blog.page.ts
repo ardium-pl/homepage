@@ -21,8 +21,6 @@ export class BlogPage {
   readonly loading = this.postsState.loading;
   readonly error = this.postsState.error;
   readonly activeType = signal<BlogPostType>('caseStudy');
-  readonly visiblePosts = computed(() =>
-    (this.posts() ?? []).filter((post) => post.type === this.activeType()),
-  );
+  readonly visiblePosts = computed(() => (this.posts() ?? []).filter(post => post.type === this.activeType()));
   readonly typeLabel = blogPostTypeLabel;
 }

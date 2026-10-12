@@ -10,7 +10,7 @@ import { TakeChance } from 'take-chance';
   styleUrl: './faq-item.component.scss',
   host: {
     '[class.open]': 'isOpen()',
-  }
+  },
 })
 export class FaqItemComponent {
   readonly htmlId = TakeChance.id();

@@ -16,7 +16,7 @@ export class ClientLogosService {
   private readonly sanity = inject(SanityService);
 
   getClientLogos(): Promise<ClientLogo[] | null> {
-    return this.sanity.fetch<ClientLogosContent | null>(CLIENT_LOGOS_QUERY).then((content) => {
+    return this.sanity.fetch<ClientLogosContent | null>(CLIENT_LOGOS_QUERY).then(content => {
       const logos =
         content?.list.flatMap((logo): ClientLogo[] => {
           const key = logo.key?.trim();
