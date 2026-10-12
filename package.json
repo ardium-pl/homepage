@@ -5,6 +5,7 @@
   "author": "",
   "scripts": {
     "start": "npm run build && cd server && node dist/index.js",
+    "start:development": "npm run build:development && cd server && node dist/index.js",
     "build": "cd client && npm install && npm run build && cd ../server && npm install && npm run build",
     "build:development": "cd client && npm install && npm run build:development && cd ../server && npm install && npm run build",
     "watch": "cd client && npm run watch",
