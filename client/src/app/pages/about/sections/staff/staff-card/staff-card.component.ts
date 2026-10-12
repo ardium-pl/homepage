@@ -1,6 +1,6 @@
 import { Component, computed, input } from '@angular/core';
 import { ArdIconAt } from '@ardium-ui/icons';
-import { BrandLinkedinIcon } from '../../icons/brand-linkedin.icon';
+import { BrandLinkedinIcon } from '../../../../../icons/brand-linkedin.icon';
 
 @Component({
   selector: 'app-staff-card',
@@ -22,4 +22,5 @@ export class StaffCardComponent {
   readonly linkedInLink = computed<string | undefined>(() =>
     this.linkedInName() ? `https://www.linkedin.com/in/p${this.linkedInName()}/` : undefined
   );
+  readonly description = input.required<string>();
 }

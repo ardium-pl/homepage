@@ -1,5 +1,10 @@
 :host {
   display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.horizontal {
+  display: flex;
   gap: 1rem;
   align-items: center;
   width: max-content;
@@ -24,7 +29,8 @@ img {
   font-size: 18px;
   line-height: 1.5;
 }
-.job-title {
+.job-title,
+.description {
   font-size: 14px;
   line-height: 20px;
   color: hsl(246, 6%, 65%);
