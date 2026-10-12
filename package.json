@@ -4,7 +4,7 @@
   "description": "",
   "author": "",
   "scripts": {
-    "start": "npm --prefix server start",
+    "start": "npm run build && cd server && node dist/index.js",
     "build": "cd client && npm install && npm run build && cd ../server && npm install && npm run build",
     "build:development": "cd client && npm install && npm run build:development && cd ../server && npm install && npm run build",
     "watch": "cd client && npm run watch",
