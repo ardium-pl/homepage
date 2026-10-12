@@ -8,6 +8,7 @@ export interface StaffData {
   name: string;
   jobTitle: string;
   nationality: string;
+  email: string;
   linkedInLink?: string;
 }
 
@@ -26,6 +27,7 @@ export class StaffSection {
         name: 'Paweł Bakalarz',
         jobTitle: $localize`:@@job_titles.lead_technical_specialist:Główny specjalista techniczny`,
         nationality: 'PL',
+        email: 'pawel.bakalarz@ardium.pl',
         linkedInLink: 'pawel-bakalarz',
       },
       {
@@ -33,6 +35,7 @@ export class StaffSection {
         name: 'Jakub Bródka',
         jobTitle: $localize`:@@job_titles.team_lead_manager:Kierownik zespołu`,
         nationality: 'PL',
+        email: 'jakub.brodka@ardium.pl',
         linkedInLink: 'jakub-bródka-0119a2272',
       },
       {
@@ -40,6 +43,7 @@ export class StaffSection {
         name: 'Mikołaj Wolny',
         jobTitle: $localize`:@@job_titles.chief_of_sales:Dyrektor ds. sprzedaży`,
         nationality: 'PL',
+        email: 'mikolaj.wolny@ardium.pl',
         linkedInLink: 'mikołaj-wolny-498597203',
       },
     ])
