@@ -1,11 +1,10 @@
-import { UpperCasePipe } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 import { BrandLinkedinIcon } from '../../icons/brand-linkedin.icon';
 
 @Component({
   selector: 'app-staff-card',
   standalone: true,
-  imports: [UpperCasePipe, BrandLinkedinIcon],
+  imports: [BrandLinkedinIcon],
   templateUrl: './staff-card.component.html',
   styleUrl: './staff-card.component.scss',
 })
