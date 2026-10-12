@@ -27,10 +27,10 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "en",
+        "sourceLocale": "pl",
         "locales": {
-          "pl": {
-            "translation": "locales/messages.pl.xlf"
+          "en": {
+            "translation": "locales/messages.en.xlf"
           }
         }
       },
@@ -89,8 +89,8 @@
                 }
               ]
             },
-            "pl": {
-              "localize": ["pl"]
+            "en": {
+              "localize": ["en"]
             }
           },
           "defaultConfiguration": "production"
@@ -104,8 +104,8 @@
             "development": {
               "buildTarget": "client2:build:development"
             },
-            "pl": {
-              "buildTarget": "client2:build:development,pl"
+            "en": {
+              "buildTarget": "client2:build:development,en"
             }
           },
           "defaultConfiguration": "development"

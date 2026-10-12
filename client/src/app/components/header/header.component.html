@@ -1,6 +1,6 @@
 <header [class.is-scrolled]="isScrolled()">
   <div class="content-width-g header-container">
-    <a class="logo" routerLink="/" aria-label="Ardium - home page" i18n-aria-label="@@header.logoLabel">
+    <a class="logo" routerLink="/" aria-label="Ardium - strona główna" i18n-aria-label="@@header.logoLabel">
       <img src="ardium_logo.png" alt="Ardium logo" />
     </a>
     <app-icon-button (click)="isOpen.set(!isOpen())">
@@ -9,16 +9,16 @@
     <nav [class.open]="isOpen()">
       <ul>
         <li>
-          <a routerLink="/" (click)="closeMenu()" i18n="@@header.home">Home</a>
+          <a routerLink="/" (click)="closeMenu()" i18n="@@header.home">Start</a>
         </li>
         <li>
-          <a routerLink="/" fragment="services-section" (click)="closeMenu()" i18n="@@header.services">Services</a>
+          <a routerLink="/" fragment="services-section" (click)="closeMenu()" i18n="@@header.services">Usługi</a>
         </li>
         <li>
-          <a routerLink="/" fragment="contact-section" (click)="closeMenu()" i18n="@@header.contact">Write to Us</a>
+          <a routerLink="/" fragment="contact-section" (click)="closeMenu()" i18n="@@header.contact">Napisz do nas</a>
         </li>
         <li>
-          <a routerLink="/about" (click)="closeMenu()" i18n="@@header.about">About us</a>
+          <a routerLink="/about" (click)="closeMenu()" i18n="@@header.about">O nas</a>
         </li>
         <li class="blog-link">
           <a routerLink="/blog" (click)="closeMenu()" i18n="@@header.blog">Blog</a>

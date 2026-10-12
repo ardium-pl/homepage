@@ -9,19 +9,35 @@ const router = express.Router();
 const serverRoot = path.resolve(__dirname, '..');
 const angularAppPath = path.join(serverRoot, '../dist/homepage/browser');
 
-const locales = fs.readdirSync(angularAppPath);
+const locales = fs.existsSync(angularAppPath) ? fs.readdirSync(angularAppPath) : [];
 
 for (const locale of locales) {
   const localeAsPath = '/' + locale;
   const localeAsPathAsterisk = localeAsPath + '/*';
-  router.use(localeAsPath, express.static(angularAppPath + localeAsPath));
-  router.use(localeAsPathAsterisk, express.static(angularAppPath + localeAsPath));
+  router.use(localeAsPath, express.static(path.join(angularAppPath, locale)));
+  router.use(localeAsPathAsterisk, express.static(path.join(angularAppPath, locale)));
 }
 
-router.get('/', (req, res) => {
-  if (req.acceptsLanguages('pl')) return res.redirect('/pl/');
+router.use(express.static(angularAppPath));
 
-  res.redirect('/en/');
+router.get('/', (req, res) => {
+  if (req.acceptsLanguages('en') && !req.acceptsLanguages('pl')) {
+    return res.redirect('/en/');
+  }
+
+  res.sendFile(path.join(angularAppPath, 'index.html'));
+});
+
+router.get(['/*', '/:locale/*'], (req, res) => {
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).send();
+  }
+
+  if (req.path.startsWith('/en')) {
+    return res.sendFile(path.join(angularAppPath, 'en', 'index.html'));
+  }
+
+  res.sendFile(path.join(angularAppPath, 'index.html'));
 });
 
 export default router;

@@ -2,11 +2,11 @@
 <section id="blog-section">
   <div class="content-width-g blog-container">
     <div class="heading-container">
-      <app-pre-heading i18n="@@homeBlog.preheading">Posts</app-pre-heading>
-      <h2 i18n="@@homeBlog.title">From our blog</h2>
+      <app-pre-heading i18n="@@homeBlog.preheading">Wpisy</app-pre-heading>
+      <h2 i18n="@@homeBlog.title">Z naszego bloga</h2>
       <div class="heading-bottom">
-        <p i18n="@@homeBlog.subtitle">See our latest news</p>
-        <a routerLink="/blog" i18n="@@homeBlog.allPosts">All posts →</a>
+        <p i18n="@@homeBlog.subtitle">Zobacz nasze aktualności</p>
+        <a routerLink="/blog" i18n="@@homeBlog.allPosts">Wszystkie wpisy →</a>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
           @if (first && post.contentPreview.length) {
           <app-portable-content class="content-preview" [nodes]="post.contentPreview" [compact]="true" />
           }
-          <a class="read-more" [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Read more →</a>
+          <a class="read-more" [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Czytaj więcej →</a>
         </div>
       </article>
       }
