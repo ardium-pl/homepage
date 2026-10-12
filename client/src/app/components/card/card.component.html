@@ -1,4 +1,4 @@
-<div class="card-container" [class.annotated]="annotated()">
+<div class="card-container" [class.annotated]="annotated()" [class.transparent]="transparent()">
   @if (!noIcon()) {
     <div class="card-icon">
       <ng-content select="app-card-icon" />

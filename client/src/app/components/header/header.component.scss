@@ -57,7 +57,6 @@ nav {
       font-size: 1.25rem;
       font-weight: 500;
       position: relative;
-      text-transform: capitalize;
       text-decoration: none !important;
       transition: color 0.3s ease-in-out;
 
@@ -98,6 +97,9 @@ app-icon-button {
 }
 
 @media only screen and (min-width: 768px) {
+  .header-container {
+    max-width: max-content;
+  }
   app-icon-button {
     display: none;
   }
@@ -107,7 +109,7 @@ app-icon-button {
 
     ul {
       flex-direction: row;
-      gap: 0.75rem;
+      gap: 1.5rem;
 
       a {
         font-size: 1rem;
@@ -125,14 +127,10 @@ app-icon-button {
     padding-left: 1rem;
     border-left: 1px solid rgba(var(--clr-white-rgb), 0.75);
   }
-
-  nav ul {
-    gap: 2rem;
-  }
 }
 @media only screen and (min-width: 992px) {
   nav ul {
-    gap: 3rem;
+    gap: 2rem;
   }
 }
 @media only screen and (min-width: 1200px) {

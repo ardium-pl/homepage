@@ -1,16 +1,8 @@
-<section class="blog-hero">
-  <img class="hero-pattern" src="pattern1.jpg" alt="" />
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="content-width-g hero-content">
-    <app-pre-heading i18n="@@blog.preheading">Wiedza</app-pre-heading>
-    <h1 i18n="@@blog.title">Blog &amp; Case Studies</h1>
-    <div class="hero-line" aria-hidden="true"></div>
-    <p i18n="@@blog.description">
-      Praktyczna wiedza o AI w biznesie - rzeczywiste projekty,<br />
-      narzędzia i spostrzeżenia z pracy z klientami.
-    </p>
-  </div>
-</section>
+<app-page-hero
+  preheading="Wiedza"
+  title="Blog & Case Studies"
+  description="Praktyczna wiedza o AI w biznesie - rzeczywiste projekty,<br />narzędzia i spostrzeżenia z pracy z klientami."
+/>
 
 <section class="posts-section">
   <div class="content-width-g posts-content">
@@ -37,18 +29,21 @@
       </button>
     </div>
 
-    @if (posts()) {
-    @if (visiblePosts().length) {
+    @if (posts()) { @if (visiblePosts().length) {
     <div class="posts-grid">
       @for (post of visiblePosts(); track post.id) {
       <article class="post-card">
         <div class="post-image">
-          <img [src]="post.imageUrl" [alt]="post.imageAlt" />
+          <a [routerLink]="['/blog', post.slug]" fragment="article">
+            <img [src]="post.imageUrl" [alt]="post.imageAlt" />
+          </a>
           <span class="badge">{{ typeLabel(post.type) }}</span>
         </div>
         <div class="post-body">
           <time [attr.datetime]="post.publishedAt">{{ post.date }}</time>
-          <h2>{{ post.title }}</h2>
+          <h2>
+            <a [routerLink]="['/blog', post.slug]" fragment="article"> {{ post.title }} </a>
+          </h2>
           <p>{{ post.summary }}</p>
           <a [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Czytaj więcej →</a>
         </div>
@@ -57,8 +52,7 @@
     </div>
     } @else {
     <p class="state-message" i18n="@@blog.emptyCategory">Nie ma jeszcze wpisów w tej kategorii.</p>
-    }
-    } @else if (loading()) {
+    } } @else if (loading()) {
     <p class="state-message" i18n="@@common.loading">Ładowanie...</p>
     } @else if (error()) {
     <p class="state-message" i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>

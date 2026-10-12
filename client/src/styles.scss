@@ -1,9 +1,12 @@
 @use './styles/post-card';
+@use '../node_modules/@ardium-ui/icons/styles/core.scss';
+@use '../node_modules/@ardium-ui/icons/styles/direction.scss';
 
 :root {
   --clr-main: #09aff4;
   --clr-main-rgb: 9, 175, 244;
   --clr-accent: #0d1857;
+  --clr-accent-light: #242B43;
   --clr-secondary: #4820a7;
 
   --clr-white: #fff;
@@ -73,14 +76,12 @@ h1 {
   line-height: 1.5;
   font-weight: 700;
   margin-bottom: 1.75rem;
-  text-transform: capitalize;
 }
 h2 {
   font-size: 2.5rem;
   line-height: 1.3;
   font-weight: 500;
   margin-bottom: 0.75rem;
-  text-transform: capitalize;
   letter-spacing: 1.5px;
 }
 .heading-container-g {
@@ -90,6 +91,16 @@ h2 {
     font-size: 1.1rem;
     font-weight: 400;
     margin-bottom: 1.25rem;
+    opacity: 0.75;
+  }
+}
+a {
+  color: var(--clr-main);
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
     opacity: 0.75;
   }
 }
@@ -139,6 +150,6 @@ h2 {
   img {
     height: 100%;
     width: 100%;
-    object-fit: cover; 
+    object-fit: cover;
   }
 }

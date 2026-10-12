@@ -37,6 +37,10 @@
       padding-top: 1.25rem;
     }
   }
+  &.transparent {
+    background-color: transparent;
+    border: none;
+  }
 }
 
 @media only screen and (min-width: 576px) {

@@ -2,6 +2,10 @@
   color: rgba(var(--clr-white-rgb), 0.8);
   font-size: 1.0625rem;
   line-height: 1.75;
+
+  > :not(figure) {
+    max-width: 90ch;
+  }
 }
 
 .text-span {
