@@ -30,6 +30,13 @@ export const contactInfo = defineType({
       type: 'url',
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'fullName',
+      title: 'Full name',
+      description: 'Full company name + KRS + NIP',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
   ],
 
   preview: {
