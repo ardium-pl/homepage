@@ -15,8 +15,6 @@ import {localizedString} from './objects/localized-string'
 import {localizedText} from './objects/localized-text'
 import {portableText} from './objects/portable-text'
 
-
-
 export const schemaTypes = [
   localizedString,
   localizedText,

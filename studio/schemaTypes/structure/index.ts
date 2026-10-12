@@ -27,7 +27,9 @@ export const structure: StructureResolver = (S) =>
         .id('privacyPolicy')
         .schemaType('privacyPolicy')
         .title('Privacy policy')
-        .child(S.editor().id('privacyPolicy').schemaType('privacyPolicy').documentId('privacyPolicy')),
+        .child(
+          S.editor().id('privacyPolicy').schemaType('privacyPolicy').documentId('privacyPolicy'),
+        ),
 
       S.listItem()
         .id('services')

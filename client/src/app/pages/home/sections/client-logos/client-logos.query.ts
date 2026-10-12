@@ -5,4 +5,3 @@ export const CLIENT_LOGOS_QUERY = `*[_type == "clientLogos"][0]{
     "logoUrl": logo.asset->url
   }, [])
 }`;
-

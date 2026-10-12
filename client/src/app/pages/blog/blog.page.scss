@@ -116,8 +116,16 @@ h1 {
     font-size: 1.0625rem;
     font-weight: 600;
     line-height: 1.38;
-  }
 
+    a {
+      color: var(--clr-white);
+      transition: color 0.15s ease-in-out;
+
+      &:hover {
+        color: var(--clr-main);
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 768px) {

@@ -5,22 +5,22 @@
   <div class="hero-content content-width-g">
     <div class="heading-container">
       <div class="striped-decor" aria-hidden="true"></div>
-      <app-pre-heading i18n="@@privacy.preheading">Information</app-pre-heading>
-      <h1 i18n="@@privacy.title">Privacy Policy</h1>
+      <app-pre-heading i18n="@@privacy.preheading">Informacje</app-pre-heading>
+      <h1 i18n="@@privacy.title">Polityka prywatności</h1>
     </div>
-    <p i18n="@@privacy.subtitle">Learn how we process and protect your personal data.</p>
+    <p i18n="@@privacy.subtitle">Dowiedz się, w jaki sposób przetwarzamy i chronimy Twoje dane osobowe.</p>
   </div>
 </section>
 
 <section class="privacy-content">
   <article>
     @if (policy(); as content) {
-    <p class="updated-at"><span i18n="@@privacy.updatedAt">Last updated:</span> {{ content.updatedAt }}</p>
+    <p class="updated-at"><span i18n="@@privacy.updatedAt">Ostatnia aktualizacja:</span> {{ content.updatedAt }}</p>
     <app-portable-content [nodes]="content.content" />
     } @else if (loading()) {
-    <p class="status" i18n="@@common.loading">Loading...</p>
+    <p class="status" i18n="@@common.loading">Ładowanie...</p>
     } @else if (error()) {
-    <p class="status" i18n="@@common.content-unavailable">Content is currently unavailable.</p>
+    <p class="status" i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
     }
   </article>
 </section>

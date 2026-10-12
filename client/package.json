@@ -23,9 +23,11 @@
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@ardium-ui/devkit": "^1.5.0",
+    "@ardium-ui/icons": "^0.4.0",
     "@sanity/client": "^7.26.2",
     "array-shuffle": "^3.0.0",
     "rxjs": "~7.8.0",
+    "take-chance": "^4.3.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

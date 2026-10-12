@@ -148,11 +148,7 @@ import {homepage} from './documents/homepage'
 import {localizedString} from './objects/localized-string'
 import {localizedText} from './objects/localized-text'
 
-export const schemaTypes = [
-  localizedString,
-  localizedText,
-  homepage,
-]
+export const schemaTypes = [localizedString, localizedText, homepage]
 ```
 
 ### Documents
@@ -261,18 +257,13 @@ structure/singletons.ts
 Example:
 
 ```ts
-export const singletonTypes = new Set([
-  'homepage',
-])
+export const singletonTypes = new Set(['homepage'])
 ```
 
 When adding another singleton, add its schema type to the same set:
 
 ```ts
-export const singletonTypes = new Set([
-  'homepage',
-  'siteSettings',
-])
+export const singletonTypes = new Set(['homepage', 'siteSettings'])
 ```
 
 Singleton documents must also be added to the custom Studio structure in:
@@ -290,12 +281,7 @@ S.listItem()
   .id('homepage')
   .schemaType('homepage')
   .title('Homepage')
-  .child(
-    S.editor()
-      .id('homepage')
-      .schemaType('homepage')
-      .documentId('homepage'),
-  )
+  .child(S.editor().id('homepage').schemaType('homepage').documentId('homepage'))
 ```
 
 This ensures that Studio always opens the same document instead of allowing multiple copies of it to be created.

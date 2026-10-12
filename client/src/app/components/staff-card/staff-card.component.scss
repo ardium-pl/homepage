@@ -35,9 +35,9 @@ img {
   align-items: center;
 }
 .nationality {
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  opacity: 50%;
+  width: 1.5rem;
+  height: 1rem;
+  border-radius: 0.125rem;
 }
 .links {
   display: flex;
@@ -48,7 +48,7 @@ img {
     color: rgb(108, 107, 123);
 
     &:hover {
-      color: var(--clr-main)
+      color: var(--clr-main);
     }
   }
 }

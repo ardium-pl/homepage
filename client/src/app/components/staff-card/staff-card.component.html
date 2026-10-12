@@ -7,7 +7,11 @@
   </div>
 
   <div class="other-info">
-    <div class="nationality">{{ nationality() | uppercase }}</div>
+    <img
+      class="nationality"
+      alt="{{ nationality() }}"
+      [src]="'https://purecatamphetamine.github.io/country-flag-icons/3x2/' + nationality().toUpperCase() + '.svg'"
+    />
     <div class="links">
       <a [href]="linkedInLink()">
         <icon-brand-linkedin />

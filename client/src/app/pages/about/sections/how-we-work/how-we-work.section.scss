@@ -1,0 +1,56 @@
+section {
+  padding: 5rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-margin-top: 5rem;
+}
+
+.card-area {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  counter-reset: card-counter;
+
+  p {
+    font-size: 1rem;
+  }
+}
+app-card {
+  counter-increment: card-counter;
+
+  app-card-icon {
+    .big-number {
+      color: var(--clr-main);
+      font-size: 4.5rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 6rem;
+
+      &::before {
+        content: counter(card-counter);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .card-area {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    p {
+      font-size: 0.9375rem;
+    }
+  }
+  app-card {
+    app-card-icon {
+      width: 3rem;
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .card-area p {
+    font-size: 1rem;
+  }
+}

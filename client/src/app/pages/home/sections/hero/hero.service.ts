@@ -10,11 +10,11 @@ export class HeroService {
   private readonly locale = inject(LocaleService);
 
   getHero(): Promise<HeroContent | null> {
-    return this.sanity.fetch<HeroContent | null>(HERO_QUERY, { language: this.locale.language }).then((hero) => {
+    return this.sanity.fetch<HeroContent | null>(HERO_QUERY, { language: this.locale.language }).then(hero => {
       if (!hero) return null;
 
       const hasContent = Boolean(
-        hero.preHeading || hero.title || hero.subtitle || hero.contactButtonText || hero.imageUrl,
+        hero.preHeading || hero.title || hero.subtitle || hero.contactButtonText || hero.imageUrl
       );
       return hasContent ? hero : null;
     });

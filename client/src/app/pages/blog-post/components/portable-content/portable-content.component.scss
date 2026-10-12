@@ -2,6 +2,10 @@
   color: rgba(var(--clr-white-rgb), 0.8);
   font-size: 1.0625rem;
   line-height: 1.75;
+
+  > :not(figure) {
+    max-width: 90ch;
+  }
 }
 
 .text-span {
@@ -28,11 +32,21 @@ h6 {
   text-transform: capitalize;
 }
 
-h2 { font-size: 1.625rem; }
-h3 { font-size: 1.375rem; }
-h4 { font-size: 1.125rem; }
-h5 { font-size: 1rem; }
-h6 { font-size: 0.875rem; }
+h2 {
+  font-size: 1.625rem;
+}
+h3 {
+  font-size: 1.375rem;
+}
+h4 {
+  font-size: 1.125rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.875rem;
+}
 
 ul,
 ol {
@@ -44,7 +58,9 @@ a {
   color: var(--clr-main);
 }
 
-a { text-underline-offset: 0.2em; }
+a {
+  text-underline-offset: 0.2em;
+}
 
 blockquote {
   padding-left: 1.25rem;
@@ -101,5 +117,4 @@ code {
   ol {
     padding-left: 1.25rem;
   }
-
 }

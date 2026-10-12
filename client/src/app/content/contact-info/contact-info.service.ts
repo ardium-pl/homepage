@@ -13,10 +13,10 @@ export class ContactInfoService {
   getContactInfo(): Promise<ContactInfo | null> {
     this.request ??= this.sanity
       .fetch<ContactInfo | null>(CONTACT_INFO_QUERY, { language: this.locale.language })
-      .then((contactInfo) => {
+      .then(contactInfo => {
         if (!contactInfo) return null;
 
-        const hasContent = Object.values(contactInfo).some((value) => value.length > 0);
+        const hasContent = Object.values(contactInfo).some(value => value.length > 0);
         return hasContent ? contactInfo : null;
       })
       .catch((error: unknown) => {

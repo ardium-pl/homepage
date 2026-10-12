@@ -36,17 +36,6 @@ fieldset {
     font-weight: 500;
     line-height: 1.5;
   }
-
-  a {
-    color: var(--clr-main);
-    text-decoration: none;
-    transition: opacity 0.2s ease-in-out;
-
-    &:hover,
-    &:focus-visible {
-      opacity: 0.75;
-    }
-  }
 }
 
 @media only screen and (max-width: 576px) {

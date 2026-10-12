@@ -1,0 +1,15 @@
+<section class="page-hero">
+  <img class="hero-pattern" src="pattern1.jpg" alt="" />
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="content-width-g hero-content">
+    <app-pre-heading>{{ preheading() }}</app-pre-heading>
+
+    <h1>{{ title() }}</h1>
+
+    <div class="hero-line" aria-hidden="true"></div>
+
+    @if (description()) {
+      <p [innerHTML]="description()"></p>
+    }
+  </div>
+</section>

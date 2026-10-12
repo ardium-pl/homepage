@@ -28,11 +28,11 @@ export class BlogPostPage {
   constructor() {
     this.route.paramMap
       .pipe(
-        map((params) => params.get('slug') ?? ''),
+        map(params => params.get('slug') ?? ''),
         distinctUntilChanged(),
-        takeUntilDestroyed(this.destroyRef),
+        takeUntilDestroyed(this.destroyRef)
       )
-      .subscribe((slug) => void this.loadPost(slug));
+      .subscribe(slug => void this.loadPost(slug));
   }
 
   private async loadPost(slug: string): Promise<void> {

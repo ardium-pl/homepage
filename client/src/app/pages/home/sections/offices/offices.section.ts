@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { createAsyncContent } from '@utils/async-content';
-import { ContactInfoService } from '../../../../content/contact-info/contact-info.service';
 import { OfficeCardComponent } from '../../../../components/office-card/office-card.component';
+import { ContactInfoService } from '../../../../content/contact-info/contact-info.service';
 
 @Component({
   selector: 'app-offices-section',
@@ -18,5 +18,5 @@ export class OfficesSection {
   readonly contactInfo = this.contactInfoState.content;
   readonly loading = this.contactInfoState.loading;
   readonly error = this.contactInfoState.error;
-  readonly city = $localize`:@@offices.city.warsaw:Warsaw`;
+  readonly city = $localize`:@@offices.city.warsaw:Warszawa`;
 }

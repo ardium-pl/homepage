@@ -1,11 +1,20 @@
 <section id="contact-section">
   <div class="content-width-g">
-    <h2 i18n="@@contact.title">Have&nbsp;any&nbsp;questions? Let's&nbsp;answer&nbsp;them</h2>
+    <div class="heading-container-g">
+      <h2 i18n="@@contact.title">Opowiedz nam, co Cię spowalnia</h2>
+      <p i18n="@@contact.subtitle">
+        Opisz w kilku zdaniach, co chcesz usprawnić. Odpiszemy w ciągu 3 dni roboczych i zaproponujemy kolejny krok.
+      </p>
+      <p i18n="@@contact.subtitle-email">
+        Wolisz napisać bezpośrednio do Jakuba Bródki?
+        <a href="mailto:jakub.brodka@ardium.pl">jakub.brodka&#64;ardium.pl</a>
+      </p>
+    </div>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <fieldset>
         <app-form-field
           formControlName="name"
-          label="Name"
+          label="Imię"
           required
           inputId="name"
           autocomplete="name"
@@ -22,23 +31,23 @@
       </fieldset>
       <app-form-field
         formControlName="subject"
-        label="Subject"
+        label="Temat"
         required
         inputId="subject"
         [errorText]="translateError(form.controls.subject)"
       />
       <app-form-field-textarea
         formControlName="message"
-        label="Message"
+        label="Wiadomość"
         required
         inputId="message"
         [errorText]="translateError(form.controls.subject)"
       />
       <div class="form-actions">
-        <app-button appearance="filled" type="submit" i18n="@@contact.send">Send your message</app-button>
+        <app-button appearance="filled" type="submit" i18n="@@contact.send">Napisz do nas</app-button>
         <p i18n="@@contact.privacyNotice">
-          Information about how we process your data can be found in the
-          <a routerLink="/privacy-policy">Privacy Policy</a>.
+          Informacje dotyczące przetwarzania danych znajdziesz w
+          <a routerLink="/privacy-policy">Polityce prywatności</a>.
         </p>
       </div>
     </form>

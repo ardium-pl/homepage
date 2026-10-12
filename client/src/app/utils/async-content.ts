@@ -13,7 +13,7 @@ export function createAsyncContent<T>(loader: () => Promise<T | null>): AsyncCon
 
   void Promise.resolve()
     .then(loader)
-    .then((value) => {
+    .then(value => {
       content.set(value);
       error.set(!value);
     })

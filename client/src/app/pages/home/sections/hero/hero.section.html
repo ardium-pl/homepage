@@ -10,15 +10,13 @@
         <div class="striped-decor"></div>
         @if (content.preHeading) {
         <app-pre-heading>{{ content.preHeading }}</app-pre-heading>
-        }
-        @if (content.title) {
+        } @if (content.title) {
         <h1>{{ content.title }}</h1>
         }
       </div>
       @if (content.subtitle) {
       <p>{{ content.subtitle }}</p>
-      }
-      @if (content.contactButtonText) {
+      } @if (content.contactButtonText) {
       <app-button (click)="onContactUsClick()">{{ content.contactButtonText }}</app-button>
       }
     </div>
@@ -28,10 +26,9 @@
       }
     </div>
     } @else if (loading()) {
-    <p i18n="@@common.loading">Loading...</p>
+    <p i18n="@@common.loading">Ładowanie...</p>
     } @else if (error()) {
-    <p i18n="@@common.content-unavailable">Content is currently unavailable.</p>
+    <p i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
     }
   </div>
 </section>
- 
