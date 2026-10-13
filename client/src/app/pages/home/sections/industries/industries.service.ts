@@ -1,7 +1,7 @@
-import {httpResource, HttpResourceRequest} from '@angular/common/http'
-import {computed, inject, Injectable} from '@angular/core'
-import {environment} from '../../../../../environments/environment'
-import {LocaleService} from '../../../../services/locale.service'
+import { httpResource, HttpResourceRequest } from '@angular/common/http'
+import { computed, inject, Injectable } from '@angular/core'
+import { environment } from '../../../../../environments/environment'
+import { LocaleService } from '../../../../services/locale.service'
 
 export interface IndustryItem {
   key: string
