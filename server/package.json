@@ -6,8 +6,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "cd .. && npm run build && cd server && node dist/index.js",
-    "dev": "nodemon --watch src --ext ts --exec \"npm run start\""
+    "start": "cd .. && pnpm run build && cd server && node dist/index.js",
+    "dev": "nodemon --watch src --ext ts --exec \"pnpm run start\""
   },
   "author": "",
   "license": "MIT",

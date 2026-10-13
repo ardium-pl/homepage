@@ -4,17 +4,18 @@
   "description": "",
   "author": "",
   "scripts": {
-    "start": "npm run build && cd server && node dist/index.js",
-    "start:development": "npm run build:development && cd server && node dist/index.js",
-    "build": "cd client && npm install && npm run build && cd ../server && npm install && npm run build",
-    "build:development": "cd client && npm install && npm run build:development && cd ../server && npm install && npm run build",
-    "watch": "cd client && npm run watch",
-    "server": "npm --prefix server run dev",
+    "start": "pnpm run build && cd server && node dist/index.js",
+    "start:development": "pnpm run build:development && cd server && node dist/index.js",
+    "build": "cd client && pnpm install && pnpm run build && cd ../server && pnpm install && pnpm run build",
+    "build:development": "cd client && pnpm install && pnpm run build:development && cd ../server && pnpm install && pnpm run build",
+    "watch": "cd client && pnpm run watch",
+    "server": "pnpm --prefix server run dev",
     "front": "cd client && ng serve",
     "prettier": "prettier --write ."
   },
   "license": "MIT",
   "devDependencies": {
+    "ppnpm": "^12.11.2",
     "prettier": "^3.3.2"
   }
 }

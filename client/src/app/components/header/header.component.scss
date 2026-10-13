@@ -30,7 +30,7 @@ nav {
   position: fixed;
   z-index: 5;
   inset: 0 0 50% 100%;
-  padding: 6rem 1rem;
+  padding: 6rem 1rem 6rem 4rem;
   background-color: rgba(var(--clr-black-rgb), 0.6);
   overflow: hidden;
   transition:
@@ -46,9 +46,10 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 1.5rem;
+    gap: 0.25rem;
 
     a {
+      min-width: max-content;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -97,9 +98,6 @@ app-icon-button {
 }
 
 @media only screen and (min-width: 768px) {
-  .header-container {
-    max-width: max-content;
-  }
   app-icon-button {
     display: none;
   }
@@ -109,7 +107,6 @@ app-icon-button {
 
     ul {
       flex-direction: row;
-      gap: 1.5rem;
 
       a {
         font-size: 1rem;
@@ -126,6 +123,11 @@ app-icon-button {
   .blog-link {
     padding-left: 1rem;
     border-left: 1px solid rgba(var(--clr-white-rgb), 0.75);
+  }
+}
+@media only screen and (max-width: 991.98px) {
+  .header-container {
+    max-width: unset;
   }
 }
 @media only screen and (min-width: 992px) {

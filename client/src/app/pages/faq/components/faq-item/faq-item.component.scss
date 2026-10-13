@@ -5,10 +5,10 @@ $padding-vertical: 1.25rem;
   padding: $padding-vertical 1.5rem;
   flex-direction: column;
   align-items: flex-start;
-  align-self: stretch;
   position: relative;
   background-color: #0c1029;
   border-top: 1px solid var(--clr-accent-light);
+  width: 100%;
   max-width: 100ch;
 
   &:last-of-type {
