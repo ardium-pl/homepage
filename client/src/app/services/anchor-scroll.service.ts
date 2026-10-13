@@ -1,5 +1,5 @@
-import { DOCUMENT, isPlatformBrowser, ViewportScroller } from '@angular/common';
-import { DestroyRef, inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, ViewportScroller } from '@angular/common';
+import { DestroyRef, inject, Injectable, PLATFORM_ID, DOCUMENT } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router, Scroll } from '@angular/router';
 import { filter } from 'rxjs';
