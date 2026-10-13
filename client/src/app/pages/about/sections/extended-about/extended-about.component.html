@@ -1,25 +1,27 @@
 <section>
   <div class="content-width-g">
-    <div class="left-right-container">
-      <div>
-        <div class="heading-container-g">
-          <h3 i18n="@@extended-about.about-us.title">O nas</h3>
+    @if (content(); as about) {
+      <div class="left-right-container">
+        <div>
+          @if (about.title) {
+            <div class="heading-container-g">
+              <h3>{{ about.title }}</h3>
+            </div>
+          }
+          @for (paragraph of about.paragraphs; track $index) {
+            <p>{{ paragraph }}</p>
+          }
         </div>
-        <p i18n="@@extended-about.about-us.content1">
-          Specjalizujemy się w zaawansowanych wdrożeniach produkcyjnych dużych modeli językowych. Wierzymy, że kluczem
-          do skutecznego wykorzystania AI w organizacji jest precyzyjna konfiguracja modeli. Zapewniamy kompleksowe
-          wsparcie - od pomysłu, przez dostosowanie modelu, aż po integrację z firmowymi narzędziami i utrzymanie
-          rozwiązania w wybranym środowisku.
-        </p>
-        <p i18n="@@extended-about.about-us.content2">
-          Najczęściej pracujemy z nieustrukturyzowanymi danymi pochodzącymi z dokumentów w najróżniejszych formatach.
-          Wspólnie z klientem projektujemy procesy, które umożliwiają modelowi samodzielne działanie - bez konieczności
-          stałego nadzoru.
-        </p>
+        <div class="with-img">
+          @if (about.imageUrl) {
+            <img [src]="about.imageUrl" class="llm-img" alt="About us" />
+          }
+        </div>
       </div>
-      <div class="with-img">
-        <img src="llm.png" class="llm-img" alt="About Us" />
-      </div>
-    </div>
+    } @else if (loading()) {
+      <p i18n="@@common.loading">Ładowanie...</p>
+    } @else if (error()) {
+      <p i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
+    }
   </div>
 </section>

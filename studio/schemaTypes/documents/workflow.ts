@@ -43,7 +43,7 @@ export const workflow = defineType({
             defineField({
               name: 'description',
               title: 'Description',
-              type: 'localizedString',
+              type: 'localizedText',
               validation: (rule) => rule.required(),
             }),
           ],
@@ -55,7 +55,7 @@ export const workflow = defineType({
   preview: {
     prepare() {
       return {
-        title: 'FAQ',
+        title: 'Workflow',
       }
     },
   },

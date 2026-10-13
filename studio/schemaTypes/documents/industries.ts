@@ -61,7 +61,7 @@ export const industries = defineType({
   preview: {
     prepare() {
       return {
-        title: 'Services',
+        title: 'Industries',
       }
     },
   },

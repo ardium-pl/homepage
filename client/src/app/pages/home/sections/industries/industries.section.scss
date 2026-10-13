@@ -16,9 +16,27 @@ section {
     font-size: 1rem;
   }
 }
+
 app-card {
+  aspect-ratio: unset !important;
+  
   app-card-icon {
     width: 3.5rem;
+
+    .industry-icon {
+      aspect-ratio: 1;
+      background-color: var(--clr-main);
+      display: block;
+      mask-image: var(--industry-icon-url);
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      width: 100%;
+      -webkit-mask-image: var(--industry-icon-url);
+      -webkit-mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+    }
   }
 }
 

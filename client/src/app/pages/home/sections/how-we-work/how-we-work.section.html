@@ -1,60 +1,36 @@
 <section id="how-we-work-section">
   <div class="content-width-g">
-    <div class="heading-container-g">
-      <app-pre-heading i18n="@@how-we-work.heading">Proces</app-pre-heading>
-      <h2 i18n="@@how-we-work.subheading">Jak pracujemy</h2>
-    </div>
-    <div class="card-area">
-      <app-card transparent>
-        <app-card-icon>
-          <span class="big-number">
-            <!-- content added in CSS -->
-          </span>
-        </app-card-icon>
-        <app-card-title i18n="@@how-we-work.talk.title">Rozmowa</app-card-title>
-        <app-card-content>
-          <p i18n="@@how-we-work.talk.content">
-            Poznajemy Twój proces i cel. Pierwsza rozmowa jest bezpłatna i do niczego nie zobowiązuje.
-          </p>
-        </app-card-content>
-      </app-card>
-      <app-card transparent>
-        <app-card-icon>
-          <span class="big-number">
-            <!-- content added in CSS -->
-          </span>
-        </app-card-icon>
-        <app-card-title i18n="@@how-we-work.audit.title">Audyt</app-card-title>
-        <app-card-content>
-          <p i18n="@@how-we-work.audit.content">
-            Sprawdzamy, co w procesie da się usprawnić i co faktycznie się opłaci. Efektem jest plan wdrożenia.
-          </p>
-        </app-card-content>
-      </app-card>
-      <app-card transparent>
-        <app-card-icon>
-          <span class="big-number">
-            <!-- content added in CSS -->
-          </span>
-        </app-card-icon>
-        <app-card-title i18n="@@how-we-work.project.title">Projekt</app-card-title>
-        <app-card-content>
-          <p i18n="@@how-we-work.project.content">Projektujemy rozwiązanie przed przejściem do pełnego wdrożenia.</p>
-        </app-card-content>
-      </app-card>
-      <app-card transparent>
-        <app-card-icon>
-          <span class="big-number">
-            <!-- content added in CSS -->
-          </span>
-        </app-card-icon>
-        <app-card-title i18n="@@how-we-work.implementation.title">Wdrożenie i rozwój</app-card-title>
-        <app-card-content>
-          <p i18n="@@how-we-work.implementation.content">
-            Wdrażamy rozwiązanie i rozwijamy je po wdrożeniu według wspólnie ustalonej roadmapy.
-          </p>
-        </app-card-content>
-      </app-card>
-    </div>
+    @if (content(); as workflow) {
+      <div class="heading-container-g">
+        @if (workflow.preHeading) {
+          <app-pre-heading>{{ workflow.preHeading }}</app-pre-heading>
+        }
+        @if (workflow.title) {
+          <h2>{{ workflow.title }}</h2>
+        }
+        @if (workflow.subtitle) {
+          <p>{{ workflow.subtitle }}</p>
+        }
+      </div>
+      <div class="card-area">
+        @for (item of workflow.list; track item.key) {
+          <app-card transparent>
+            <app-card-icon>
+              <span class="big-number"></span>
+            </app-card-icon>
+            @if (item.title) {
+              <app-card-title>{{ item.title }}</app-card-title>
+            }
+            @if (item.description) {
+              <app-card-content><p>{{ item.description }}</p></app-card-content>
+            }
+          </app-card>
+        }
+      </div>
+    } @else if (loading()) {
+      <p i18n="@@common.loading">Ładowanie...</p>
+    } @else if (error()) {
+      <p i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
+    }
   </div>
 </section>
