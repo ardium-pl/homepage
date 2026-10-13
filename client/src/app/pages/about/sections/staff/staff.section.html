@@ -5,7 +5,7 @@
       <h2 i18n="@@staff.title">Poznaj nasz zespół</h2>
     </div>
     <div class="staff-container">
-      @for (person of STAFF_DATA; track person.name) {
+      @for (person of staffData(); track person.name) {
       <app-staff-card
         [imgSrc]="person.imgSrc"
         [name]="person.name"

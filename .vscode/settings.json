@@ -5,11 +5,7 @@
         {
           "name": "ng",
           "commands": ["cd client"]
-        }
-      ]
-    },
-    {
-      "splitTerminals": [
+        },
         {
           "name": "ng serve",
           "commands": ["cd client", "ng serve"]
@@ -21,15 +17,19 @@
         {
           "name": "server",
           "commands": ["cd server"]
+        },
+        {
+          "name": "nodemon",
+          "commands": ["npm run server"]
         }
       ]
     },
     {
       "splitTerminals": [
         {
-          "name": "nodemon",
-          "commands": ["npm run server"]
-        }
+          "name": "studio",
+          "commands": ["cd studio"]
+        },
       ]
     }
   ],

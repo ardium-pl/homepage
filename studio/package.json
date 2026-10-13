@@ -6,7 +6,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "sanity build",
-    "deploy": "sanity deploy",
+    "deploy": "node scripts/deploy-with-env.mjs development",
+    "deploy:dev": "node scripts/deploy-with-env.mjs development",
+    "deploy:prod": "node scripts/deploy-with-env.mjs production",
     "deploy-graphql": "sanity graphql deploy",
     "dev": "sanity dev",
     "start": "sanity start"

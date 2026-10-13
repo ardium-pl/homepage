@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export const employees = defineType({
   name: 'employees',
@@ -38,8 +38,8 @@ export const employees = defineType({
               name: 'countryCode',
               title: 'Country code',
               type: 'string',
-              description: 'ex. PL, DE',
-              validation: (rule) => rule.required(),
+              description: '2-letter ISO country code, e.g. PL, DE',
+              validation: (rule) => rule.required().min(2).max(2).uppercase(),
             }),
             defineField({
               name: 'portrait',
@@ -48,10 +48,16 @@ export const employees = defineType({
               validation: (rule) => rule.required(),
             }),
             defineField({
-              name: 'bio',
-              title: 'Biography',
+              name: 'description',
+              title: 'Description',
               type: 'localizedText',
               validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'bio',
+              title: 'Legacy description',
+              type: 'localizedText',
+              hidden: true,
             }),
             defineField({
               name: 'email',
