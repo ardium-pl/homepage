@@ -1,0 +1,60 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.horizontal {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: max-content;
+}
+
+img {
+  height: 6.5rem;
+  border-radius: 1rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.name-and-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.name {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.job-title,
+.description {
+  font-size: 14px;
+  line-height: 20px;
+  color: hsl(246, 6%, 65%);
+}
+.other-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.nationality {
+  width: 1.5rem;
+  height: 1rem;
+  border-radius: 0.125rem;
+}
+.links {
+  display: flex;
+  gap: 0.5rem;
+
+  a {
+    height: 1.25rem;
+    color: rgb(108, 107, 123);
+
+    &:hover {
+      color: var(--clr-main);
+    }
+  }
+}

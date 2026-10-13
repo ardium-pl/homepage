@@ -1,0 +1,61 @@
+<app-page-hero
+  preheading="Wiedza"
+  title="Blog & Case Studies"
+  description="Praktyczna wiedza o AI w biznesie - rzeczywiste projekty,<br />narzędzia i spostrzeżenia z pracy z klientami."
+/>
+
+<section class="posts-section">
+  <div class="content-width-g posts-content">
+    <div class="tabs" role="tablist" aria-label="Kategorie wpisów" i18n-aria-label="@@blog.categoriesLabel">
+      <button
+        type="button"
+        role="tab"
+        [attr.aria-selected]="activeType() === 'caseStudy'"
+        [class.active]="activeType() === 'caseStudy'"
+        (click)="activeType.set('caseStudy')"
+        i18n="@@blog.caseStudiesTab"
+      >
+        Case Studies
+      </button>
+      <button
+        type="button"
+        role="tab"
+        [attr.aria-selected]="activeType() === 'blog'"
+        [class.active]="activeType() === 'blog'"
+        (click)="activeType.set('blog')"
+        i18n="@@blog.postsTab"
+      >
+        Wpisy
+      </button>
+    </div>
+
+    @if (posts()) { @if (visiblePosts().length) {
+    <div class="posts-grid">
+      @for (post of visiblePosts(); track post.id) {
+      <article class="post-card">
+        <div class="post-image">
+          <a [routerLink]="['/blog', post.slug]" fragment="article">
+            <img [src]="post.imageUrl" [alt]="post.imageAlt" />
+          </a>
+          <span class="badge">{{ typeLabel(post.type) }}</span>
+        </div>
+        <div class="post-body">
+          <time [attr.datetime]="post.publishedAt">{{ post.date }}</time>
+          <h2>
+            <a [routerLink]="['/blog', post.slug]" fragment="article"> {{ post.title }} </a>
+          </h2>
+          <p>{{ post.summary }}</p>
+          <a [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Czytaj więcej →</a>
+        </div>
+      </article>
+      }
+    </div>
+    } @else {
+    <p class="state-message" i18n="@@blog.emptyCategory">Nie ma jeszcze wpisów w tej kategorii.</p>
+    } } @else if (loading()) {
+    <p class="state-message" i18n="@@common.loading">Ładowanie...</p>
+    } @else if (error()) {
+    <p class="state-message" i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
+    }
+  </div>
+</section>

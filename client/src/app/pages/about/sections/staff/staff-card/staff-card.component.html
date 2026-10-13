@@ -1,0 +1,29 @@
+<div class="horizontal">
+
+  <img [src]="imgSrc()" [alt]="name()" />
+  
+  <div class="info">
+    <div class="name-and-title">
+      <div class="name">{{ name() }}</div>
+      <div class="job-title">{{ jobTitle() }}</div>
+    </div>
+    
+    <div class="other-info">
+      <img
+      class="nationality"
+      alt="{{ nationality() }}"
+      [src]="'https://purecatamphetamine.github.io/country-flag-icons/3x2/' + nationality().toUpperCase() + '.svg'"
+    />
+    <div class="links">
+      <a [href]="mailtoLink()">
+        <ard-icon-at />
+      </a>
+      <a [href]="linkedInLink()">
+        <icon-brand-linkedin />
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+<p class="description">{{ description() }}</p>

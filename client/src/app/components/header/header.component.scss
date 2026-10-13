@@ -1,8 +1,6 @@
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto;
   height: 5rem;
   z-index: 10;
   transition: background-color 0.3s ease-in-out;
@@ -24,13 +22,14 @@ header {
 img {
   height: 2.5rem;
 }
+.logo {
+  display: block;
+  flex-shrink: 0;
+}
 nav {
   position: fixed;
   z-index: 5;
-  left: 100%;
-  right: 0;
-  top: 0;
-  bottom: 50%;
+  inset: 0 0 50% 100%;
   padding: 6rem 1rem;
   background-color: rgba(var(--clr-black-rgb), 0.6);
   overflow: hidden;
@@ -39,8 +38,7 @@ nav {
     bottom 0.2s ease-in-out;
 
   &.open {
-    left: 0;
-    bottom: 0;
+    inset: 0;
   }
 
   ul {
@@ -59,7 +57,6 @@ nav {
       font-size: 1.25rem;
       font-weight: 500;
       position: relative;
-      text-transform: capitalize;
       text-decoration: none !important;
       transition: color 0.3s ease-in-out;
 
@@ -97,6 +94,12 @@ app-icon-button {
     padding: 0.75rem;
     width: calc(100% - 3rem);
   }
+}
+
+@media only screen and (min-width: 768px) {
+  .header-container {
+    max-width: max-content;
+  }
   app-icon-button {
     display: none;
   }
@@ -106,7 +109,7 @@ app-icon-button {
 
     ul {
       flex-direction: row;
-      gap: 0.75rem;
+      gap: 1.5rem;
 
       a {
         font-size: 1rem;
@@ -120,15 +123,14 @@ app-icon-button {
       background-color: var(--clr-white);
     }
   }
-}
-@media only screen and (min-width: 768px) {
-  nav ul {
-    gap: 2rem;
+  .blog-link {
+    padding-left: 1rem;
+    border-left: 1px solid rgba(var(--clr-white-rgb), 0.75);
   }
 }
 @media only screen and (min-width: 992px) {
   nav ul {
-    gap: 3rem;
+    gap: 2rem;
   }
 }
 @media only screen and (min-width: 1200px) {

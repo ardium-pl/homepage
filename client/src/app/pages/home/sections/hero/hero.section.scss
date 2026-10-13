@@ -1,8 +1,7 @@
 section {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: max-content;
   max-height: 1280px;
-  padding: 6rem 0;
+  padding: 6rem 0 3rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -15,7 +14,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  padding: 4rem 0.75rem 0;
+  padding: 2.5rem 0.75rem 0;
 
   > * {
     width: 100%;
@@ -53,6 +52,7 @@ section {
 
 .image-column img {
   width: 80%;
+  max-width: 38rem;
   margin: 0 auto;
 }
 
@@ -79,5 +79,10 @@ section {
     width: 100%;
     position: relative;
     bottom: 4rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  section {
+    padding-bottom: 0;
   }
 }

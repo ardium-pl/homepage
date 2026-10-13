@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ExtendedAboutComponent } from "./sections/extended-about/extended-about.component";
+import { ExtendedAboutComponent } from './sections/extended-about/extended-about.component';
 import { StaffSection } from './sections/staff/staff.section';
 
 @Component({
@@ -7,8 +7,6 @@ import { StaffSection } from './sections/staff/staff.section';
   standalone: true,
   imports: [StaffSection, ExtendedAboutComponent],
   templateUrl: './about.page.html',
-  styleUrl: './about.page.scss'
+  styleUrl: './about.page.scss',
 })
-export class AboutPage {
-
-}
+export class AboutPage {}

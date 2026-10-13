@@ -1,0 +1,66 @@
+:host {
+  display: block;
+}
+
+.page-hero {
+  min-height: 32rem;
+  padding: 10rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-pattern,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-pattern {
+  object-fit: cover;
+  opacity: 0.35;
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(6, 9, 34, 0.12), rgba(6, 9, 34, 0.42));
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.75rem, 5.2vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 1.5px;
+}
+
+.hero-line {
+  width: 10rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--clr-main), transparent);
+}
+
+.hero-content p {
+  max-width: 47rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: rgba(var(--clr-white-rgb), 0.78);
+}
+
+@media only screen and (max-width: 575px) {
+  .page-hero {
+    min-height: 28rem;
+    padding-top: 8rem;
+  }
+
+  .hero-content p br {
+    display: none;
+  }
+}

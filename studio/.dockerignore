@@ -1,0 +1,7 @@
+node_modules
+dist
+.sanity
+.env.development
+.env.production
+*.local
+npm-debug.log

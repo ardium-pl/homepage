@@ -5,10 +5,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.scroll-anchor {
-  position: absolute;
-  top: -4rem;
+  scroll-margin-top: 5rem;
 }
 h2 {
   text-align: center;
@@ -25,8 +22,20 @@ fieldset {
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
-app-button {
+.form-actions {
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  p {
+    max-width: 16.5rem;
+    color: var(--clr-semi-dark);
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
 }
 
 @media only screen and (max-width: 576px) {
@@ -39,10 +48,12 @@ app-button {
     padding-top: 10rem;
     padding-bottom: 5rem;
   }
-  .scroll-anchor {
-    top: 0.55rem;
-  }
   fieldset {
     grid-template-columns: 1fr 1fr;
+  }
+  .form-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
   }
 }

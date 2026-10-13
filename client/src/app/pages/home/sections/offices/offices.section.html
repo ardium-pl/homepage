@@ -1,12 +1,21 @@
 <section>
   <div class="content-width-g">
     <div class="heading-container-g">
-      <h2 i18n="@@offices.title">Our office</h2>
-      <p i18n="@@offices.subtitle">If you want to meet with us in person.</p>
+      <h2 i18n="@@offices.title">Nasze biuro</h2>
+      <p i18n="@@offices.subtitle">Jeśli chcesz spotkać się z nami osobiście.</p>
     </div>
     <div class="offices-container">
-      @for (office of OFFICES; track $index) {
-      <app-office-card [city]="office.city" [address]="office.address" [email]="office.email" [phone]="office.phone" />
+      @if (contactInfo(); as contact) {
+      <app-office-card
+        [city]="city"
+        [address]="contact.address"
+        [email]="contact.email"
+        [phone]="contact.phoneNumber"
+      />
+      } @else if (loading()) {
+      <p i18n="@@common.loading">Ładowanie...</p>
+      } @else if (error()) {
+      <p i18n="@@common.contact-unavailable">Dane kontaktowe są obecnie niedostępne.</p>
       }
     </div>
   </div>

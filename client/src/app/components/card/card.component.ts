@@ -10,6 +10,7 @@ import { coerceBooleanProperty } from '@ardium-ui/devkit';
 })
 export class CardComponent {
   readonly annotated = input<boolean, any>(false, { transform: v => coerceBooleanProperty(v) });
+  readonly transparent = input<boolean, any>(false, { transform: v => coerceBooleanProperty(v) });
 
   readonly noIcon = input<boolean, any>(false, { transform: v => coerceBooleanProperty(v) });
 }

@@ -1,0 +1,20 @@
+<button
+  class="heading"
+  (click)="toggle()"
+  [attr.aria-expanded]="isOpen()"
+  [attr.aria-controls]="'faq-content-' + htmlId"
+>
+  <div class="question" [attr.id]="'faq-question-' + htmlId">{{ question() }}</div>
+  <ard-icon-arrow-right class="arrow" aria-hidden="true" />
+</button>
+<div class="content-wrapper">
+  <div
+    class="content"
+    [attr.id]="'faq-content-' + htmlId"
+    role="region"
+    [attr.aria-labelledby]="'faq-question-' + htmlId"
+    aria-live="polite"
+  >
+    <ng-content />
+  </div>
+</div>
