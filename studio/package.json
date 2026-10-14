@@ -11,7 +11,11 @@
     "deploy:prod": "node scripts/deploy-with-env.mjs production",
     "deploy-graphql": "sanity graphql deploy",
     "dev": "sanity dev",
-    "start": "sanity start"
+    "start": "sanity start",
+    "export:dev": "sanity dataset export development ./exports/development.tar.gz",
+    "export:prod": "sanity dataset export production ./exports/production.tar.gz",
+    "import:dev": "sanity dataset import --dataset development",
+    "import:prod": "sanity dataset import --dataset production"
   },
   "keywords": [
     "sanity"
