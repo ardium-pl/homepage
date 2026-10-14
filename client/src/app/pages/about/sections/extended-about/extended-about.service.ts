@@ -43,7 +43,7 @@ export class ExtendedAboutService {
 
   readonly contentResource = httpResource<ExtendedAboutContent | null>(() => this.request(), {
     defaultValue: null,
-    parse: (raw) => this.parseResponse(raw),
+    parse: raw => this.parseResponse(raw),
   });
 
   readonly content = this.contentResource.value;
@@ -60,7 +60,7 @@ export class ExtendedAboutService {
 
     const paragraphs = content.content
       .split(/\n{2,}/)
-      .map((part) => part.trim())
+      .map(part => part.trim())
       .filter(Boolean);
 
     const hasContent = Boolean(content.title || paragraphs.length || content.imageUrl);

@@ -1,29 +1,28 @@
 <div class="horizontal">
-
   <img [src]="imgSrc()" [alt]="name()" />
-  
+
   <div class="info">
     <div class="name-and-title">
       <div class="name">{{ name() }}</div>
       <div class="job-title">{{ jobTitle() }}</div>
     </div>
-    
+
     <div class="other-info">
       <img
-      class="nationality"
-      alt="{{ flagCode() }}"
-      [src]="'https://purecatamphetamine.github.io/country-flag-icons/3x2/' + flagCode() + '.svg'"
-    />
-    <div class="links">
-      <a [href]="mailtoLink()">
-        <ard-icon-at />
-      </a>
-      <a [href]="linkedInLink()">
-        <icon-brand-linkedin />
-      </a>
+        class="nationality"
+        alt="{{ flagCode() }}"
+        [src]="'https://purecatamphetamine.github.io/country-flag-icons/3x2/' + flagCode() + '.svg'"
+      />
+      <div class="links">
+        <a [href]="mailtoLink()">
+          <ard-icon-at />
+        </a>
+        <a [href]="linkedInLink()">
+          <icon-brand-linkedin />
+        </a>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <p class="description">{{ description() }}</p>

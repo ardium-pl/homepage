@@ -29,33 +29,35 @@
       </button>
     </div>
 
-    @if (posts()) { @if (visiblePosts().length) {
-    <div class="posts-grid">
-      @for (post of visiblePosts(); track post.id) {
-      <article class="post-card">
-        <div class="post-image">
-          <a [routerLink]="['/blog', post.slug]" fragment="article">
-            <img [src]="post.imageUrl" [alt]="post.imageAlt" />
-          </a>
-          <span class="badge">{{ typeLabel(post.type) }}</span>
+    @if (posts()) {
+      @if (visiblePosts().length) {
+        <div class="posts-grid">
+          @for (post of visiblePosts(); track post.id) {
+            <article class="post-card">
+              <div class="post-image">
+                <a [routerLink]="['/blog', post.slug]" fragment="article">
+                  <img [src]="post.imageUrl" [alt]="post.imageAlt" />
+                </a>
+                <span class="badge">{{ typeLabel(post.type) }}</span>
+              </div>
+              <div class="post-body">
+                <time [attr.datetime]="post.publishedAt">{{ post.date }}</time>
+                <h2>
+                  <a [routerLink]="['/blog', post.slug]" fragment="article"> {{ post.title }} </a>
+                </h2>
+                <p>{{ post.summary }}</p>
+                <a [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Czytaj więcej →</a>
+              </div>
+            </article>
+          }
         </div>
-        <div class="post-body">
-          <time [attr.datetime]="post.publishedAt">{{ post.date }}</time>
-          <h2>
-            <a [routerLink]="['/blog', post.slug]" fragment="article"> {{ post.title }} </a>
-          </h2>
-          <p>{{ post.summary }}</p>
-          <a [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore">Czytaj więcej →</a>
-        </div>
-      </article>
+      } @else {
+        <p class="state-message" i18n="@@blog.emptyCategory">Nie ma jeszcze wpisów w tej kategorii.</p>
       }
-    </div>
-    } @else {
-    <p class="state-message" i18n="@@blog.emptyCategory">Nie ma jeszcze wpisów w tej kategorii.</p>
-    } } @else if (loading()) {
-    <p class="state-message" i18n="@@common.loading">Ładowanie...</p>
+    } @else if (loading()) {
+      <p class="state-message" i18n="@@common.loading">Ładowanie...</p>
     } @else if (error()) {
-    <p class="state-message" i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
+      <p class="state-message" i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
     }
   </div>
 </section>

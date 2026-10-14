@@ -1,36 +1,38 @@
 @if (posts()?.length) {
-<section id="blog-section">
-  <div class="content-width-g blog-container">
-    <div class="heading-container">
-      <app-pre-heading i18n="@@homeBlog.preheading">Wpisy</app-pre-heading>
-      <h2 i18n="@@homeBlog.title">Z naszego bloga</h2>
-      <div class="heading-bottom">
-        <p i18n="@@homeBlog.subtitle">Zobacz nasze aktualności</p>
-        <a routerLink="/blog" i18n="@@homeBlog.allPosts">Wszystkie wpisy →</a>
+  <section id="blog-section">
+    <div class="content-width-g blog-container">
+      <div class="heading-container">
+        <app-pre-heading i18n="@@homeBlog.preheading">Wpisy</app-pre-heading>
+        <h2 i18n="@@homeBlog.title">Z naszego bloga</h2>
+        <div class="heading-bottom">
+          <p i18n="@@homeBlog.subtitle">Zobacz nasze aktualności</p>
+          <a routerLink="/blog" i18n="@@homeBlog.allPosts">Wszystkie wpisy →</a>
+        </div>
+      </div>
+
+      <div class="posts-layout">
+        @for (post of posts(); track post.id; let first = $first) {
+          <article class="post-card" [class.featured]="first">
+            <div class="post-image">
+              <img [src]="post.imageUrl" [alt]="post.imageAlt" />
+              <span class="badge">{{ typeLabel(post.type) }}</span>
+            </div>
+            <div class="post-body">
+              <time [attr.datetime]="post.publishedAt">{{ post.date }}</time>
+              <h3>
+                <a [routerLink]="['/blog', post.slug]" fragment="article">{{ post.title }}</a>
+              </h3>
+              <p>{{ post.summary }}</p>
+              @if (first && post.contentPreview.length) {
+                <app-portable-content class="content-preview" [nodes]="post.contentPreview" [compact]="true" />
+              }
+              <a class="read-more" [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore"
+                >Czytaj więcej →</a
+              >
+            </div>
+          </article>
+        }
       </div>
     </div>
-
-    <div class="posts-layout">
-      @for (post of posts(); track post.id; let first = $first) {
-      <article class="post-card" [class.featured]="first">
-        <div class="post-image">
-          <img [src]="post.imageUrl" [alt]="post.imageAlt" />
-          <span class="badge">{{ typeLabel(post.type) }}</span>
-        </div>
-        <div class="post-body">
-          <time [attr.datetime]="post.publishedAt">{{ post.date }}</time>
-          <h3><a [routerLink]="['/blog', post.slug]" fragment="article">{{ post.title }}</a></h3>
-          <p>{{ post.summary }}</p>
-          @if (first && post.contentPreview.length) {
-          <app-portable-content class="content-preview" [nodes]="post.contentPreview" [compact]="true" />
-          }
-          <a class="read-more" [routerLink]="['/blog', post.slug]" fragment="article" i18n="@@blog.readMore"
-            >Czytaj więcej →</a
-          >
-        </div>
-      </article>
-      }
-    </div>
-  </div>
-</section>
+  </section>
 }
