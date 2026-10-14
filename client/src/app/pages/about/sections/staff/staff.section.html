@@ -6,15 +6,15 @@
     </div>
     <div class="staff-container">
       @for (person of staffData(); track person.name) {
-      <app-staff-card
-        [imgSrc]="person.imgSrc"
-        [name]="person.name"
-        [jobTitle]="person.jobTitle"
-        [nationality]="person.nationality"
-        [email]="person.email"
-        [linkedInName]="person.linkedInLink"
-        [description]="person.description"
-      />
+        <app-staff-card
+          [imgSrc]="person.imgSrc"
+          [name]="person.name"
+          [jobTitle]="person.jobTitle"
+          [nationality]="person.nationality"
+          [email]="person.email"
+          [linkedInName]="person.linkedInLink"
+          [description]="person.description"
+        />
       }
     </div>
   </div>

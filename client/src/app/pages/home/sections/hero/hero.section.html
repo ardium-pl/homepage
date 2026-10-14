@@ -5,30 +5,32 @@
   <div class="particles"></div>
   <div class="hero-container content-width-g">
     @if (hero(); as content) {
-    <div class="text-column">
-      <div class="heading-container">
-        <div class="striped-decor"></div>
-        @if (content.preHeading) {
-        <app-pre-heading>{{ content.preHeading }}</app-pre-heading>
-        } @if (content.title) {
-        <h1>{{ content.title }}</h1>
+      <div class="text-column">
+        <div class="heading-container">
+          <div class="striped-decor"></div>
+          @if (content.preHeading) {
+            <app-pre-heading>{{ content.preHeading }}</app-pre-heading>
+          }
+          @if (content.title) {
+            <h1>{{ content.title }}</h1>
+          }
+        </div>
+        @if (content.subtitle) {
+          <p>{{ content.subtitle }}</p>
+        }
+        @if (content.contactButtonText) {
+          <app-button (click)="onContactUsClick()">{{ content.contactButtonText }}</app-button>
         }
       </div>
-      @if (content.subtitle) {
-      <p>{{ content.subtitle }}</p>
-      } @if (content.contactButtonText) {
-      <app-button (click)="onContactUsClick()">{{ content.contactButtonText }}</app-button>
-      }
-    </div>
-    <div class="image-column">
-      @if (content.imageUrl) {
-      <img [src]="content.imageUrl" alt="" />
-      }
-    </div>
+      <div class="image-column">
+        @if (content.imageUrl) {
+          <img [src]="content.imageUrl" alt="" />
+        }
+      </div>
     } @else if (loading()) {
-    <p i18n="@@common.loading">Ładowanie...</p>
+      <p i18n="@@common.loading">Ładowanie...</p>
     } @else if (error()) {
-    <p i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
+      <p i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
     }
   </div>
 </section>

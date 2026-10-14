@@ -6,16 +6,16 @@
     </div>
     <div class="offices-container">
       @if (contactInfo(); as contact) {
-      <app-office-card
-        [city]="city"
-        [address]="contact.address"
-        [email]="contact.email"
-        [phone]="contact.phoneNumber"
-      />
+        <app-office-card
+          [city]="city"
+          [address]="contact.address"
+          [email]="contact.email"
+          [phone]="contact.phoneNumber"
+        />
       } @else if (loading()) {
-      <p i18n="@@common.loading">Ładowanie...</p>
+        <p i18n="@@common.loading">Ładowanie...</p>
       } @else if (error()) {
-      <p i18n="@@common.contact-unavailable">Dane kontaktowe są obecnie niedostępne.</p>
+        <p i18n="@@common.contact-unavailable">Dane kontaktowe są obecnie niedostępne.</p>
       }
     </div>
   </div>

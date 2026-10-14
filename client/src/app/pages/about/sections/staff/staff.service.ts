@@ -58,26 +58,22 @@ export class StaffService {
 
   readonly staffResource = httpResource<StaffData[]>(() => this.request(), {
     defaultValue: [],
-    parse: (raw) => this.parseResponse(raw),
+    parse: raw => this.parseResponse(raw),
   });
 
   readonly staffData = computed(() =>
-    arrayShuffle(
-      this.staffResource
-        .value()
-        .filter((item) => item.name || item.email || item.imgSrc || item.description)
-    )
+    arrayShuffle(this.staffResource.value().filter(item => item.name || item.email || item.imgSrc || item.description))
   );
 
   njfdnfj = effect(() => {
     console.log('Staff data updated:', this.staffData());
-  })
+  });
 
   private parseResponse(raw: unknown): StaffData[] {
     const response = raw as SanityQueryResponse<StaffSanityResponse | null>;
     const list = response?.result?.list ?? [];
 
-    return list.map((item) => ({
+    return list.map(item => ({
       imgSrc: item.imgSrc ?? '',
       name: item.name,
       jobTitle: item.jobTitle,

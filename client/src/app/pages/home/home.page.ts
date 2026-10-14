@@ -19,8 +19,8 @@ import { ServicesSection } from './sections/services/services.section';
     ContactSection,
     OfficesSection,
     IndustriesSection,
-    HowWeWorkSection
-],
+    HowWeWorkSection,
+  ],
   templateUrl: './home.page.html',
   styleUrl: './home.page.scss',
 })

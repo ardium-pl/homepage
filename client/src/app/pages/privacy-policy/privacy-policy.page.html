@@ -15,12 +15,12 @@
 <section class="privacy-content">
   <article>
     @if (policy(); as content) {
-    <p class="updated-at"><span i18n="@@privacy.updatedAt">Ostatnia aktualizacja:</span> {{ content.updatedAt }}</p>
-    <app-portable-content [nodes]="content.content" />
+      <p class="updated-at"><span i18n="@@privacy.updatedAt">Ostatnia aktualizacja:</span> {{ content.updatedAt }}</p>
+      <app-portable-content [nodes]="content.content" />
     } @else if (loading()) {
-    <p class="status" i18n="@@common.loading">Ładowanie...</p>
+      <p class="status" i18n="@@common.loading">Ładowanie...</p>
     } @else if (error()) {
-    <p class="status" i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
+      <p class="status" i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
     }
   </article>
 </section>

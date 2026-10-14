@@ -15,9 +15,7 @@ export class StaffCardComponent {
   readonly jobTitle = input.required<string>();
   readonly nationality = input<string | undefined>(undefined);
   readonly email = input.required<string>();
-  readonly mailtoLink = computed<string | undefined>(() =>
-    this.email() ? `mailto:${this.email()}` : undefined
-  );
+  readonly mailtoLink = computed<string | undefined>(() => (this.email() ? `mailto:${this.email()}` : undefined));
   readonly linkedInName = input<string | undefined>(undefined);
   readonly linkedInLink = computed<string | undefined>(() => {
     const value = this.linkedInName()?.trim();
