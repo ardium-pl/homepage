@@ -1,0 +1,25 @@
+# Dependencies
+**/node_modules
+
+# Build output
+**/dist
+**/.angular
+
+# Environment
+**/.env
+**/.env.*
+
+# Logs and caches
+**/*.log
+**/coverage
+
+# IDE
+.vscode
+.idea
+
+# Git
+.git
+.github
+
+# Sanity Studio has its own Dockerfile
+studio
