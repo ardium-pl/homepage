@@ -15,7 +15,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "pnpm": "^12.11.2",
     "prettier": "^3.3.2"
   }
 }
