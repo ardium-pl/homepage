@@ -1,25 +1,19 @@
-<app-page-hero preheading="FAQ" title="Najczęstsze pytania" />
+@if (content(); as faq) {
+  <app-page-hero
+    [preheading]="faq.preHeading || 'FAQ'"
+    [title]="faq.title || 'Najczęstsze pytania'"
+    [description]="faq.subtitle || ''"
+  />
 
-<section class="faq-section">
-  <app-faq-item question="W jakich technologiach działacie?">
-    To zależy od projektu. Specjalizujemy się we wdrożeniach produkcyjnych dużych modeli językowych, a w ekosystemie
-    Microsoft pracujemy z Azure AI, razem z firmą Senetic.
-  </app-faq-item>
-  <app-faq-item question="Jak długo trwa wdrożenie?">
-    To zależy od zakresu. Dedykowaną platformę rezerwacyjną wdrożyliśmy od zera w 6 miesięcy, razem z przeniesieniem
-    danych. Czas dla Twojego projektu podamy po rozmowie o procesie.
-  </app-faq-item>
-  <app-faq-item question="Ile to kosztuje?">
-    Zależy od zakresu projektu. Wycenę przygotowujemy po rozmowie, kiedy wiemy już, co dokładnie chcesz usprawnić.
-  </app-faq-item>
-  <app-faq-item question="Czy muszę mieć gotowe wymagania?">
-    Nie. Pomożemy Ci je spisać: na pierwszych spotkaniach ustalamy, co warto usprawnić i w jakiej kolejności.
-  </app-faq-item>
-  <app-faq-item question="Czy moje dane są bezpieczne?">
-    Przed rozpoczęciem prac chętnie podpiszemy NDA. Rozwiązanie możemy też wdrożyć i utrzymywać w środowisku, które
-    wybierzesz.
-  </app-faq-item>
-  <app-faq-item question="Co po wdrożeniu?">
-    Możemy dalej utrzymywać i rozwijać rozwiązanie. Część projektów prowadzimy w stałej współpracy.
-  </app-faq-item>
-</section>
+  <section class="faq-section">
+    @for (item of faq.list; track item.key) {
+      <app-faq-item [question]="item.question">
+        {{ item.answer }}
+      </app-faq-item>
+    }
+  </section>
+} @else if (loading()) {
+  <p i18n="@@common.loading">Ładowanie...</p>
+} @else if (error()) {
+  <p i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
+}

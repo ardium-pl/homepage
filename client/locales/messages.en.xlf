@@ -10,6 +10,10 @@
           <context context-type="linenumber">38,39</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/sections/extended-about/extended-about.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/blog-post/blog-post.page.html</context>
           <context context-type="linenumber">17,18</context>
         </context-group>
@@ -18,8 +22,20 @@
           <context context-type="linenumber">56,57</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/faq/faq.page.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/hero/hero.section.html</context>
           <context context-type="linenumber">29,30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
+          <context context-type="linenumber">37,38</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/offices/offices.section.html</context>
@@ -126,30 +142,44 @@
           <context context-type="linenumber">25,26</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="extended-about.about-us.title" datatype="html">
-        <source>O nas</source>
-        <target>About us</target>
+      <trans-unit id="common.content-unavailable" datatype="html">
+        <source>Treść jest obecnie niedostępna.</source>
+        <target>Content is currently unavailable.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/sections/extended-about/extended-about.component.html</context>
-          <context context-type="linenumber">6,8</context>
+          <context context-type="linenumber">24,28</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="extended-about.about-us.content1" datatype="html">
-        <source> Specjalizujemy się w zaawansowanych wdrożeniach produkcyjnych dużych modeli językowych. Wierzymy, że kluczem do skutecznego wykorzystania AI w organizacji jest precyzyjna konfiguracja modeli. Zapewniamy kompleksowe wsparcie - od pomysłu, przez dostosowanie modelu, aż po integrację z firmowymi narzędziami i utrzymanie rozwiązania w wybranym środowisku. </source>
-        <target> We specialize in advanced production deployments of large language models (LLMs). We believe that precise model configuration is the key to successfully leveraging AI within an organization. We provide end-to-end support—from initial concept and model customization to integration with business tools and ongoing maintenance in your chosen environment. </target>
-        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/about/sections/extended-about/extended-about.component.html</context>
-          <context context-type="linenumber">9,13</context>
+          <context context-type="sourcefile">src/app/pages/blog-post/blog-post.page.html</context>
+          <context context-type="linenumber">25,29</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="extended-about.about-us.content2" datatype="html">
-        <source> Najczęściej pracujemy z nieustrukturyzowanymi danymi pochodzącymi z dokumentów w najróżniejszych formatach. Wspólnie z klientem projektujemy procesy, które umożliwiają modelowi samodzielne działanie - bez konieczności stałego nadzoru. </source>
-        <target> We most often work with unstructured data derived from documents in various formats. Together with our clients, we design processes that enable the model to operate autonomously-without the need for constant supervision. </target>
-        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/about/sections/extended-about/extended-about.component.html</context>
-          <context context-type="linenumber">15,18</context>
+          <context context-type="sourcefile">src/app/pages/blog/blog.page.html</context>
+          <context context-type="linenumber">58,62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/faq/faq.page.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/sections/hero/hero.section.html</context>
+          <context context-type="linenumber">31,35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
+          <context context-type="linenumber">33,37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
+          <context context-type="linenumber">39,43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
+          <context context-type="linenumber">36,40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/privacy-policy/privacy-policy.page.html</context>
+          <context context-type="linenumber">23,27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="staff.pre-heading" datatype="html">
@@ -166,54 +196,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/sections/staff/staff.section.html</context>
           <context context-type="linenumber">5,7</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="job_titles.lead_technical_specialist" datatype="html">
-        <source>Główny specjalista techniczny</source>
-        <target>Lead Technical Specialist</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/about/sections/staff/staff.section.ts</context>
-          <context context-type="linenumber">28</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="staff_descriptions.pawel_bakalarz" datatype="html">
-        <source>Odpowiada za techniczne prowadzenie projektów, architekturę systemów oraz wdrażanie rozwiązań webowych i AI. Łączy programowanie z koordynacją zespołu i dba o to, by każde rozwiązanie było dopracowane, stabilne i gotowe do skalowania razem z biznesem klienta.</source>
-        <target>Responsible for the technical management of projects, system architecture, and the implementation of web and AI solutions. Combines programming with team coordination and ensures that every solution is well-crafted, stable, and ready to scale with the client's business.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/about/sections/staff/staff.section.ts</context>
-          <context context-type="linenumber">32</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="job_titles.team_lead_manager" datatype="html">
-        <source>Kierownik zespołu</source>
-        <target>Team Lead Manager</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/about/sections/staff/staff.section.ts</context>
-          <context context-type="linenumber">37</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="staff_descriptions.jakub_brodka" datatype="html">
-        <source>Zarządza projektami z perspektywy strategicznej i odpowiada za sprawne funkcjonowanie całej organizacji. Dobiera technologie, analizuje wyceny, buduje zespoły i prowadzi relacje z klientami w trakcie realizacji. Wewnątrz firmy rozwija procesy, struktury i automatyzacje, które pozwalają zespołowi skupić się na tym, co najważniejsze.</source>
-        <target>Manages projects from a strategic perspective and is responsible for the efficient functioning of the entire organization. Selects technologies, analyzes estimates, builds teams, and maintains client relationships during project execution. Within the company, develops processes, structures, and automations that allow the team to focus on what matters most.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/about/sections/staff/staff.section.ts</context>
-          <context context-type="linenumber">41</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="job_titles.chief_of_sales" datatype="html">
-        <source>Dyrektor ds. sprzedaży</source>
-        <target>Chief of Sales</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/about/sections/staff/staff.section.ts</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="staff_descriptions.mikolaj_wolny" datatype="html">
-        <source>Pracuje bezpośrednio z klientami. Pomaga im nazwać realne potrzeby i przekłada je na spójne, inżynierskie specyfikacje. Dzieli się doświadczeniem z wielu branż i projektów, inspiruje do nowych funkcjonalności i czuwa nad tym, by od pierwszej rozmowy cały projekt zmierzał we właściwym kierunku.</source>
-        <target>Works directly with clients. Helps them identify real needs and translates them into coherent, engineering specifications. Shares experience from various industries and projects, inspires new functionalities, and ensures that the entire project is on the right track from the very first conversation.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/about/sections/staff/staff.section.ts</context>
-          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="blogPost.back" datatype="html">
@@ -242,30 +224,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/blog-post/blog-post.page.html</context>
           <context context-type="linenumber">21,22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="common.content-unavailable" datatype="html">
-        <source>Treść jest obecnie niedostępna.</source>
-        <target>Content is currently unavailable.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/blog-post/blog-post.page.html</context>
-          <context context-type="linenumber">25,29</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/blog/blog.page.html</context>
-          <context context-type="linenumber">58,62</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/hero/hero.section.html</context>
-          <context context-type="linenumber">31,35</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/services/services.section.html</context>
-          <context context-type="linenumber">36,40</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/privacy-policy/privacy-policy.page.html</context>
-          <context context-type="linenumber">23,27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="blog.categoriesLabel" datatype="html">
@@ -384,7 +342,6 @@
           jakub.brodka@ardium.pl
           <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
         </target>
-        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/contact/contact.section.html</context>
           <context context-type="linenumber">9,12</context>
@@ -407,194 +364,9 @@
           <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
           . 
         </target>
-        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/sections/contact/contact.section.html</context>
           <context context-type="linenumber">49,51</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="how-we-work.heading" datatype="html">
-        <source>Proces</source>
-        <target>Process</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
-          <context context-type="linenumber">4,5</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="how-we-work.subheading" datatype="html">
-        <source>Jak pracujemy</source>
-        <target>How We Work</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
-          <context context-type="linenumber">5,7</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="how-we-work.talk.title" datatype="html">
-        <source>Rozmowa</source>
-        <target>Talk</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
-          <context context-type="linenumber">14,15</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="how-we-work.talk.content" datatype="html">
-        <source> Poznajemy Twój proces i cel. Pierwsza rozmowa jest bezpłatna i do niczego nie zobowiązuje. </source>
-        <target>We get to know your process and goal. The first conversation is free and does not oblige you to anything.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
-          <context context-type="linenumber">17,19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="how-we-work.audit.title" datatype="html">
-        <source>Audyt</source>
-        <target>Audit</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
-          <context context-type="linenumber">27,28</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="how-we-work.audit.content" datatype="html">
-        <source> Sprawdzamy, co w procesie da się usprawnić i co faktycznie się opłaci. Efektem jest plan wdrożenia. </source>
-        <target>We check what can be improved in the process and what is actually worth it. The result is an implementation plan.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
-          <context context-type="linenumber">30,32</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="how-we-work.project.title" datatype="html">
-        <source>Projekt</source>
-        <target>Project</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
-          <context context-type="linenumber">40,41</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="how-we-work.project.content" datatype="html">
-        <source>Projektujemy rozwiązanie przed przejściem do pełnego wdrożenia.</source>
-        <target>We design the solution before moving to full implementation.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
-          <context context-type="linenumber">42,44</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="how-we-work.implementation.title" datatype="html">
-        <source>Wdrożenie i rozwój</source>
-        <target>Implementation and Development</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
-          <context context-type="linenumber">51,53</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="how-we-work.implementation.content" datatype="html">
-        <source> Wdrażamy rozwiązanie i rozwijamy je po wdrożeniu według wspólnie ustalonej roadmapy. </source>
-        <target>We implement the solution and develop it after implementation according to a mutually agreed roadmap.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/how-we-work/how-we-work.section.html</context>
-          <context context-type="linenumber">54,56</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.heading" datatype="html">
-        <source>Branże</source>
-        <target>Industries</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">4,5</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.subheading" datatype="html">
-        <source>Branże, w których mamy doświadczenie</source>
-        <target>Industries we have experience in</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">5,6</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.description" datatype="html">
-        <source>Znamy specyfikę sektorów, w których wdrażaliśmy rozwiązania.</source>
-        <target>We know the specifics of the sectors in which we have implemented solutions.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">6,8</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.tourism.title" datatype="html">
-        <source>Turystyka</source>
-        <target>Tourism</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">13,14</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.tourism.content" datatype="html">
-        <source> Rezerwacje, rozliczanie wpłat i raportowanie do funduszu gwarancyjnego. </source>
-        <target>Reservations, payment settlements, and reporting to the guarantee fund.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">16,18</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.service.title" datatype="html">
-        <source>Serwis</source>
-        <target>Service</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">24,25</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.service.content" datatype="html">
-        <source>Procesy serwisowe i gospodarka magazynowa.</source>
-        <target>Service processes and warehouse management.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">26,28</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.safety.title" datatype="html">
-        <source>BHP</source>
-        <target>Safety</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">33,34</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.safety.content" datatype="html">
-        <source>Platformy do szkoleń.</source>
-        <target>Training platforms.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">35,37</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.legal.title" datatype="html">
-        <source>Prawo</source>
-        <target>Law</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">42,43</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.legal.content" datatype="html">
-        <source>Analiza dokumentów prawnych.</source>
-        <target>Legal document analysis.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">44,46</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.accounting.title" datatype="html">
-        <source>Księgowość</source>
-        <target>Accounting</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">51,52</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="industries.accounting.content" datatype="html">
-        <source>Obsługa księgowa i raportowanie finansowe.</source>
-        <target>Accounting services and financial reporting.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/sections/industries/industries.section.html</context>
-          <context context-type="linenumber">53,55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="offices.title" datatype="html">
@@ -664,7 +436,6 @@
       <trans-unit id="blog.type.blog" datatype="html">
         <source>Post</source>
         <target>Post</target>
-        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/utils/blog-post.ts</context>
           <context context-type="linenumber">4</context>
@@ -673,7 +444,6 @@
       <trans-unit id="form-errors.required" datatype="html">
         <source>Wpisz tutaj coś</source>
         <target>Please enter something here</target>
-        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/utils/form-utils.ts</context>
           <context context-type="linenumber">19</context>
@@ -682,7 +452,6 @@
       <trans-unit id="form-errors.email" datatype="html">
         <source>Podaj poprawny adres e-mail</source>
         <target>Please enter a valid email</target>
-        <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/utils/form-utils.ts</context>
           <context context-type="linenumber">20</context>
