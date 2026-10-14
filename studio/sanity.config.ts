@@ -1,9 +1,9 @@
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
-import {structure} from './schemaTypes/structure'
-import {singletonTypes, singletonActions} from './schemaTypes/structure/singletons'
+import { visionTool } from '@sanity/vision'
+import { defineConfig } from 'sanity'
+import { structureTool } from 'sanity/structure'
+import { schemaTypes } from './schemaTypes'
+import { structure } from './schemaTypes/structure'
+import { singletonActions, singletonTypes } from './schemaTypes/structure/singletons'
 
 export default defineConfig({
   name: 'default',

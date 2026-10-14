@@ -15,7 +15,8 @@
     "export:dev": "sanity dataset export development ./exports/development.tar.gz",
     "export:prod": "sanity dataset export production ./exports/production.tar.gz",
     "import:dev": "sanity dataset import --dataset development",
-    "import:prod": "sanity dataset import --dataset production"
+    "import:prod": "sanity dataset import --dataset production",
+    "clone": "powershell.exe -File scripts/copy-dev-to-prod.ps1"
   },
   "keywords": [
     "sanity"
