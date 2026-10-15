@@ -11,23 +11,34 @@
   width: max-content;
 }
 
+$staff-gap: 3rem;
+
 .staff-container {
   padding: 4rem 2rem 0 2rem;
   width: 100%;
-  display: grid;
-  gap: 3rem;
-  width: 100%;
-  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $staff-gap;
+  justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr;
+
+  // Cards keep the same widths the 1fr grid tracks gave them, but a row that
+  // isn't full now centres instead of being left-aligned.
+  > * {
+    flex: 0 1 100%;
+  }
 
   @media only screen and (min-width: 600px) {
     padding: 4rem 0 0 0;
   }
   @media only screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    > * {
+      flex-basis: calc((100% - #{$staff-gap}) / 2);
+    }
   }
   @media only screen and (min-width: 1200px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    > * {
+      flex-basis: calc((100% - #{$staff-gap} * 2) / 3);
+    }
   }
 }
