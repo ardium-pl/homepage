@@ -8,13 +8,14 @@
 }
 
 .heading-container-g {
-  width: max-content;
+  width: fit-content;
+  max-width: 100%;
 }
 
 $staff-gap: 3rem;
 
 .staff-container {
-  padding: 4rem 2rem 0 2rem;
+  padding-top: 4rem;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -28,9 +29,6 @@ $staff-gap: 3rem;
     flex: 0 1 100%;
   }
 
-  @media only screen and (min-width: 600px) {
-    padding: 4rem 0 0 0;
-  }
   @media only screen and (min-width: 768px) {
     > * {
       flex-basis: calc((100% - #{$staff-gap}) / 2);
