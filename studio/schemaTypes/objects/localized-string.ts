@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export const localizedString = defineType({
   name: 'localizedString',
@@ -6,14 +6,14 @@ export const localizedString = defineType({
   type: 'object',
   fields: [
     defineField({
-      name: 'en',
-      title: 'English',
+      name: 'pl',
+      title: 'Polish',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'pl',
-      title: 'Polish',
+      name: 'en',
+      title: 'English',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
