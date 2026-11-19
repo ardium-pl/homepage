@@ -8,26 +8,35 @@
 }
 
 .heading-container-g {
-  width: max-content;
+  width: fit-content;
+  max-width: 100%;
 }
 
-.staff-container {
-  padding: 4rem 2rem 0 2rem;
-  width: 100%;
-  display: grid;
-  gap: 3rem;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  grid-template-columns: 1fr;
+$staff-gap: 3rem;
 
-  @media only screen and (min-width: 600px) {
-    padding: 4rem 0 0 0;
+.staff-container {
+  padding-top: 4rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $staff-gap;
+  justify-content: center;
+  align-items: center;
+
+  // Cards keep the same widths the 1fr grid tracks gave them, but a row that
+  // isn't full now centres instead of being left-aligned.
+  > * {
+    flex: 0 1 100%;
   }
+
   @media only screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    > * {
+      flex-basis: calc((100% - #{$staff-gap}) / 2);
+    }
   }
   @media only screen and (min-width: 1200px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    > * {
+      flex-basis: calc((100% - #{$staff-gap} * 2) / 3);
+    }
   }
 }
