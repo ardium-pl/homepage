@@ -39,6 +39,10 @@ h1 {
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: 1.5px;
+
+  span:nth-child(2n) {
+    color: var(--clr-main);
+  }
 }
 
 .hero-line {

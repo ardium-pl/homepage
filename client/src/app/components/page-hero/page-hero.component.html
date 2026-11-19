@@ -4,7 +4,11 @@
   <div class="content-width-g hero-content">
     <app-pre-heading>{{ preheading() }}</app-pre-heading>
 
-    <h1>{{ title() }}</h1>
+    <h1>
+      @for (part of title(); track part) {
+        <span>{{ part }}</span>
+      }
+    </h1>
 
     <div class="hero-line" aria-hidden="true"></div>
 

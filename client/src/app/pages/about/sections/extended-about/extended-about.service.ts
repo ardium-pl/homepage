@@ -1,7 +1,6 @@
-import { httpResource, HttpResourceRequest } from '@angular/common/http';
+import { httpResource } from '@angular/common/http';
 import { computed, inject, Injectable } from '@angular/core';
-import { environment } from '../../../../../environments/environment';
-import { LocaleService } from '../../../../services/locale.service';
+import { SanityService } from '../../../../services/sanity.service';
 
 export interface ExtendedAboutContent {
   title: string;
@@ -29,18 +28,9 @@ const EXTENDED_ABOUT_QUERY = `*[_type == "aboutUsPage"][0]{
 
 @Injectable({ providedIn: 'root' })
 export class ExtendedAboutService {
-  private readonly locale = inject(LocaleService);
-  private readonly sanityHost = environment.sanity.useCdn ? 'apicdn.sanity.io' : 'api.sanity.io';
+  private readonly sanity = inject(SanityService);
 
-  private readonly request = computed<HttpResourceRequest>(() => ({
-    url: `https://${environment.sanity.projectId}.${this.sanityHost}/v${environment.sanity.apiVersion}/data/query/${environment.sanity.dataset}`,
-    method: 'GET',
-    params: {
-      query: EXTENDED_ABOUT_QUERY,
-      $language: JSON.stringify(this.locale.language),
-    },
-  }));
-
+  readonly request = this.sanity.newHttpRequest(EXTENDED_ABOUT_QUERY);
   readonly contentResource = httpResource<ExtendedAboutContent | null>(() => this.request(), {
     defaultValue: null,
     parse: raw => this.parseResponse(raw),

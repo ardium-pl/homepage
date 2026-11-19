@@ -1,6 +1,7 @@
 import {aboutUsPage} from './documents/about-us-page'
 import {blogPage} from './documents/blog-page'
 import {blogPost} from './documents/blog-post'
+import {careersPage} from './documents/careers-page'
 import {clientLogos} from './documents/client-logos'
 import {contactInfo} from './documents/contact-info'
 import {employees} from './documents/employees'
@@ -31,5 +32,6 @@ export const schemaTypes = [
   clientLogos,
   employees,
   blogPost,
+  careersPage,
   privacyPolicy,
 ]

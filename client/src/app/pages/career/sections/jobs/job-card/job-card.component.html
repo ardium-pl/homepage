@@ -1,0 +1,123 @@
+<article class="job-card" [class.job-card--expanded]="expanded()">
+  <div class="job-card__main">
+    <div class="job-card__content">
+      <!-- Department and date -->
+      <div class="job-card__top">
+        <span class="job-card__team">
+          {{ job().team }}
+        </span>
+
+        <span class="job-card__date">
+          {{ job().createdAt | date: 'dd.MM.yyyy' }}
+        </span>
+      </div>
+
+      <!-- Position name -->
+      <h3 class="job-card__title">
+        {{ job().positionName }}
+      </h3>
+
+      <!-- Location, work type and agreement -->
+      <div class="job-card__metadata">
+        <span class="job-card__metadata-item">
+          <ard-icon-location-pin class="job-card__metadata-icon" />
+
+          @if (job().workType !== 'zdalnie') {
+            {{ job().workType | workTypeLabel }} –
+          }
+          {{ job().workLocation }}
+        </span>
+
+        <span class="job-card__metadata-item">
+          <ard-icon-clock class="job-card__metadata-icon" />
+          {{ job().agreementType | agreementTypeLabel }}
+        </span>
+      </div>
+
+      <!-- Short description -->
+      <p class="job-card__description">
+        {{ job().description }}
+      </p>
+
+      <!-- Technologies / skills -->
+      <div class="job-card__skills">
+        @for (skill of job().requiredKnowledge; track $index) {
+          <span class="job-card__skill">
+            {{ skill }}
+          </span>
+        }
+      </div>
+    </div>
+
+    <!-- Salary and toggle -->
+    <div class="job-card__actions">
+      <div class="job-card__salary">
+        <span>
+          @if (!job().salaryTo) {
+            {{ job().salaryFrom | number: '1.0-0' }}
+          } @else {
+            {{ job().salaryFrom | number: '1.0-0' }} – {{ job().salaryTo | number: '1.0-0' }}
+          }
+          {{ job().isSalaryPerHour ? 'PLN/h' : 'PLN' }}
+        </span>
+      </div>
+
+      <button
+        type="button"
+        class="job-card__toggle"
+        [attr.aria-expanded]="expanded()"
+        [attr.aria-controls]="'job-details-' + job()._key"
+        (click)="toggle()"
+      >
+        @if (expanded()) {
+          <ng-container i18n="@@career.collapse-offer">Zwiń ofertę</ng-container>
+        } @else {
+          <ng-container i18n="@@career.expand-offer">Zobacz ofertę</ng-container>
+        }
+        <span aria-hidden="true">
+          {{ expanded() ? '↑' : '↓' }}
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Expanded content -->
+  @if (expanded()) {
+    <div class="job-card__expanded" [id]="'job-details-' + job()._key">
+      <div class="job-card__details-grid">
+        <!-- About position -->
+        <section class="job-card__section">
+          <h4 class="job-card__section-title" i18n="@@career.about-position">O stanowisku</h4>
+
+          <p class="job-card__section-text">
+            {{ job().aboutPosition }}
+          </p>
+        </section>
+
+        <!-- Responsibilities -->
+        <section class="job-card__section">
+          <h4 class="job-card__section-title" i18n="@@career.responsibilities">Twój zakres odpowiedzialności</h4>
+
+          <ul class="job-card__responsibilities">
+            @for (responsibility of job().responsibilities; track $index) {
+              <li>{{ responsibility }}</li>
+            }
+          </ul>
+        </section>
+      </div>
+
+      <!-- Application footer -->
+      <div class="job-card__apply-footer">
+        <p>
+          <ng-container i18n="@@career.interested-in-position">Brzmi jak miejsce dla Ciebie?</ng-container>&nbsp;
+          <a i18n="@@career.lets-talk" [href]="mailtoLink()">Porozmawiajmy.</a>
+        </p>
+
+        <a role="button" class="job-card__apply-button" [href]="mailtoLink()">
+          <ng-container i18n="@@career.apply-for-position">Aplikuj na stanowisko</ng-container>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  }
+</article>

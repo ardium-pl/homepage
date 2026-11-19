@@ -73,6 +73,12 @@ export const structure: StructureResolver = (S) =>
         .title('Employees')
         .child(S.editor().id('employees').schemaType('employees').documentId('employees')),
 
+      S.listItem()
+        .id('careersPage')
+        .schemaType('careersPage')
+        .title('Careers page')
+        .child(S.editor().id('careersPage').schemaType('careersPage').documentId('careersPage')),
+
       ...S.documentTypeListItems().filter((item) => {
         const id = item.getId()
 

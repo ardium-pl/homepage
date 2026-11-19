@@ -1,0 +1,17 @@
+<section>
+  <div class="content-width-g">
+    <div class="heading-container-g">
+      <app-pre-heading>{{ content().positionsSection.preHeading }}</app-pre-heading>
+      <h2>{{ content().positionsSection.title }}</h2>
+      <p>{{ content().positionsSection.subtitle }}</p>
+    </div>
+
+    <div class="jobs">
+      @for (job of content().positionsSection.positions; track job._key) {
+        <app-job-card [job]="job" [mailtoLink]="content().positionsSection.mailtoLink" />
+      } @empty {
+        <p>{{ content().positionsSection.noOpenPositionsText }}</p>
+      }
+    </div>
+  </div>
+</section>

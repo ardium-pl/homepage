@@ -1,0 +1,17 @@
+@if (content(); as content) {
+  <app-page-hero
+    [preheading]="content.hero.preHeading || 'Kariera w Ardium'"
+    [title]="content.hero.title || 'Twórz z nami przyszłość %%sztucznej inteligencji%%'"
+    [description]="
+      content.hero.subtitle ||
+      'Szukamy ludzi, którzy chcą rozwiązywać prawdziwe problemy biznesowe i budować technologię, która ma znaczenie.'
+    "
+  />
+
+  <app-jobs-section />
+  <app-company-qualities-section />
+} @else if (loading()) {
+  <p i18n="@@common.loading">Ładowanie...</p>
+} @else if (error()) {
+  <p i18n="@@common.content-unavailable">Treść jest obecnie niedostępna.</p>
+}

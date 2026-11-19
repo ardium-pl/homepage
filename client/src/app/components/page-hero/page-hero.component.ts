@@ -10,6 +10,6 @@ import { PreHeadingComponent } from '@components/pre-heading/pre-heading.compone
 })
 export class PageHeroComponent {
   readonly preheading = input.required<string>();
-  readonly title = input.required<string>();
+  readonly title = input.required<string[], string>({ transform: (value: string) => value.split('%%') });
   readonly description = input<string>('');
 }

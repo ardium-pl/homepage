@@ -12,6 +12,7 @@
     "deploy-graphql": "sanity graphql deploy",
     "dev": "sanity dev",
     "start": "sanity start",
+    "login": "sanity login",
     "export:dev": "sanity dataset export development ./exports/development.tar.gz",
     "export:prod": "sanity dataset export production ./exports/production.tar.gz",
     "import:dev": "sanity dataset import --dataset development",
@@ -22,10 +23,10 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/vision": "^6.19.0",
+    "@sanity/vision": "^6.24.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "sanity": "^6.19.0",
+    "sanity": "^6.24.0",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
