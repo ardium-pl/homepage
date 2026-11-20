@@ -13,10 +13,17 @@
         </span>
       </div>
 
-      <!-- Position name -->
-      <h3 class="job-card__title">
-        {{ job().positionName }}
-      </h3>
+      <div class="job-card__title-row">
+        <!-- Position name -->
+        <h3 class="job-card__title">
+          {{ job().positionName }}
+        </h3>
+
+        <!-- Link to job card -->
+        <button class="job-card__link-button" (click)="setFragment()">
+          <ard-icon-link-2 class="job-card__link-icon" />
+        </button>
+      </div>
 
       <!-- Location, work type and agreement -->
       <div class="job-card__metadata">
@@ -83,11 +90,7 @@
   </div>
 
   <!-- Expanded content -->
-  <div
-    class="job-card__expanded"
-    [id]="'job-details-' + job()._key"
-    [attr.aria-hidden]="!expanded()"
-  >
+  <div class="job-card__expanded" [id]="'job-details-' + job()._key" [attr.aria-hidden]="!expanded()">
     <div class="job-card__expanded-inner">
       <div class="job-card__details-grid">
         <!-- About position -->
