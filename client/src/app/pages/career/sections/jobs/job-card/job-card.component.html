@@ -1,4 +1,5 @@
 <article class="job-card" [class.job-card--expanded]="expanded()">
+  <div class="job-card__anchor" [attr.id]="jobId()"></div>
   <div class="job-card__main">
     <div class="job-card__content">
       <!-- Department and date -->
@@ -82,8 +83,12 @@
   </div>
 
   <!-- Expanded content -->
-  @if (expanded()) {
-    <div class="job-card__expanded" [id]="'job-details-' + job()._key">
+  <div
+    class="job-card__expanded"
+    [id]="'job-details-' + job()._key"
+    [attr.aria-hidden]="!expanded()"
+  >
+    <div class="job-card__expanded-inner">
       <div class="job-card__details-grid">
         <!-- About position -->
         <section class="job-card__section">
@@ -119,5 +124,5 @@
         </a>
       </div>
     </div>
-  }
+  </div>
 </article>
